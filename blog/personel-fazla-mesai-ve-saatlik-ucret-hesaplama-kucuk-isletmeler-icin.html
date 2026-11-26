@@ -1,0 +1,56 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personel Fazla Mesai ve Saatlik Ücret Hesaplama: Küçük İşletmeler İçin Pratik Rehber | Kumpanya Dijital</title><meta name="description" content="Küçük işletmelerde ve esnaf dükkanlarında personel yönetimi, işletmenin kârlılığı ve yasal uyumluluğu açısından kritik bir öneme sahiptir. Özellikle yoğun "><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/blog/">Blog</a></nav><h1>Personel Fazla Mesai ve Saatlik Ücret Hesaplama: Küçük İşletmeler İçin Pratik Rehber</h1>
+<p>Küçük işletmelerde ve esnaf dükkanlarında personel yönetimi, işletmenin kârlılığı ve yasal uyumluluğu açısından kritik bir öneme sahiptir. Özellikle yoğun sezonlarda veya hafta sonu çalışmalarında, personelin fazla mesai saatlerinin doğru hesaplanması hem çalışan motivasyonu hem de bütçe kontrolü için şarttır. Yanlış hesaplanan mesai ücretleri hem maliyetleri artırır hem de personelle güven sorunlarına yol açabilir.</p>
+<p>Bu rehberde, küçük işletme sahipleri için saatlik ücret hesaplamanın mantığını, fazla mesai yasal sınırlarını ve Excel ile bu süreci hatasız nasıl yönetebileceğinizi adım adım ele alacağız.</p>
+<h2>1. Saatlik Ücret ve Normal Çalışma Süresi Nasıl Hesaplanır?</h2>
+<p>Fazla mesai hesaplamasına geçmeden önce, çalışanın saatlik net ücretini doğru belirlemek gerekir. Türkiye'deki yasal düzenlemelere göre haftalık normal çalışma süresi en fazla 45 saattir. Aylık çalışma saati hesaplanırken genellikle 225 saat (45 saat x 4 hafta + ek günler) baz alınır.</p>
+<p>Örnek bir senaryo üzerinden gidelim:</p>
+<ul>
+<li>Çalışanın Aylık Net Maaşı: 17.000 TL</li>
+<li>Aylık Standart Çalışma Saati: 225 Saat</li>
+</ul>
+<p>Saatlik Ücret = Aylık Maaş / Aylık Çalışma Saati</p>
+<p>Saatlik Ücret = 17.000 / 225 = 75.55 TL</p>
+<p>Bu formülü uygulayarak her bir personelin saatlik bazda ne kadar kazandığını net bir şekilde görebilir, sonraki adımlar için sağlam bir temel oluşturabilirsiniz.</p>
+<h2>2. Fazla Çalışma (Fazla Mesai) Oranları ve Yasal Esaslar</h2>
+<p>İş Kanunu'na göre haftalık 45 saati aşan çalışmalar fazla çalışma olarak kabul edilir. Bu çalışmaların normal saatlik ücretin üzerinde bir katsayı ile ödenmesi gerekmektedir:</p>
+<ul>
+<li>Standart Fazla Mesai: Haftalık 45 saati aşan her bir saat için normal saatlik ücret %50 zamlı ödenir (Saatlik Ücret x 1.5).</li>
+<li>Haftalık Tatil ve Resmi Tatil Çalışmaları: Resmi tatillerde yapılan çalışmalar genellikle 1 kat fazlasıyla (toplam 2 kat) değerlendirilir.</li>
+</ul>
+<p>Yukarıdaki örneğimizden devam edelim:</p>
+<ul>
+<li>Normal Saatlik Ücret: 75.55 TL</li>
+<li>Zamlı Fazla Mesai Saat Ücreti = 75.55 x 1.5 = 113.33 TL</li>
+</ul>
+<p>Eğer bir personel ay içinde toplam 10 saat fazla mesai yaptıysa, hak edeceği brüt/net fazla mesai tutarı 10 x 113.33 = 1.133.30 TL olacaktır.</p>
+<h2>3. Excel ile Otomatik Fazla Mesai ve Bordro Takibi Nasıl Yapılır?</h2>
+<p>Kâğıt üzerinde veya akıldan yapılan mesai hesaplamaları unutulmalara ve hatalara açıktır. İşletmenizde bu süreci otomatikleştirmek için Excel tablolarından faydalanabilirsiniz.</p>
+<p>Excel'de kurabileceğiniz basit bir takip şablonunun sütunları şöyle olmalıdır:</p>
+<ol>
+<li>Personel Adı Soyadı</li>
+<li>Aylık Net Maaş</li>
+<li>Aylık Toplam Çalışma Saati (Sabit: 225)</li>
+<li>Saatlik Ücret (Formül: =Maaş/Saat)</li>
+<li>Yapılan Fazla Mesai Saati (Manuel girilir)</li>
+<li>Toplam Mesai Ödemesi (Formül: =Saatlik Ücret <i> 1.5 </i> Fazla Mesai Saati)</li>
+<li>Toplam Hak Ediş (Formül: =Maaş + Toplam Mesai Ödemesi)</li>
+</ol>
+<p>Bu yapı sayesinde her ay sonunda personelin hak edişini saniyeler içinde hesaplayabilir, bütçenizi önceden görebilirsiniz. Hazır şablonlarla uğraşmak istemiyorsanız, Esnaf İşletme Paketi içerisindeki hazır bordro ve mesai hesaplama araçlarını doğrudan kullanabilirsiniz.</p>
+<h2>4. Küçük İşletmelerde Mesai Maliyetlerini Kontrol Altına Alma Yöntemleri</h2>
+<p>Fazla mesailer, kontrol edilmediğinde işletmelerin kâr marjını eritebilir. Maliyetleri optimize etmek için şu stratejileri izleyebilirsiniz:</p>
+<ul>
+<li>Vardiya Planlamasını Erken Yapın: Son dakika yapılan vardiya değişiklikleri ve eksik personel planlaması gereksiz fazla mesai doğurur. Haftalık vardiya çizelgelerini en az 3 gün önceden duyurun.</li>
+<li>Yoğunluk Saatlerini Analiz Edin: İş yerinizin en çok müşteri ağırladığı saatleri belirleyin ve personel dağılımını bu saatlere göre optimize edin. Boş saatlerde fazla personel bulundurmak maliyeti artırır.</li>
+<li>Performans ve Verimlilik Takibi Yapın: Fazla mesai yapan personelin o saatler içinde ürettiği katma değeri değerlendirin. Düzenli fazla mesai gerektiren durumlar sürekli hale geliyorsa, yeni yarı zamanlı personel istihdam etmek daha ekonomik olabilir.</li>
+</ul>
+<p>Küçük işletmenizin finansal sağlığını korumak ve operasyonel yükünüzü hafifletmek için tüm bu hesaplamaları tek bir merkezde toplayan Esnaf İşletme Paketi'ni inceleyebilir, işletmenizi dijitalleştirebilirsiniz.</p>
+<div class="cta"><b>Esnaf İşletme Paketi (Excel)</b><p>Stok takibi, gelir-gider, veresiye ve teklif tek dosyada. Formüller hazır, sadece verini yaz. Tek seferlik $9, 14 gün iade garantisi.</p><a class="btn" href="https://buy.polar.sh/polar_cl_XZ3CJ6cyE1J5x1HY8EEE3V8MKJ1cxc2KhEYyZ1jzo0T">Paketi incele ve satın al</a></div></div></body></html>

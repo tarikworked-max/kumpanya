@@ -1,0 +1,82 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Esnaflar İçin Basit Muhasebe ve Defter Tutma Rehberi | Kumpanya Dijital</title><meta name="description" content="Esnaflar için günlük işletme yönetimi, satışları takip etmek, giderleri kaydetmek ve kârı doğru bir şekilde hesaplamakla başlar. Bu rehberde, **Esnaf İşlet"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/blog/">Blog</a></nav><h1>Esnaflar İçin Basit Muhasebe ve Defter Tutma Rehberi</h1>
+<p>Esnaflar için günlük işletme yönetimi, satışları takip etmek, giderleri kaydetmek ve kârı doğru bir şekilde hesaplamakla başlar. Bu rehberde, <b>Esnaf İşletme Paketi (Excel)</b> kullanarak <b>basit bir muhasebe sistemi</b> ve <b>defter tutma</b> adımlarını adım adım anlatacağız. Ürünümüzü satın alarak, bu adımları otomatikleştiren hazır şablonları hemen kullanabilirsiniz.</p>
+<h2>1. Neden Basit Muhasebe?</h2>
+<ul>
+<li><b>Zaman Tasarrufu:</b> Manuel hesaplamalar yerine şablonlar sayesinde dakikalar içinde rapor alabilirsiniz.</li>
+<li><b>Doğru Kar Hesaplama:</b> Gelir‑gider dengesini net görerek fiyatlandırma ve kâr marjı kararlarını destekler.</li>
+<li><b>Yasal Uyum:</b> Türkiye’de KDV, stopaj ve gelir vergisi gibi zorunlu beyanlar için gerekli veriler düzenli tutulur.</li>
+</ul>
+<h2>2. Gerekli Araçlar ve Dosyalar</h2>
+<p>| Araç | Açıklama |</p>
+<p>|------|----------|</p>
+<p>| <b>Esnaf İşletme Paketi (Excel)</b> | Gelir‑gider, stok, cari hesap ve nakit akışı tabloları içerir. |</p>
+<p>| <b>Google Drive / OneDrive</b> | Dosyaları yedeklemek ve ekip içinde paylaşmak için bulut depolama. |</p>
+<p>| <b>Polar.sh</b> | Satış ve ödeme entegrasyonu, otomatik raporlama. |</p>
+<h2>3. Günlük İş Akışı</h2>
+<h3>3.1 Satış Kaydı</h3>
+<ol>
+<li><b>Satış gerçekleştiğinde</b> Polar.sh üzerinden gelen sipariş verisi otomatik olarak `Satış_Defteri.xlsx` dosyasına eklenir.</li>
+<li><b>Satış tutarı, KDV oranı ve ödeme yöntemi</b> (nakit, kart, havale) girilir.</li>
+<li><b>Kâr Marjı Hesaplama</b> formülü: `Kâr Marjı = (Satış - Maliyet) / Satış × 100`.</li>
+</ol>
+<h3>3.2 Gider Kaydı</h3>
+<ol>
+<li>Gün içinde yapılan tüm harcamalar (malzeme, kira, elektrik, internet vb.) `Gider_Defteri.xlsx` dosyasına girilir.</li>
+<li><b>KDV İndirimi</b>: KDV tutarı ayrı bir sütunda tutulur, aylık KDV beyanı için toplama yapılır.</li>
+</ol>
+<h3>3.3 Nakit Akışı ve Kasa Kontrolü</h3>
+<ol>
+<li>Gün sonunda <b>Kasa Defteri</b>ne nakit giriş‑çıkışları yazılır.</li>
+<li><b>Nakit Fazlası / Açığı</b> otomatik olarak `=Toplam Nakit Girişi - Toplam Nakit Çıkışı` formülüyle hesaplanır.</li>
+</ol>
+<h3>3.4 Haftalık ve Aylık Raporlar</h3>
+<ul>
+<li><b>Haftalık Rapor</b>: `Haftalık_Gelir_Gider_Raporu.xlsx` dosyasına haftalık toplam satış, gider ve net kâr girilir.</li>
+<li><b>Aylık Rapor</b>: `Aylık_Mali_Raporum.xlsx` dosyası, tüm haftalık verileri birleştirerek KDV, stopaj ve vergi matrahını gösterir.</li>
+</ul>
+<h2>4. Excel Şablonlarının Kullanımı</h2>
+<h3>4.1 Şablonları İndirme ve Açma</h3>
+<ol>
+<li><b>Polar.sh</b> üzerinden “Ürünler &gt; Esnaf İşletme Paketi” bölümüne girin.</li>
+<li><b>İndir</b> butonuna tıklayın, `Esnaf_Isletme_Paketi.xlsx` dosyasını bilgisayarınıza kaydedin.</li>
+</ol>
+<h3>4.2 Şablonları Özelleştirme</h3>
+<ul>
+<li><b>Şirket Bilgileri</b>: İlk sayfada şirket adı, vergi numarası ve iletişim bilgilerini doldurun.</li>
+<li><b>KDV Oranı</b>: Türkiye’de standart %18 KDV’yi kullanın, farklı oranlar için ilgili hücreyi güncelleyin.</li>
+<li><b>Maliyet Kalemleri</b>: Ürün başına maliyet sütununu doldurun; bu, kâr marjı hesabını otomatikleştirir.</li>
+</ul>
+<h3>4.3 Otomatik Güncellemeler</h3>
+<ul>
+<li><b>Polar.sh Webhook</b>ları sayesinde her yeni sipariş anında `Satış_Defteri` güncellenir.</li>
+<li><b>Google Apps Script</b> ile günlük yedekleme ve e‑posta bildirimleri ayarlanabilir.</li>
+</ul>
+<h2>5. Vergi ve Yasal Bildirimler</h2>
+<p>| Bildirim | Zaman Dilimi | Gereken Veri |</p>
+<p>|----------|--------------|--------------|</p>
+<p>| KDV Beyanı | Aylık | Toplam KDV tahsilatı ve indirimli KDV. |</p>
+<p>| Gelir Vergisi Stopajı | Aylık | Çalışan maaşları ve stopaj tutarı. |</p>
+<p>| E‑fatura / E‑irsaliye | Satış anı | Satış faturası, KDV tutarı. |</p>
+<p><b>Not:</b> Tüm veriler `Esnaf İşletme Paketi` içinde yer alan “Vergi_Özet” sayfasından otomatik olarak çekilir.</p>
+<h2>6. Sık Karşılaşılan Sorunlar ve Çözüm Önerileri</h2>
+<ul>
+<li><b>Veri Girişi Hatası:</b> Hücre formatı (tarih, para birimi) doğru ayarlanmamışsa formüller hata verir. Hücreyi seçip “Biçim &gt; Sayı &gt; Para Birimi” olarak ayarlayın.</li>
+<li><b>KDV Hesaplama Yanlış:</b> KDV oranı hücresini kontrol edin; `%` işareti eklenmemişse formül çalışmaz.</li>
+<li><b>Dosya Çakışması:</b> Aynı dosyayı birden fazla kişi aynı anda düzenliyorsa, <b>Google Sheets</b>’e aktararak gerçek zamanlı ortak çalışma sağlayın.</li>
+</ul>
+<h2>7. İlk Satışı Hızlandırmak İçin İndirim Teklifi</h2>
+<p><b>Erken Kuş İndirimi:</b> Blog okuyucularına <b>%20 indirim kodu “ERKEK20”</b> ile ilk paket satın alımında avantaj sunun. Bu kodu checkout sayfasına ekleyeceğiz; satış butonu otomatik olarak görünecek.</p>
+<h2>8. Sonuç ve Çağrı</h2>
+<p>Bu rehberde, esnafların <b>günlük muhasebe işlemlerini</b> basitleştiren, <b>hızlı raporlar</b> üreten ve <b>yasal uyumu</b> sağlayan bir sistem kurduk. <b>Esnaf İşletme Paketi</b>ni hemen satın alarak, işletmenizin finansal sağlığını kontrol altına alın ve ilk satışı artırın.</p>
+<p>---</p>
+<p><i>Bu blog taslağı, Polar.sh üzerinden satış sayfasına eklenecek ve otomatik olarak “Satın Al” butonu ile desteklenecek.</i></p>
+<div class="cta"><b>Esnaf İşletme Paketi (Excel)</b><p>Stok takibi, gelir-gider, veresiye ve teklif tek dosyada. Formüller hazır, sadece verini yaz. Tek seferlik $9, 14 gün iade garantisi.</p><a class="btn" href="https://buy.polar.sh/polar_cl_XZ3CJ6cyE1J5x1HY8EEE3V8MKJ1cxc2KhEYyZ1jzo0T">Paketi incele ve satın al</a></div></div></body></html>

@@ -1,5 +1,5 @@
 <!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Excel Stok Takibi Nasıl Yapılır | Kumpanya Dijital</title><meta name="description" content="Küçük işletmeler için stok yönetimi, kar marjını ve müşteri memnuniyetini doğrudan etkileyen kritik bir süreçtir. Excel, maliyeti düşük, esnek ve herkesin "><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+<title>Excel Stok Takibi Nasıl Yapılır? | Kumpanya Dijital</title><meta name="description" content="Küçük işletmeler için stok yönetimi, maliyet kontrolü ve müşteri memnuniyeti açısından kritik bir süreçtir. Excel, düşük maliyetli ve esnek bir araç olarak"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
 @media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
 .w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
@@ -7,88 +7,64 @@ h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:v
 .cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
 .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
 nav{font-size:14px;margin-bottom:24px}</style></head>
-<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/blog/">Blog</a></nav><h1>Excel Stok Takibi Nasıl Yapılır</h1>
-<h2>Giriş</h2>
-<p>Küçük işletmeler için stok yönetimi, kar marjını ve müşteri memnuniyetini doğrudan etkileyen kritik bir süreçtir. Excel, maliyeti düşük, esnek ve herkesin bildiği bir araç olduğu için en yaygın stok takip çözümüdür. Bu yazıda, bir esnafın stok takibini adım‑adım Excel ile nasıl yapabileceğini, formüller, veri doğrulama ve görselleştirme tekniklerini öğreneceksiniz.</p>
-<h2>1. Temel Tablo Yapısı</h2>
-<h3>1.1 Sütunlar</h3>
-<p>| Sütun | Açıklama |</p>
-<p>|---|---|</p>
-<p>| Ürün Kodu | Benzersiz tanımlayıcı |</p>
-<p>| Ürün Adı | Açıklayıcı metin |</p>
-<p>| Kategori | Ürün grubunu belirtir |</p>
-<p>| Birim Fiyat | Birim başına satış fiyatı |</p>
-<p>| Miktar | Mevcut stok miktarı |</p>
-<p>| Minimum Stok | Yeniden sipariş için eşik |</p>
-<p>| Satış Tarihi | En son satış tarihi |</p>
-<p>| Toplam Değer | Miktar * Birim Fiyat |</p>
-<h3>1.2 Formül Örneği</h3>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/blog/">Blog</a></nav><h1>Excel Stok Takibi Nasıl Yapılır?</h1>
+<p>Küçük işletmeler için stok yönetimi, maliyet kontrolü ve müşteri memnuniyeti açısından kritik bir süreçtir. Excel, düşük maliyetli ve esnek bir araç olarak, doğru yapılandırıldığında etkili bir stok takibi çözümü sunar. Bu rehberde, adım adım bir Excel stok takibi şablonu oluşturacak, örnek verilerle uygulayacak ve sık karşılaşılan sorunları nasıl çözeceğinizi göstereceğiz.</p>
+<h2>1. Stok Takibi İçin Gerekli Temel Alanlar</h2>
+<p>Stok takibi yaparken her ürün için aşağıdaki bilgileri kaydetmek gerekir:</p>
+<ul>
+<li><b>Ürün Kodu</b>: Tekil ve anlamlı bir kod (örnek: PRD001).</li>
+<li><b>Ürün Adı</b>: Açıklayıcı bir isim.</li>
+<li><b>Birim Fiyatı</b>: Satış fiyatı ya da alış fiyatı (tercihe göre).</li>
+<li><b>Stok Giriş Tarihi</b>: Ürün depoya girdiği tarih.</li>
+<li><b>Stok Çıkış Tarihi</b>: Ürün satıldığında veya çıktığında tarih.</li>
+<li><b>Giriş Miktarı</b>: Depoya giren birim sayısı.</li>
+<li><b>Çıkış Miktarı</b>: Satılan ya da çıkan birim sayısı.</li>
+<li><b>Mevcut Stok</b>: Formülle otomatik hesaplanır.</li>
+<li><b>Kritik Stok Seviyesi</b>: Minimum stok miktarı, bu seviyenin altına düşülürse uyarı verir.</li>
+</ul>
+<h2>2. Excel Şablonunun Oluşturulması</h2>
+<ol>
+<li><b>Yeni bir çalışma kitabı açın</b> ve “Stok Takibi” adını verin.</li>
+<li>A1 hücresine “Ürün Kodu”, B1’e “Ürün Adı”, C1’e “Birim Fiyatı”, D1’e “Stok Giriş Tarihi”, E1’e “Giriş Miktarı”, F1’e “Stok Çıkış Tarihi”, G1’e “Çıkış Miktarı”, H1’e “Mevcut Stok”, I1’e “Kritik Stok Seviyesi” yazın.</li>
+<li><b>Tablo formatı ekleyin</b>: A1:I1 aralığını seçip “Tablo Olarak Biçimlendir” → “Tablo Stili” seçin. Bu, veri eklemeyi ve formülleri otomatik genişletir.</li>
+<li><b>Mevcut Stok formülü</b>: H2 hücresine aşağıdaki formülü girin ve tabloya otomatik olarak uygulandığından emin olun:</li>
+</ol>
+<p>```excel</p>
+<p>=[@[Giriş Miktarı]]-[@[Çıkış Miktarı]]</p>
 <p>```</p>
-<p>=E2*D2</p>
+<ol>
+<li><b>Kritik Stok Uyarısı</b>: I2 hücresine kritik seviye (örnek: 10) girin. H2 hücresi kritik seviyenin altına düştüğünde kırmızı renk alması için koşullu biçimlendirme ekleyin:</li>
+</ol>
+<ul>
+<li>H2 hücresini seç → “Koşullu Biçimlendirme” → “Yeni Kural” → “Formül kullanarak biçimlendir” → `=H2&lt;I2` → Kırmızı dolgu.</li>
+</ul>
+<h2>3. Stok Giriş ve Çıkış İşlemlerinin Kaydedilmesi</h2>
+<ul>
+<li><b>Stok Girişi</b>: Yeni bir tedarik geldiğinde, ilgili satıra tarih ve giriş miktarı ekleyin. Bir ürün yeni ise, yeni satır ekleyin ve tüm alanları doldurun.</li>
+<li><b>Stok Çıkışı</b>: Satış gerçekleştiğinde, aynı ürün kodu satırına çıkış tarihi ve miktarını girin. Mevcut stok otomatik olarak güncellenecektir.</li>
+</ul>
+<h2>4. Raporlama ve Analiz</h2>
+<h3>4.1. Toplam Stok Değeri</h3>
+<p>Mevcut stok miktarını birim fiyatla çarparak toplam stok değerini bulabilirsiniz:</p>
+<p>```excel</p>
+<p>=SUMPRODUCT(H2:H1000,C2:C1000)</p>
 <p>```</p>
-<p>Bu formül, Miktar (E2) ile Birim Fiyat (D2) çarpımını Toplam Değer sütununa yerleştirir.</p>
-<h2>2. Veri Doğrulama ile Hataları Önleme</h2>
-<h3>2.1 Ürün Kodu Teklifi</h3>
+<h3>4.2. En Çok Satılan Ürün</h3>
+<p>PivotTable kullanarak “Çıkış Miktarı” toplamını ürün bazında gruplayın. En yüksek değere sahip ürün en çok satılan ürün olacaktır.</p>
+<h2>5. Sık Karşılaşılan Sorunlar ve Çözümleri</h2>
+<p>| Sorun | Çözüm |</p>
+<p>|-------|------|</p>
+<p>| Mevcut stok negatif çıkıyor | Giriş/çıkış miktarlarını kontrol edin, hatalı veri girişlerini düzeltin. |</p>
+<p>| Formül otomatik güncellenmiyor | Tablo formatının aktif olduğundan emin olun; tablo dışına veri eklemeyin. |</p>
+<p>| Kritik stok uyarısı çalışmıyor | Koşullu biçimlendirme kuralındaki hücre referansının mutlak olduğuna (`I2`) dikkat edin. |</p>
+<h2>6. İleri Seviye Özelleştirmeler</h2>
 <ul>
-<li><b>A1</b> hücresine veri doğrulama ekleyin: <i>Tek değer</i> seçeneği ile aynı kodun tekrar girmesini engelleyin.</li>
+<li><b>Stok Hareket Günlüğü</b>: Ayrı bir “Stok Günlüğü” sayfası oluşturup, her giriş/çıkışı tarih ve miktar olarak kaydedin; ardından `VLOOKUP` ya da `XLOOKUP` ile mevcut stok tablosuna bağlayın.</li>
+<li><b>Otomatik Bildirim</b>: Excel’in “Veri Doğrulama” ve “Makro” özellikleriyle, kritik seviyenin altına düşüldüğünde e‑posta gönderimi ayarlayabilirsiniz (örnek makro kodu ek ekibe paylaşılabilir).</li>
+<li><b>Grafik Görselleştirme</b>: Stok seviyelerini zaman içinde izlemek için çizgi grafiği ekleyin; bu, sezonluk dalgalanmaları görselleştirir.</li>
 </ul>
-<h3>2.2 Kategori Seçimi</h3>
-<ul>
-<li>Kategori sütununa <i>Açılır Menü</i> ekleyin: `Kategori1, Kategori2, Kategori3` gibi önceden tanımlı listeler oluşturun.</li>
-</ul>
-<h2>3. Stok Düşük Uyarıları</h2>
-<h3>3.1 Koşullu Biçimlendirme</h3>
-<ul>
-<li>Minimum Stok sütununu seçin.</li>
-<li><i>Koşullu Biçimlendirme</i> → <i>Hücre Kuralları</i> → <i>Eşsiz Değerler</i> → <i>Kırmızı Renk</i>.</li>
-<li>Böylece stok minimuma düştüğünde hücre otomatik olarak kırmızıya döner.</li>
-</ul>
-<h3>3.2 Hızlı Uyarı Metni</h3>
-<p>```</p>
-<p>=IF(E2&lt;=F2,"Stok Düşük","")</p>
-<p>```</p>
-<p>Bu formül, Minimum Stok (F2) altında kalan ürünler için “Stok Düşük” mesajı gösterir.</p>
-<h2>4. Satış Takibi</h2>
-<h3>4.1 Satış Tablosu</h3>
-<p>| Ürün Kodu | Satış Miktarı | Satış Tarihi |</p>
-<p>|---|---|---|</p>
-<ul>
-<li>Her satış için yeni satır ekleyin.</li>
-<li>Satış miktarını stok tablosundaki Miktar sütunundan çıkarın.</li>
-</ul>
-<h3>4.2 Otomatik Güncelleme</h3>
-<p>```</p>
-<p>=E2-G2</p>
-<p>```</p>
-<p>Satış Tablosundaki Satış Miktarı (G2) ile Stok Tablosundaki Miktar (E2) çarpımını çıkarır.</p>
-<h2>5. Görselleştirme</h2>
-<h3>5.1 Stok Dağılımı Grafiği</h3>
-<ul>
-<li>Stok tablosundan <i>Ürün Adı</i> ve <i>Miktar</i> sütunlarını seçin.</li>
-<li><i>Ekle</i> → <i>Çubuk Grafik</i>.</li>
-<li>Grafik, hangi ürünlerin en fazla stokta olduğunu hızlıca gösterir.</li>
-</ul>
-<h3>5.2 Satış Trend Grafiği</h3>
-<ul>
-<li>Satış tablosunda <i>Satış Tarihi</i> ve <i>Satış Miktarı</i> sütunlarını seçin.</li>
-<li><i>Ekle</i> → <i>Çizgi Grafik</i>.</li>
-<li>Zaman içinde satış eğilimini izleyin.</li>
-</ul>
-<h2>6. Raporlama</h2>
-<ul>
-<li><b>Toplam Değer</b> sütununu kullanarak aylık gelir raporu oluşturun.</li>
-<li>Pivot tablo oluşturun: <i>Ürün Kodu</i> satır, <i>Toplam Değer</i> değer.</li>
-<li>Bu rapor, en karlı ürünleri ve en düşük performanslı ürünleri gösterir.</li>
-</ul>
-<h2>7. En İyi Uygulamalar</h2>
-<p>| Uygulama | Açıklama |</p>
-<p>|---|---|</p>
-<p>| Düzenli Güncelleme | Her satış sonrası stok miktarını güncelleyin |</p>
-<p>| Yedekleme | Dosyayı sık sık yedekleyin (Google Drive, OneDrive) |</p>
-<p>| Erişim Kontrolü | Dosyayı yalnızca yetkili çalışanlarla paylaşın |</p>
-<p>| Eğitim | Tüm çalışanlara Excel stok takibi eğitimi verin |</p>
-<h2>8. Sonuç</h2>
-<p>Excel ile stok takibi, küçük işletmeler için maliyet etkin, esnek ve kolay uygulanabilir bir çözümdür. Yukarıdaki adımları takip ederek, stok seviyelerinizi gerçek zamanlı olarak izleyebilir, düşük stok uyarıları alabilir ve satış trendlerini analiz edebilirsiniz. Bu sayede kar marjınızı artırırken müşteri memnuniyetini de yükseltebilirsiniz.</p>
+<h2>7. Sonuç ve Eylem Çağrısı</h2>
+<p>Excel ile stok takibi, düşük maliyetli bir çözüm sunar ve doğru yapılandırıldığında işletmenizin envanter kontrolünü güçlendirir. Şimdi bu adımları uygulayarak kendi “Esnaf İşletme Paketi” içinde yer alan Excel stok takibi şablonunu özelleştirin. Hazır şablonu indirmek ve9 erken kuş fiyatı ile satın almak için aşağıdaki butona tıklayın.</p>
 <p>---</p>
-<p><b>CTA</b>: <i>Erken Kuş Avantajıyla $9'a Hemen İndir</i></p>
+<p><i>Bu içerik, Polar.sh üzerinden satışa sunulacak “Esnaf İşletme Paketi (Excel)” ürününün blog tanıtım sayfası olarak kullanılacaktır.</i></p>
 <div class="cta"><b>Esnaf İşletme Paketi (Excel)</b><p>Stok takibi, gelir-gider, veresiye ve teklif tek dosyada. Formüller hazır, sadece verini yaz. Tek seferlik $9, 14 gün iade garantisi.</p><a class="btn" href="https://buy.polar.sh/polar_cl_XZ3CJ6cyE1J5x1HY8EEE3V8MKJ1cxc2KhEYyZ1jzo0T">Paketi incele ve satın al</a></div></div></body></html>

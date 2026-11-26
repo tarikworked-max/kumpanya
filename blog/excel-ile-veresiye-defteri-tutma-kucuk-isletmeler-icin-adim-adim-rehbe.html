@@ -1,0 +1,44 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Excel ile Veresiye Defteri Tutma: Küçük İşletmeler İçin Adım Adım Rehber | Kumpanya Dijital</title><meta name="description" content="Küçük esnafın ve perakende işletmelerin en büyük operasyonel yüklerinden biri, müşterilerin veresiye alışverişlerini düzenli takip etmektir. Kağıt defterle"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/blog/">Blog</a></nav><h1>Excel ile Veresiye Defteri Tutma: Küçük İşletmeler İçin Adım Adım Rehber</h1>
+<p>Küçük esnafın ve perakende işletmelerin en büyük operasyonel yüklerinden biri, müşterilerin veresiye alışverişlerini düzenli takip etmektir. Kağıt defterlerde tutulan veresiye hesapları bir süre sonra kaybolma riski taşır, hesap hatalarına açık hale gelir ve borçluların takibini zorlaştırır. Excel ile veresiye defteri tutmak, bu süreci dijitalleştirmenin en hızlı, masrafsız ve güvenilir yoludur. Bu rehberde, sıfırdan profesyonel bir veresiye takip tablosu oluşturmanın püf noktalarını ve işletmenizin nakit akışını koruyacak pratik adımları ele alacağız.</p>
+<h2>1. Veresiye Defteri İçin Doğru Excel Tablosu Nasıl Tasarlanır?</h2>
+<p>Etkili bir veresiye takip sistemi karmaşık formüllerle değil, net ve anlaşılır sütunlarla başlar. Kağıt defter mantığını dijitale taşırken eksiksiz bir sütun yapısı kurmak şarttır. Excel sayfanızın üst kısmında işletme adı ve dönem bilgisi yer almalıdır. Sütun başlıkları ise operasyonel hızı artıracak şekilde düzenlenmelidir.</p>
+<p>Bir veresiye tablosunda mutlaka bulunması gereken temel sütunlar şunlardır:</p>
+<ul>
+<li>Müşteri Adı ve Soyadı</li>
+<li>İletişim Numarası (Telefon)</li>
+<li>İşlem Tarihi</li>
+<li>İşlem Türü (Satış / Borç Ödeme)</li>
+<li>Ürün veya Hizmet Açıklaması</li>
+<li>Borç Tutarı (Borçlanılan miktar)</li>
+<li>Ödenen Tutar (Tahsil edilen miktar)</li>
+<li>Güncel Bakiye (Kalan borç)</li>
+</ul>
+<p>Bu yapıyı kurarken ilk satırı dondurarak (Görünüm &gt; Bölmeleri Dondur) uzun listelerde çalışırken başlıkların kaybolmasını önleyebilirsiniz. Ayrıca 'Güncel Bakiye' sütununda her satırda borç ekleyip ödeme çıktıkça otomatik hesaplama yapacak formüller kullanmak insan hatasını sıfıra indirir. Örneğin, bir önceki bakiye üzerine yeni borcu ekleyip ödemeyi düşen basit toplama ve çıkarma mantığı işinizi kolaylaştıracaktır.</p>
+<h2>2. Müşteri Borç ve Ödeme Takibinde Sık Yapılan Hatalar</h2>
+<p>Dijital ortama geçiş yaparken esnafın sıklıkla düştüğü bazı tuzaklar vardır. Bu hatalar, zamanla alacakların takip edilememesine ve tahsilat oranlarının düşmesine yol açar. İlk hata, her müşterinin hareketini tek bir sayfada karıştırarak takip etmektir. Yüzlerce satırlık tek bir karmaşık sayfa yerine, her müşteri için ayrı bir satır özeti tutmak ve detayları alt alta düzenli girmek gerekir.</p>
+<p>İkinci yaygın hata, kısmi ödemelerin yanlış kaydedilmesidir. Müşteri borcunun tamamını ödeyemeyip parça parça ödeme yaptığında, bu tutarın hangi tarihte ve hangi borca mahsuben yatırıldığı mutlaka not edilmelidir. 'Ödenen Tutar' sütunu boş bırakılırsa veya sadece bakiye elden değiştirilirse, geçmiş döneme ait uyuşmazlıklar çıktığında müşterilerle anlaşmazlık yaşanabilir.</p>
+<p>Üçüncü büyük hata ise yedekleme yapmamaktır. Bilgisayarda tek bir dosyada tutulan veresiye defteri, olası bir cihaz arızasında tüm işletmenin alacak hafızasının silinmesine neden olur. Bu riski bertaraf etmek için dosyanızı düzenli olarak bulut depolama alanlarına yedeklemeli veya her hafta sonu bir kopyasını harici bir ortama almalısınız.</p>
+<h2>3. Excel Formülleriyle Otomatik Bakiye ve Vade Takibi</h2>
+<p>Excel'i basit bir tablodan çıkarıp akıllı bir veresiye motoruna dönüştürmek için temel formüllerden yararlanmalısınız. EĞER (IF), ETOPLA (SUMIF) ve ÇOKETOPLA (SUMIFS) fonksiyonları bu aşamada en büyük yardımcınızdır.</p>
+<p>Örneğin, bir müşterinin toplam borcunu ve toplam ödemesini başka bir özet sayfada otomatik görmek istiyorsanız SUMIF fonksiyonu hayat kurtarır. A sütununda müşteri adı yazıyorsa, belirli bir müşterinin tüm borç toplamını almak için `=ETOPLA(A:A; "Ahmet Yılmaz"; D:D)` formülünü kullanabilirsiniz. Bu sayede her müşteri için ayrı bir hesap özeti kartı oluşturabilir, kimin ne kadar borcu kaldığını tek bakışta görebilirsiniz.</p>
+<p>Vade takibi için ise KOŞULLU BİÇİMLENDİRME (Conditional Formatting) özelliğinden yararlanabilirsiniz. Ödeme tarihi üzerinden 30 günden fazla geçen ve bakiye veren satırların otomatik olarak kırmızı renge boyanmasını sağlayabilirsiniz. Bu görsel uyarı, hangi müşteriyi aramanız gerektiğini size hatırlatır ve tahsilat gecikmelerinin önüne geçer.</p>
+<h2>4. Zaman Kazandıran Hazır Şablonlar ve Profesyonel Çözümler</h2>
+<p>Sıfırdan Excel tablosu oluşturmak zaman alabilir ve her zaman en ideal formül kurgusunu içermeyebilir. Küçük işletmelerin tüm finansal ve veresiye süreçlerini tek ekranda yönetebilmesi için hazır, test edilmiş ve onaylanmış şablonlar kullanmak en rasyonel yaklaşımdır.</p>
+<p>Hazır şablon kullanmanın avantajları şunlardır:</p>
+<ul>
+<li>Kurulumla uğraşmazsınız, hemen veri girmeye başlarsınız.</li>
+<li>Hatalı formül riski ortadan kalkar.</li>
+<li>Stok takibi, gelir-gider ve veresiye modülleri bir arada çalışır.</li>
+<li>Raporlama ekranları sayesinde kârlılığınızı net şekilde görürsünüz.</li>
+</ul>
+<p>Eğer bu süreçleri manuel formüllerle uğraşmadan hemen bugünden profesyonel standartlarda yönetmek istiyorsanız, işletmeniz için özel olarak tasarlanmış Esnaf İşletme Paketi'ni inceleyebilirsiniz. Hazır formülleri, entegre veresiye ve stok takip modülleriyle iş yükünüzü minimuma indiren bu set, işletmenizin nakit akışını kontrol altına almanızı sağlar. Adım adım dijitalleşmek ve defter tutma derdine son vermek için bugünden ilk adımı atın.</p>
+<div class="cta"><b>Esnaf İşletme Paketi (Excel)</b><p>Stok takibi, gelir-gider, veresiye ve teklif tek dosyada. Formüller hazır, sadece verini yaz. Tek seferlik $9, 14 gün iade garantisi.</p><a class="btn" href="https://buy.polar.sh/polar_cl_XZ3CJ6cyE1J5x1HY8EEE3V8MKJ1cxc2KhEYyZ1jzo0T">Paketi incele ve satın al</a></div></div></body></html>

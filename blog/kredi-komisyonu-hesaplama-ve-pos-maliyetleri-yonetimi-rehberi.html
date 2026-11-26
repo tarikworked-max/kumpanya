@@ -1,0 +1,51 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kredi Komisyonu Hesaplama ve Pos Maliyetleri Yönetimi Rehberi | Kumpanya Dijital</title><meta name="description" content="Küçük işletmelerin ve esnafların günlük operasyonlarında en büyük gider kalemlerinden biri pos cihazı komisyonları ve kredi kartı kesintileridir. Nakit akı"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/blog/">Blog</a></nav><h1>Kredi Komisyonu Hesaplama ve Pos Maliyetleri Yönetimi Rehberi</h1>
+<p>Küçük işletmelerin ve esnafların günlük operasyonlarında en büyük gider kalemlerinden biri pos cihazı komisyonları ve kredi kartı kesintileridir. Nakit akışını korumak ve karlılığı artırmak için kredi komisyonlarının doğru hesaplanması ve maliyetlerin optimize edilmesi hayati önem taşır. Bu rehberde, kredi komisyonu hesaplama yöntemlerini, işletmenize bindirdiği gerçek yükü ve Excel ile pratik takip adımlarını detaylıca ele alacağız.</p>
+<h2>Pos Komisyon Oranları Nedir ve Nasıl Hesaplanır?</h2>
+<p>Bankalar ve ödeme kuruluşları, iş yerlerinin kredi kartı ile yaptığı tahsilatlardan belirli bir oran veya sabit kesinti yaparlar. Bu oranlar vadeye (tek çekim, 2 taksit, 3 taksit vb.) ve sektöre göre değişiklik gösterir.</p>
+<p>Örneğin, %2.5 oranında pos komisyonu kesilen 1.000 TL tutarındaki bir satışta hesaplama şu şekilde yapılır:</p>
+<ul>
+<li>Satış Tutarı: 1.000 TL</li>
+<li>Komisyon Tutarı: 1.000 x 0.025 = 25 TL</li>
+<li>Hesaba Gelecek Net Tutar: 1.000 - 25 = 975 TL</li>
+</ul>
+<p>Bu kesintilerin aylık bazda toplanması, işletmenin yıl sonunda kârından ne kadar feragat ettiğini açıkça gösterir. Küçük esnaf, bu maliyeti ürün fiyatlandırmasına yansıtmadığı takdirde zamanla gizli zararlarla karşılaşabilir.</p>
+<h2>Vadeli İşlemlerde Komisyon ve Vade Farkı Maliyeti</h2>
+<p>Tek çekim işlemlerin yanı sıra taksitli satışlar esnafın en çok tercih ettiği ancak maliyeti en yüksek olan alanlardandır. Taksit sayısı arttıkça bankanın uyguladığı vade komisyon oranı da yükselir.</p>
+<p>Örneğin, 6 taksitli bir satışta komisyon oranı %8 ile %12 arasında değişebilir. 5.000 TL'lik bir ürünü 6 taksitle sattığınızda ve oran %9 olduğunda:</p>
+<ul>
+<li>Brüt Satış: 5.000 TL</li>
+<li>Kesinti: 5.000 x 0.09 = 450 TL</li>
+<li>Net Tutar: 4.550 TL</li>
+</ul>
+<p>Bu tutar banka hesabınıza genellikle blokeli olarak veya vade günlerinde yatar. Vade farkını müşteriye yansıtma veya ürün fiyatına dahil etme stratejisi, işletme sermayesinin erimesini önler.</p>
+<h2>Excel ile Kredi Komisyonu ve Net Tahsilat Takibi</h2>
+<p>Manuel hesaplamalar ve banka ekstrelerini tek tek kontrol etmek zaman kaybına ve hatalara yol açar. Excel kullanarak bu süreci otomatikleştirebilirsiniz. Temel bir komisyon takip tablosunda şu sütunlar yer almalıdır:</p>
+<ol>
+<li>İşlem Tarihi</li>
+<li>Müşteri / Fiş No</li>
+<li>Brüt Satış Tutarı</li>
+<li>Banka Komisyon Oranı (%)</li>
+<li>Kesinti Tutarı (Formül: =Brüt*KomisyonOranı)</li>
+<li>Net Hesaba Geçen Tutar (Formül: =Brüt-Kesinti)</li>
+<li>Blokeli Ödeme Vadesi</li>
+</ol>
+<p>Bu tablo sayesinde ay sonunda hangi bankaya ne kadar komisyon ödediğinizi net bir şekilde görebilir, bankalar arası oran kıyaslaması yaparak daha avantajlı POS anlaşmaları yapabilirsiniz.</p>
+<h2>POS Maliyetlerini Düşürme ve Karlılığı Koruma Stratejileri</h2>
+<p>Yüksek pos komisyonlarıyla başa çıkmak ve kâr marjını korumak için esnafın uygulayabileceği pratik stratejiler şunlardır:</p>
+<ul>
+<li><b>Banka Oranlarını Periyodik Olarak Karşılaştırın:</b> Farklı bankaların sunduğu oranları her 3 ayda bir inceleyin ve düşük komisyon sunan kurumlarla pazarlık yapın.</li>
+<li><b>Nakit ve Havale Teşviki:</b> Müşterilerinize nakit veya havale/EFT işlemlerinde küçük indirimler veya avantajlar sunarak kartlı işlem maliyetini azaltın.</li>
+<li><b>Fiyatlandırma Politikası:</b> Ürün etiket fiyatlarını belirlerken ortalama pos komisyon oranını hesaba katın ve net kârınızı koruyacak şekilde fiyat güncelleyin.</li>
+<li><b>Düzenli Mutabakat:</b> Günlük Z raporları ile banka ekstrelerini her gün karşılaştırarak kayıp veya hatalı kesintilerin önüne hemen geçin.</li>
+</ul>
+<p>Esnaf İşletme Paketi içerisindeki hazır Excel şablonları ile tüm bu komisyon ve nakit akışı takibini tek tıkla yapabilir, işletmenizin finansal sağlığını garanti altına alabilirsiniz.</p>
+<div class="cta"><b>Esnaf İşletme Paketi (Excel)</b><p>Stok takibi, gelir-gider, veresiye ve teklif tek dosyada. Formüller hazır, sadece verini yaz. Tek seferlik $9, 14 gün iade garantisi.</p><a class="btn" href="https://buy.polar.sh/polar_cl_XZ3CJ6cyE1J5x1HY8EEE3V8MKJ1cxc2KhEYyZ1jzo0T">Paketi incele ve satın al</a></div></div></body></html>

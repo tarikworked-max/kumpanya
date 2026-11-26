@@ -1,0 +1,57 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cari Hesap Takibi Nasıl Yapılır? Excel ile Alacak ve Borç Yönetimi | Kumpanya Dijital</title><meta name="description" content="Küçük işletme sahipleri ve esnaflar için en büyük risklerden biri, veresiye satışların kontrolsüz bırakılmasıdır. "Cari hesap takibi excel" araması yapanla"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/blog/">Blog</a></nav><h1>Cari Hesap Takibi Nasıl Yapılır? Excel ile Alacak ve Borç Yönetimi</h1>
+<p>Küçük işletme sahipleri ve esnaflar için en büyük risklerden biri, veresiye satışların kontrolsüz bırakılmasıdır. "Cari hesap takibi excel" araması yapanların çoğu, kimin ne kadar borçlu olduğunu, kimin ne kadar alacaklı olduğunu ve hangi faturanın ödenmediğini şeffaf bir şekilde görmek ister. Excel, doğru formüller ve yapılandırma ile bu karmaşayı dakikalar içinde çözer. Bu rehberde, sıfırdan bir cari hesap defteri oluşturmayı, kasa ve banka hareketlerini entegre etmeyi ve riskli müşterileri tespit etmeyi adım adım öğreneceksiniz.</p>
+<h2>Neden Excel ile Cari Takip Maliyetleri Düşürür?</h2>
+<p>Profesyonel muhasebe yazılımları aylık yüksek lisans ücretleri gerektirir. Ancak günlük 10-20 işlem yapan bir esnaf için Excel'in sunduğu esneklik ve sıfır lisans maliyeti, en mantıklı çözümdür. Excel, verilerinizi kendi bilgisayarınızda tutmanızı sağlar; bu da veri güvenliği açısından büyük bir avantajdır. Ayrıca, Excel'in veri doğrulama ve koşullu biçimlendirme özellikleri, hatalı girişleri önler ve kritik durumları görsel olarak vurgular.</p>
+<p>Bir esnaf için cari hesap takibi sadece sayı toplamak değildir; nakit akışını yönetmek demektir. Hangi müşterinin ödeme alışkanlığı düzensiz, hangisinin sürekli gecikmeli olduğunu Excel ile görselleştirebilirsiniz. Bu sayede, yeni bir siparişi onaylamadan önce müşterinin mevcut borç durumunu saniyeler içinde kontrol edebilirsiniz.</p>
+<h2>Adım Adım Excel Cari Hesap Defteri Oluşturma</h2>
+<p>İlk adım, verilerinizi tutarlı bir formatta girmektir. Aşağıdaki sütun yapısını kullanmanız önerilir:</p>
+<ol>
+<li><b>Tarih:</b> İşlemin gerçekleştiği gün.</li>
+<li><b>Müşteri Adı:</b> Borçlu veya alacaklı taraf.</li>
+<li><b>Belge No:</b> Fatura veya irsaliye numarası.</li>
+<li><b>Açıklama:</b> İşlem detayı (ör: "Veresiye satış", "Kısmi ödeme").</li>
+<li><b>Borç (Alacak):</b> Müşterinin size olan borcunun arttığı tutarlar.</li>
+<li><b>Alacak (Ödeme):</b> Müşterinin size ödediği tutarlar.</li>
+<li><b>Bakiye:</b> Otomatik hesaplanan son durum.</li>
+</ol>
+<p><b>Bakiye Formülü:</b></p>
+<p>Bakiye sütununda şu formülü kullanın: `=SUMIF(B:B, B2, E:E) - SUMIF(B:B, B2, F:F)`</p>
+<p>Bu formül, seçilen müşterinin toplam borçlarından toplam ödemelerini çıkararak anlık bakiyesini verir. Pozitif sonuç müşteri borçlu, negatif sonuç ise siz alacaklısınız demektir.</p>
+<h2>Koşullu Biçimlendirme ile Riskli Müşterileri Tespit Etme</h2>
+<p>Yüzlerce satır veriyi gözle taramak zordur. Excel'in koşullu biçimlendirme özelliği ile bakiyesi belirli bir eşiğin üzerinde olan veya belirli bir tarihten sonra ödenmemiş faturaları olan müşterileri otomatik olarak kırmızı renkle işaretleyebilirsiniz.</p>
+<p><b>Uygulama Adımları:</b></p>
+<ol>
+<li>Bakiye sütununu seçin.</li>
+<li>"Koşullu Biçimlendirme" &gt; "Hücre Kuralları" &gt; "Değerler İçin Karşılaştırma" yolunu izleyin.</li>
+<li>"Büyük" seçeneğini işaretleyin ve eşiği belirleyin (ör: 5000 TL).</li>
+<li>Kırmızı dolgu rengi seçin.</li>
+</ol>
+<p>Bu sayede, her gün defterinizi açtığınızda dikkatinizi çeken ilk şey, riskli borçlularınız olacaktır. Ayrıca, "Tarih" sütunu için "Bugünden 30 gün önce" kuralı ekleyerek, 1 ayı aşkın süredir ödenmemiş faturaları ayrı bir kategoride toplayabilirsiniz. Bu, icra takibi veya hatırlatma maili göndermeniz gereken listeyi anında oluşturmanızı sağlar.</p>
+<h2>Nakit Akışı ve Tutanç Entegrasyonu</h2>
+<p>Cari hesap takibi tek başına yeterli değildir; kasa ve banka hareketleri ile tutarlı olması gerekir. Excel'de ayrı bir "Kasa" ve "Banka" sayfası oluşturarak, müşteri ödemelerini buraya da taşıyabilirsiniz.</p>
+<p><b>Örnek Senaryo:</b></p>
+<p>Ali Usta, 1000 TL'lik malzeme veresiye sattı. 3 gün sonra 400 TL nakit, 600 TL havale ile ödeme yaptı.</p>
+<ul>
+<li>Cari Hareket: +1000 Borç, -400 Alacak, -600 Alacak.</li>
+<li>Kasa Hareketi: +400 Gelir.</li>
+<li>Banka Hareketi: +600 Gelir.</li>
+</ul>
+<p>Bu entegrasyon, ay sonu bakiyelerinizin muhasebe defterinizle uyuşmasını garantiler. Excel'de `=EĞER(B2="Kasa", C2, 0)` gibi basit formüllerle, belirli bir ödeme yöntemi olan tutarları filtreleyerek toplam nakit girişinizi anlık olarak görebilirsiniz.</p>
+<h2>Sık Yapılan Hatalar ve Çözümleri</h2>
+<ol>
+<li><b>Müşteri Adı Yazım Hataları:</b> "Ahmet Yılmaz" ve "Ahmet Yilmaz" olarak iki farklı kayıt oluşur. Çözüm: Veri doğrulama listesinden müşteri adlarını seçtirin.</li>
+<li><b>Tarih Formatı Kaosu:</b> 01.02.2023 ve 02/01/2023 karışıklığı. Çözüm: Tüm tarih hücrelerini "Tarih" formatına sabitleyin ve veri girişinde sadece bu formatı kullanın.</li>
+<li><b>Silinen Satırlar:</b> Hatalı girilen satırı silmek yerine, tutarı 0 yapın ve not ekleyin. Bu, audit trail (denetim izi) korumak için kritiktir.</li>
+</ol>
+<h2>Sonuç ve Hızlı Başlangıç</h2>
+<p>Excel ile cari hesap takibi, doğru yapılandırıldığında profesyonel muhasebe yazılımlarının %90'ını karşılar. Önemli olan, verileri düzenli girmek ve formülleri bir kez kurduktan sonra her gün güncellemektir. Yukarıdaki adımları uygulayarak, 1 saat içinde kendi cari hesap defterinizi oluşturabilir ve işletmenizin nakit akışını kontrol altına alabilirsiniz. Daha gelişmiş otomasyonlar ve hazır şablonlar için Esnaf İşletme Paketimizdeki "Cari Takip" sekmesini kullanabilirsiniz. Bu sayede, manuel hata riskini sıfırlar ve zamanınızı satışa ayırırsınız.</p>
+<div class="cta"><b>Esnaf İşletme Paketi (Excel)</b><p>Stok takibi, gelir-gider, veresiye ve teklif tek dosyada. Formüller hazır, sadece verini yaz. Tek seferlik $9, 14 gün iade garantisi.</p><a class="btn" href="https://buy.polar.sh/polar_cl_XZ3CJ6cyE1J5x1HY8EEE3V8MKJ1cxc2KhEYyZ1jzo0T">Paketi incele ve satın al</a></div></div></body></html>

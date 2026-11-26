@@ -1,0 +1,54 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kritik Stok Seviyesi Hesaplama: Küçük İşletmeler İçin Adım Adım Rehber | Kumpanya Dijital</title><meta name="description" content="Küçük işletmelerin ve esnafların en sık yaptığı hatalardan biri, ellerindeki ürünlerin ne zaman tükeneceğini öngörememektir. Rafınızda ürün kalmadığında mü"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/blog/">Blog</a></nav><h1>Kritik Stok Seviyesi Hesaplama: Küçük İşletmeler İçin Adım Adım Rehber</h1>
+<p>Küçük işletmelerin ve esnafların en sık yaptığı hatalardan biri, ellerindeki ürünlerin ne zaman tükeneceğini öngörememektir. Rafınızda ürün kalmadığında müşteriyi kaçırır, fazla ürün tuttuğunuzda ise nakit akışınızı tıkayarak sermayenizi bağlarsınız. Bu dengesizliği ortadan kaldırmanın tek yolu doğru bir <b>kritik stok seviyesi hesaplama</b> süreci kurmaktır.</p>
+<p>Stok yönetimi, sadece depoda ne kadar ürün olduğunu saymaktan ibaret değildir. Tedarik süresi, günlük ortalama satış adedi ve güvenli stok payı gibi kritik metriklerin doğru hesaplanması gerekir. Bu rehberde, Excel kullanarak işletmeniz için kritik stok seviyesini nasıl hesaplayacağınızı ve sipariş süreçlerinizi nasıl otomatikleştireceğinizi öğreneceksiniz.</p>
+<h2>Kritik Stok Seviyesi Nedir ve Neden Hayatidir?</h2>
+<p>Kritik stok seviyesi (yeniden sipariş noktası), bir ürünün stoğu tükenmeden hemen önce yeni sipariş verilmesi gereken eşik değerdir. Tedarikçinizden yeni ürün gelene kadar satmaya devam edebilmeniz için gereken minimum ürün miktarını ifade eder.</p>
+<p>Eğer bu eşiği doğru belirleyemezseniz iki büyük riskle karşılaşırsınız:</p>
+<ol>
+<li><b>Stok Tükenmesi (Stockout):</b> Müşteri talep eder ancak ürün yoktur. Satış kaçar, müşteri rakibe gider.</li>
+<li><b>Aşırı Stoklama (Overstock):</b> Depoda çürüyen mallar nakit akışını kilitler. Esnaf için en büyük tehlike paranın raflarda kalmasıdır.</li>
+</ol>
+<p>Doğru bir hesaplama ile parasal sermayenizi en verimli şekilde yönetebilir, ne eksik ne fazla kuralıyla çalışabilirsiniz.</p>
+<h2>Adım Adım Kritik Stok Seviyesi Formülü</h2>
+<p>Kritik stok seviyesini bulmak için temel bir formül kullanılır. Bu formülü Excel tablolarınıza entegre ederek otomatik uyarılar alabilirsiniz.</p>
+<p><b>Temel Formül:</b></p>
+<p>&gt; Kritik Stok Seviyesi = (Günlük Ortalama Satış Adedi × Tedarik Süresi Gün Sayısı) + Güvenlik Stoku</p>
+<p>Bu formüldeki bileşenleri detaylandıralım:</p>
+<ul>
+<li><b>Günlük Ortalama Satış Adedi:</b> Son 30 veya 90 günde o üründen günde ortalama kaç adet sattığınızdır.</li>
+<li><b>Tedarik Süresi (Lead Time):</b> Siparişi verdiğiniz an ile ürünlerin dükkanınıza/deponuza ulaştığı an arasındaki geçen gün sayısıdır.</li>
+<li><b>Güvenlik Stoku (Safety Stock):</b> Tedarikçinin gecikmesi veya ani talep patlaması gibi beklenmedik durumlar için depoda tutulan yedek Miktardır.</li>
+</ul>
+<h3>Excel ile Otomatik Hesaplama Tablosu Oluşturma</h3>
+<p>Excel'de bu hesaplamayı yapmak oldukça basittir. Tablonuzun sütunlarını şu şekilde düzenleyebilirsiniz:</p>
+<ul>
+<li>Sütun A: Ürün Adı</li>
+<li>Sütun B: Günlük Ortalama Satış</li>
+<li>Sütun C: Tedarik Süresi (Gün)</li>
+<li>Sütun D: Güvenlik Stoku</li>
+<li>Sütun E: Kritik Stok Seviyesi (Formül: `=(B2*C2)+D2`)</li>
+<li>Sütun F: Mevcut Stok</li>
+<li>Sütun G: Sipariş Durumu (Formül: `=EĞER(F2&lt;=E2; "SİPARİŞ VER"; "Yeterli")`)</li>
+</ul>
+<p>Bu basit IF formülü sayesinde, mevcut stoğunuz kritik eşiğin altına düştüğünde Excel size otomatik olarak "SİPARİŞ VER" uyarısı verecektir.</p>
+<h2>İşletmeler İçin Stok Yönetiminde En Sık Yapılan Hatalar</h2>
+<p>Esnafların stok takibi yaparken düştüğü bazı tuzaklar vardır. Bunlardan kaçınmak işletmenizin ömrünü uzatır:</p>
+<ul>
+<li><b>Geçmiş Satışları Göz Ardı Etmek:</b> Sezonluk talep değişimlerini hesaba katmadan sabit sipariş vermek.</li>
+<li><b>Tedarikçi Gecikmelerini Hesaba Katmamak:</b> Tedarikçinin "yarın getiririm" sözüne güvenip güvenlik stoku bırakmamak.</li>
+<li><b>Manuel Takipte Israr Etmek:</b> Kağıt üzerinde veya akıldan yapılan takiplerde hata payının yüksek olduğunu unutmak.</li>
+</ul>
+<p>Dijitalleşmek ve bu süreçleri hatasız yürütmek için hazır şablonlar kullanmak en hızlı çözümdür.</p>
+<h2>Sonuç ve Hemen Başlayın</h2>
+<p>Kritik stok seviyesi hesaplama, işletmenizin nakit akışını koruyan ve müşteri memnuniyetini artıran en temel adımdır. Excel tablolarınızı doğru formüllerle donatarak sipariş süreçlerinizi otomatikleştirebilirsiniz.</p>
+<p>İşletmenizin finansal takibini, stok yönetimini ve gelir-gider dengesini tek bir yerden yönetmek istiyorsanız, profesyonel hazır çözümleri inceleyebilir ve işinizi bugün büyümeye başlayabilirsiniz.</p>
+<div class="cta"><b>Esnaf İşletme Paketi (Excel)</b><p>Stok takibi, gelir-gider, veresiye ve teklif tek dosyada. Formüller hazır, sadece verini yaz. Tek seferlik $9, 14 gün iade garantisi.</p><a class="btn" href="https://buy.polar.sh/polar_cl_XZ3CJ6cyE1J5x1HY8EEE3V8MKJ1cxc2KhEYyZ1jzo0T">Paketi incele ve satın al</a></div></div></body></html>

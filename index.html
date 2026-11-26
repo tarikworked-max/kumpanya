@@ -18,6 +18,9 @@ header{padding:56px 0 32px}h1{font-size:clamp(28px,5vw,44px);line-height:1.15;ma
 .tag{display:inline-block;font-size:12px;border:1px solid var(--accent);color:var(--accent);border-radius:99px;padding:1px 8px;margin-bottom:10px}
 section{padding:8px 0 32px;border-top:1px solid var(--line)}section h2{font-size:20px}
 section p,section li{color:var(--muted);max-width:70ch}
+.hero{margin:8px 0 32px;border-color:var(--accent)}.hero h2{font-size:24px}.hero ul{color:var(--muted);padding-left:20px;margin:8px 0}
+.btn{display:inline-block;margin-top:8px;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+.btn:hover{filter:brightness(1.08)}.soon{font-size:18px;margin:0}
 footer{padding:24px 0 48px;color:var(--muted);font-size:14px}
 </style>
 </head>
@@ -28,9 +31,24 @@ footer{padding:24px 0 48px;color:var(--muted);font-size:14px}
   <p class="lead">Kumpanya Dijital; esnaf ve küçük işletmelerin günlük işini kolaylaştıran yazılımlar, hazır şablonlar ve web paketleri hazırlar. Tüm ürünler anında dijital olarak teslim edilir.</p>
 </header>
 
+<div class="hero card">
+  <span class="tag">Şimdi satışta · $9</span>
+  <h2>Esnaf İşletme Paketi (Excel)</h2>
+  <p>Tek dosyada 7 hazır sayfa. Formüller kurulu, sadece kendi verini yaz:</p>
+  <ul>
+    <li><b>Ürünler &amp; Stok:</b> mevcut stok kendiliğinden hesaplanır, kritik seviyede satır kırmızı olur ve "SİPARİŞ VER" yazar.</li>
+    <li><b>Stok Hareketleri:</b> mal girişi ve satışları kaydet, ürün adı ve tutar otomatik dolar.</li>
+    <li><b>Gelir-Gider + Aylık Özet:</b> 12 ayın gelir, gider ve net kârı grafikle birlikte.</li>
+    <li><b>Veresiye:</b> kimin ne kadar borcu kaldığını anında gör.</li>
+    <li><b>Teklif / Proforma:</b> KDV oranını seç (%1, %10, %20), toplamlar hesaplanır, yazdır.</li>
+  </ul>
+  <p>Excel ve Google E-Tablolar ile çalışır. Abonelik yok, tek seferlik ödeme, anında indirme. 14 gün koşulsuz iade.</p>
+  <a class="btn" href="https://buy.polar.sh/polar_cl_XZ3CJ6cyE1J5x1HY8EEE3V8MKJ1cxc2KhEYyZ1jzo0T">Satın al · $9</a>
+</div>
+
+<h2 class="soon">Yakında</h2>
 <div class="grid">
-  <div class="card"><span class="tag">Yazılım</span><h2>Esnaf Stok &amp; Fatura</h2><p>Stok takibi, kritik stok uyarısı ve basit fatura kaydı. Kurulum gerektirmez, tarayıcıda çalışır.</p></div>
-  <div class="card"><span class="tag">Şablon</span><h2>İşletme Şablonları</h2><p>Teklif, fatura, stok sayım ve gelir-gider tabloları. Excel ve Google E-Tablolar uyumlu.</p></div>
+  <div class="card"><span class="tag">Yazılım</span><h2>Esnaf Stok &amp; Fatura (web)</h2><p>Aynı özelliklerin tarayıcıda çalışan, kurulumsuz sürümü.</p></div>
   <div class="card"><span class="tag">Web</span><h2>Hazır Web Paketleri</h2><p>Kafe, kuaför, atölye gibi işletmeler için tek sayfalık, mobil uyumlu hazır site şablonları.</p></div>
 </div>
 

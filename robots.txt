@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tarikworked-max.github.io/kumpanya/sitemap.xml

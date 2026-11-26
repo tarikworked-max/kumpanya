@@ -3,48 +3,115 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Small Business Toolkit | Inventory, Cash Book &amp; Invoice Spreadsheet</title>
-<meta name="description" content="A ready-made Excel and Google Sheets toolkit for small shops: inventory with reorder alerts, cash book, monthly profit report, customer credit tracker and invoice/quote template. One-time $12.">
+<title>Small Business Toolkit: Inventory, Cash Book &amp; Invoice Spreadsheet</title>
+<meta name="description" content="One spreadsheet to run a small shop: inventory with reorder alerts, cash book, monthly profit report, customer credit tracker and invoice template. Excel + Google Sheets. One-time $12.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
 <style>
-:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
-@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,"Segoe UI",sans-serif}
-.w{max-width:900px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left))}
-header{padding:56px 0 24px}h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 12px}h1 span{color:var(--accent)}
-.lead{color:var(--muted);max-width:62ch;margin:0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px;margin:24px 0}
-.hero{border-color:var(--accent)}.hero h2{margin:0 0 6px;font-size:24px}.hero ul{color:var(--muted);padding-left:20px}
-.tag{display:inline-block;font-size:12px;border:1px solid var(--accent);color:var(--accent);border-radius:99px;padding:1px 8px;margin-bottom:10px}
-.btn{display:inline-block;margin-top:8px;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
-section{padding:8px 0 24px;border-top:1px solid var(--line)}section h2{font-size:20px}section p{color:var(--muted);max-width:70ch}
-footer{padding:24px 0 48px;color:var(--muted);font-size:14px}a{color:var(--accent)}
+:root{--paper:#fbfaf6;--ink:#17202c;--muted:#5b6574;--line:#e4dfd3;--card:#ffffff;--green:#1f7a4d;--green-soft:#e6f2ea;--red:#b3261e;--red-soft:#fbe9e7;--amber:#b86b12;--head:#1f2a3a;
+--display:"Fraunces",Georgia,serif;--body:"Inter",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root{--paper:#11161e;--ink:#e8ecf2;--muted:#9aa5b5;--line:#273244;--card:#18202b;--green:#4fbf85;--green-soft:#173327;--red:#f08a80;--red-soft:#3a1d1b;--amber:#f2b84b;--head:#26354a}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--body)}
+.w{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+nav{display:flex;justify-content:space-between;align-items:center;padding-block:18px;font-size:14px}nav b{font-family:var(--display);font-size:18px}nav a{color:var(--muted);text-decoration:none}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding-block:40px 56px}
+h1{font-family:var(--display);font-size:clamp(34px,5.2vw,56px);line-height:1.05;letter-spacing:-.02em;margin:0 0 18px;text-wrap:balance}
+h1 em{font-style:normal;color:var(--green)}
+.sub{font-size:18px;color:var(--muted);max-width:46ch;margin:0 0 26px}
+.buy{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);font-weight:600;padding:15px 26px;border-radius:10px;text-decoration:none;font-size:16px}
+.buy:hover{transform:translateY(-1px)}.buy span{font-family:var(--mono);opacity:.8}
+.trust{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:18px;font-size:13.5px;color:var(--muted)}.trust i{font-style:normal;color:var(--green);margin-right:4px}
+/* Spreadsheet preview */
+.sheet{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:0 20px 50px -25px rgba(20,30,45,.35);overflow:hidden;min-width:0}
+.bar{display:flex;gap:6px;padding:10px 12px;border-bottom:1px solid var(--line);font-size:12px;color:var(--muted);overflow-x:auto;white-space:nowrap}
+.tab{padding:3px 9px;border-radius:5px}.tab.on{background:var(--green-soft);color:var(--green);font-weight:600}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:12.5px;font-variant-numeric:tabular-nums}
+th{background:var(--head);color:#fff;font-weight:600;text-align:left;padding:8px 10px;white-space:nowrap}
+td{padding:7px 10px;border-bottom:1px solid var(--line);white-space:nowrap}td.n{text-align:right;font-family:var(--mono);font-size:12px}
+tr.low td{background:var(--red-soft);color:var(--red);font-weight:600}.ok{color:var(--green);font-weight:600}
+section{padding-block:56px;border-top:1px solid var(--line)}
+h2{font-family:var(--display);font-size:clamp(26px,3.4vw,36px);line-height:1.15;margin:0 0 10px;letter-spacing:-.01em}
+.lede{color:var(--muted);max-width:60ch;margin:0 0 32px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.f{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+.f h3{margin:0 0 6px;font-size:16px}.f p{margin:0;color:var(--muted);font-size:14.5px}.f .k{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.06em;text-transform:uppercase}
+.pain{display:grid;grid-template-columns:1fr 1fr;gap:18px}.pain div{padding:20px;border-radius:12px;border:1px solid var(--line)}
+.pain .b{background:var(--red-soft)}.pain .a{background:var(--green-soft)}.pain ul{margin:8px 0 0;padding-left:18px}.pain li{margin:4px 0}
+.price{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;background:var(--card);border:2px solid var(--ink);border-radius:16px;padding:28px}
+.price .amt{font-family:var(--display);font-size:56px;line-height:1}.price small{display:block;color:var(--muted);font-size:14px;margin-top:6px}
+details{border-bottom:1px solid var(--line);padding:14px 0}summary{cursor:pointer;font-weight:600}details p{color:var(--muted);margin:8px 0 0;max-width:70ch}
+footer{padding-block:32px 56px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}footer a{color:var(--muted)}
+a:focus-visible,.buy:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+@media (max-width:820px){.hero{grid-template-columns:1fr;gap:32px}.pain{grid-template-columns:1fr}.price{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.buy:hover{transform:none}}
 </style>
 </head>
 <body>
 <div class="w">
-<header>
-  <h1>Run your shop from <span>one spreadsheet</span></h1>
-  <p class="lead">Stop juggling notebooks and half-built sheets. The Small Business Toolkit gives you inventory, cash book, profit report, customer credit and invoices in one file, with every formula already in place.</p>
-</header>
+<nav><b>Kumpanya</b><a href="blog/">Free guides</a></nav>
 
-<div class="card hero">
-  <span class="tag">One-time $12 · instant download</span>
-  <h2>Small Business Toolkit (Excel + Google Sheets)</h2>
-  <ul>
-    <li><b>Products &amp; stock:</b> stock on hand, stock value and markup update automatically. When an item hits its reorder level the row turns red and says REORDER.</li>
-    <li><b>Stock movements:</b> log deliveries and sales; product names and amounts fill themselves in.</li>
-    <li><b>Cash book + monthly summary:</b> income, expenses and net profit for all 12 months, with a chart.</li>
-    <li><b>Customer credit:</b> see who owes you what, at a glance.</li>
-    <li><b>Invoice / quote:</b> pick the tax rate, totals calculate, print or save as PDF.</li>
-  </ul>
-  <p>Works in Microsoft Excel and Google Sheets. Any currency. No subscription. 14-day no-questions refund.</p>
-  <a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit · $12</a>
+<div class="hero">
+  <div>
+    <h1>Know your stock, cash and profit <em>without accounting software.</em></h1>
+    <p class="sub">One ready-made spreadsheet for small shops. Type in what you buy and sell; it tells you what is running low, who owes you money and what you actually made this month.</p>
+    <a class="buy" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit <span>$12</span></a>
+    <div class="trust"><span><i>✓</i>Excel &amp; Google Sheets</span><span><i>✓</i>One-time payment</span><span><i>✓</i>Instant download</span><span><i>✓</i>14-day refund</span></div>
+  </div>
+  <div class="sheet" aria-label="Preview of the Products sheet">
+    <div class="bar"><span class="tab">Start Here</span><span class="tab on">Products</span><span class="tab">Stock Movements</span><span class="tab">Cash Book</span><span class="tab">Monthly Summary</span><span class="tab">Customer Credit</span><span class="tab">Invoice</span></div>
+    <div class="tbl"><table>
+      <thead><tr><th>SKU</th><th>Product</th><th>On hand</th><th>Reorder at</th><th>Markup</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>C-01</td><td>Coffee beans 1 kg</td><td class="n">34</td><td class="n">10</td><td class="n">56%</td><td class="ok">OK</td></tr>
+        <tr class="low"><td>C-02</td><td>Paper cups (100)</td><td class="n">8</td><td class="n">20</td><td class="n">71%</td><td>REORDER</td></tr>
+        <tr><td>C-03</td><td>Oat milk 1 L</td><td class="n">22</td><td class="n">12</td><td class="n">64%</td><td class="ok">OK</td></tr>
+        <tr class="low"><td>C-04</td><td>Detergent 4 L</td><td class="n">3</td><td class="n">5</td><td class="n">45%</td><td>REORDER</td></tr>
+        <tr><td>C-05</td><td>Croissant (frozen, 24)</td><td class="n">15</td><td class="n">6</td><td class="n">88%</td><td class="ok">OK</td></tr>
+      </tbody></table></div>
+  </div>
 </div>
 
-<section><h2>Who it is for</h2><p>Cafés, corner shops, salons, workshops, market sellers, Etsy and craft sellers: anyone who sells products or services and wants clear numbers without paying for accounting software every month.</p></section>
-<section><h2>Delivery and refunds</h2><p>Payment is handled by Polar, our merchant of record. Right after checkout you receive an email with the download link. If the toolkit does not work for you, request a full refund within 14 days through the customer portal link in that email.</p></section>
-<section><h2>Guides</h2><p>Free guides on running the numbers of a small business: <a href="blog/">read the blog</a>.</p></section>
-<footer>© 2026 Kumpanya Dijital · <a href="../">Türkçe</a></footer>
+<section>
+  <h2>Sound familiar?</h2>
+  <p class="lede">Most small shops run on memory, a notebook and a half-finished spreadsheet. That works until it doesn't.</p>
+  <div class="pain">
+    <div class="b"><b>Before</b><ul><li>You notice you're out of a bestseller when a customer asks for it.</li><li>"Who still owes me?" means flipping through a notebook.</li><li>You know the till was busy, but not whether you made a profit.</li></ul></div>
+    <div class="a"><b>After</b><ul><li>Low stock turns red and says REORDER before you run out.</li><li>Every customer's open balance on one screen.</li><li>Income, expenses and net profit for each month, with a chart.</li></ul></div>
+  </div>
+</section>
+
+<section>
+  <h2>Seven sheets, every formula already built</h2>
+  <p class="lede">You only fill in the white cells. Everything in the cream cells calculates itself.</p>
+  <div class="grid">
+    <div class="f"><span class="k">Products</span><h3>Live stock levels</h3><p>Stock on hand, stock value at cost and markup per item. Rows turn red at your reorder level.</p></div>
+    <div class="f"><span class="k">Stock Movements</span><h3>Log in seconds</h3><p>Choose In or Out, type the SKU and quantity. Product name and amount fill themselves in.</p></div>
+    <div class="f"><span class="k">Cash Book</span><h3>Every payment in one place</h3><p>Categories and payment methods from drop-down lists, so your reports stay clean.</p></div>
+    <div class="f"><span class="k">Monthly Summary</span><h3>Profit, month by month</h3><p>Income, expenses, net profit and margin for all 12 months, plus a chart.</p></div>
+    <div class="f"><span class="k">Customer Credit</span><h3>Know who owes you</h3><p>Record charges and payments; balances per customer update automatically.</p></div>
+    <div class="f"><span class="k">Invoice / Quote</span><h3>Print-ready documents</h3><p>Pick a tax rate per line (0, 5, 10 or 20%); subtotal, tax and total calculate for you.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>One price. Yours to keep.</h2>
+  <div class="price">
+    <div><div class="amt">$12</div><small>One-time payment · no subscription · 14-day refund</small>
+      <p style="color:var(--muted);margin:14px 0 0;max-width:52ch">Built for cafés, corner shops, salons, workshops, market stalls and craft sellers. Works in any currency.</p></div>
+    <a class="buy" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Buy and download <span>$12</span></a>
+  </div>
+</section>
+
+<section>
+  <h2>Questions</h2>
+  <details><summary>Do I need Microsoft Excel?</summary><p>No. The file works in Excel (2016 or newer), Google Sheets (free) and LibreOffice. To use Google Sheets, upload the file to Google Drive and open it.</p></details>
+  <details><summary>Does it work in my currency and with my tax rate?</summary><p>Yes. Amounts are plain numbers, so it works in dollars, pounds, euros or anything else. The invoice sheet lets you choose a tax rate per line.</p></details>
+  <details><summary>How do I get the file?</summary><p>Right after payment you receive an email from Polar, our payment provider, with the download link. You can download it again any time from the customer portal.</p></details>
+  <details><summary>Is this accounting software?</summary><p>No. It is a practical tracking tool for day-to-day stock, cash and customer balances. Keep giving your accountant what they ask for; this makes that much easier.</p></details>
+  <details><summary>What if it's not right for me?</summary><p>Ask for a refund within 14 days through the customer portal link in your purchase email and you get your money back in full.</p></details>
+</section>
+
+<footer>© 2026 Kumpanya Dijital · Payments by Polar (merchant of record) · <a href="blog/">Guides</a> · <a href="../">Türkçe</a></footer>
 </div>
 </body>
 </html>

@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate Inventory Obsolescence and Free Up Cash Flow for Small Businesses | Kumpanya Dijital</title><meta name="description" content="Dead stock is a silent killer of small business profitability. When products sit on your shelves for months, you are not just losing potential sales; you a"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Calculate Inventory Obsolescence and Free Up Cash Flow for Small Businesses</h1>
+<p>Dead stock is a silent killer of small business profitability. When products sit on your shelves for months, you are not just losing potential sales; you are locking up capital that could be used for growth. This guide provides a step-by-step Excel method to identify obsolete inventory and take corrective action.</p>
+<h2>Identifying Dead Stock with Excel</h2>
+<p>To manage your inventory, you must first categorize it by age. In your Excel sheet, create columns for 'Product Name' (Column A), 'Last Sale Date' (Column B), and 'Current Date' (Column C). Use the DATEDIF formula to calculate the age of your stock in months.</p>
+<p>Formula in Column D (Age in Months):</p>
+<p>`=DATEDIF(B2, C2, "m")`</p>
+<p><i>Note on DATEDIF:</i> While DATEDIF is useful, it can sometimes return a `#NUM!` error if the 'Last Sale Date' is later than the 'Current Date' due to data entry typos. To prevent this, you can wrap your formula with an IFERROR check:</p>
+<p>`=IFERROR(DATEDIF(B2, C2, "m"), "Check Date")`</p>
+<p>If the result in your 'Age' column is greater than 6, flag this item as 'Potential Dead Stock'. This allows you to visualize which products are draining your cash flow.</p>
+<h2>Calculating the True Cost of Carrying Obsolete Inventory</h2>
+<p>Every item in your warehouse incurs carrying costs beyond simple storage. To calculate an accurate carrying cost percentage, break down your annual expenses into concrete categories:</p>
+<ul>
+<li><b>Warehouse Storage:</b> Rent and utilities allocated per SKU (500/year)</li>
+<li><b>Insurance &amp; Taxes:</b> Protection coverage for stored goods (150/year)</li>
+<li><b>Depreciation &amp; Damage:</b> Risk of handling or product degradation (250/year)</li>
+<li><b>Opportunity Cost:</b> Tied-up capital that cannot be reinvested (100/year)</li>
+</ul>
+<p>If your total inventory value is 5,000 and your annual carrying costs total1,000, your carrying cost percentage is 20% (1,000 /5,000).</p>
+<p>Formula for Annual Carrying Cost in Excel:</p>
+<p>`=Inventory_Value <i> Carrying_Cost_Percentage` -&gt; `=5000 </i> 0.20` = $1,000 annual loss.</p>
+<p>By tracking this metric, you can make informed decisions about whether to discount the items or liquidate them entirely to recover cash.</p>
+<h2>Taking Action: Liquidation vs. Discounting</h2>
+<p>Once you identify obsolete items, you have three clear paths:</p>
+<ol>
+<li><b>Flash Sale:</b> Set a discount that covers at least your cost of goods sold (COGS) to break even and clear shelf space.</li>
+<li><b>Bundling:</b> Pair the slow-moving item with a high-demand product to increase the perceived value and move units together.</li>
+<li><b>Liquidation:</b> Sell to a bulk wholesaler if the item's storage cost exceeds its potential retail profit.</li>
+</ol>
+<h2>Automating Your Inventory Health</h2>
+<p>Manually tracking these metrics every month is time-consuming and prone to formula errors. For businesses looking to streamline this process, the Small Business Toolkit provides pre-built Excel dashboards that instantly calculate obsolescence rates and carrying costs without manual setup.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

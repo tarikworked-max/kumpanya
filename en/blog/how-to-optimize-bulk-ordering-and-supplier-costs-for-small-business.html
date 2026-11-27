@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Optimize Bulk Ordering and Supplier Costs for Small Business | Kumpanya Dijital</title><meta name="description" content="Managing inventory purchases is one of the most critical challenges for small business owners. Buying too much ties up valuable working capital, while orde"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Optimize Bulk Ordering and Supplier Costs for Small Business</h1>
+<p>Managing inventory purchases is one of the most critical challenges for small business owners. Buying too much ties up valuable working capital, while ordering too little leads to frequent stockouts and lost sales. Finding the sweet spot between volume discounts and holding costs requires a systematic approach using simple spreadsheet tools.</p>
+<p>In this practical guide, you will learn how to calculate optimal order quantities, factor in supplier minimum order quantities (MOQ), and build a dynamic Excel tracking sheet to minimize your total procurement costs.</p>
+<h2>Understanding the True Cost of Procurement</h2>
+<p>When small business owners evaluate purchasing decisions, they often look only at the unit price quoted by the supplier. However, total procurement cost is a combination of three distinct financial elements:</p>
+<ol>
+<li><b>Purchase Cost:</b> The actual amount paid to the supplier per unit.</li>
+<li><b>Ordering Cost:</b> The administrative expense of placing an order, including shipping, bank transfer fees, and receiving labor.</li>
+<li><b>Holding Cost:</b> The cost of warehousing, insurance, depreciation, and tied-up capital.</li>
+</ol>
+<p>To manage these costs effectively, you need to track them in a dedicated spreadsheet rather than relying on guesswork.</p>
+<h2>Step 1: Setting Up Your Procurement Tracker in Excel</h2>
+<p>Create a new Google Sheets or Microsoft Excel document named `Supplier_Order_Tracker.xlsx`. Set up the following column headers in Row 1 to track your inventory purchases:</p>
+<ul>
+<li><b>Column A:</b> Item Name</li>
+<li><b>Column B:</b> Annual Demand (Units)</li>
+<li><b>Column C:</b> Order Cost per Batch ()</li>
+<li><b>Column D:</b> Annual Holding Cost per Unit ()</li>
+<li><b>Column E:</b> Unit Price ($)</li>
+<li><b>Column F:</b> Current Stock Level</li>
+</ul>
+<p>For example, if you run a specialty kitchenware shop and purchase ceramic mugs, enter the following data in Row 2:</p>
+<ul>
+<li>`A2`: Ceramic Mug</li>
+<li>`B2`: 2400</li>
+<li>`C2`: 45</li>
+<li>`D2`: 3.50</li>
+<li>`E2`: 12.00</li>
+<li>`F2`: 200</li>
+</ul>
+<h2>Step 2: Calculating the Optimal Order Quantity</h2>
+<p>To find the most cost-effective batch size, use the Economic Order Quantity (EOQ) formula. In your spreadsheet, add a calculation row or a separate summary table to compute this automatically. The formula is the square root of (2 times Annual Demand times Order Cost) divided by Holding Cost.</p>
+<p>In Excel, write the following formula to calculate EOQ in cell `G2`:</p>
+<p>`=ROUND(SQRT((2 <i> B2 </i> C2) / D2), 0)`</p>
+<p>Using our ceramic mug example (`B2` = 2400, `C2` = 45, `D2` = 3.50), the calculation evaluates as follows:</p>
+<ul>
+<li>Numerator: 2 <i> 2400 </i> 45 = 216,000</li>
+<li>Divided by Holding Cost: 216,000 / 3.50 = 61,714.28</li>
+<li>Square Root: SQRT(61,714.28) = 248.42</li>
+<li>Rounded EOQ: 248 units per order.</li>
+</ul>
+<p>This means ordering approximately 248 units at a time minimizes your combined ordering and holding expenses over the year.</p>
+<h2>Step 3: Factoring Supplier Minimum Order Quantities (MOQ)</h2>
+<p>Suppliers frequently impose a Minimum Order Quantity (MOQ). If your calculated EOQ is lower than the supplier's MOQ, your spreadsheet should flag this so you can adjust your purchasing strategy.</p>
+<p>Add an `MOQ` column in `Column H` and a final `Recommended Order Quantity` in `Column I`. In cell `I2`, enter the following logical test formula:</p>
+<p>`=IF(G2 &lt; H2, H2, G2)`</p>
+<p>If your supplier requires a minimum of 300 units (`H2` = 300), your spreadsheet will automatically override the EOQ of 248 and display 300 as the required order size.</p>
+<h2>Automate Your Inventory Control Without Expensive Software</h2>
+<p>Manually updating purchase logs and tracking procurement thresholds across dozens of products can quickly become overwhelming. Growing small businesses and Etsy sellers need a streamlined system that connects inventory levels, order tracking, and cash flow forecasting in one place.</p>
+<p>The Small Business Toolkit includes ready-to-use Google Sheets and Excel templates designed specifically to automate inventory tracking, calculate reorder points, and protect your profit margins without costly monthly software subscriptions.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

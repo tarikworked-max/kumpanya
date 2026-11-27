@@ -1,0 +1,103 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Create an Accounts Receivable Aging Report: A Practical Guide for Small Business | Kumpanya Dijital</title><meta name="description" content="**Why This Matters:** Cash is king. If your customers don't pay on time, your business can fail even if you are technically profitable. An Accounts Receiva"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Create an Accounts Receivable Aging Report: A Practical Guide for Small Business</h1>
+<p><b>Why This Matters:</b> Cash is king. If your customers don't pay on time, your business can fail even if you are technically profitable. An Accounts Receivable (AR) Aging Report is the single most important tool for identifying who owes you money, how long they have been owing it, and who you need to call <i>today</i>.</p>
+<p>Most small business owners use a simple list of invoices. But a list doesn't tell you <i>risk</i>. An aging report categorizes debt by age, allowing you to prioritize collection efforts where the risk of non-payment is highest. This guide shows you exactly how to build this in Excel without complex formulas.</p>
+<h2>1. Setting Up Your Data Structure</h2>
+<p>Before building the report, you need clean data. If your source data is messy, your aging report will be wrong. Create a sheet named `Invoices` with the following columns:</p>
+<ul>
+<li><b>A: Invoice Number</b> (Unique ID)</li>
+<li><b>B: Customer Name</b></li>
+<li><b>C: Invoice Date</b> (Date the invoice was issued)</li>
+<li><b>D: Due Date</b> (Date payment is expected)</li>
+<li><b>E: Total Amount</b> (Currency value)</li>
+<li><b>F: Paid Amount</b> (Amount already received; 0 if unpaid)</li>
+<li><b>G: Balance</b> (Calculated: Total - Paid)</li>
+<li><b>H: Status</b> (Open, Partial, Paid, Overdue)</li>
+</ul>
+<p><b>Crucial Step:</b> Ensure your dates are actual Excel dates, not text. If Excel treats them as text, your aging formulas will fail.</p>
+<h2>2. Calculating 'Days Past Due' Correctly</h2>
+<p>The core of the aging report is determining how overdue an invoice is. A common mistake is simply subtracting dates. You must account for invoices that are not yet due.</p>
+<p>In Column <b>I</b> (Named `Days Past Due`), use this logic:</p>
+<p>`Days Past Due = MAX(0, TODAY() - Due_Date)`</p>
+<p>However, for a professional aging report, we often need to know if it is <i>current</i> (not yet due) or <i>overdue</i>. Let's create a helper column <b>J</b> named `Aging Bucket`.</p>
+<p>Instead of complex nested IF statements that break with negative numbers, we will use a <b>VLOOKUP</b> with approximate matching. This is more robust and easier to manage.</p>
+<p>First, create a reference table for your aging buckets. Let's put this in cells `P1:Q5`:</p>
+<p>| Days Overdue (Min) | Category |</p>
+<p>| :--- | :--- |</p>
+<p>| 0 | Current (Not Yet Due) |</p>
+<p>| 1 | 1-30 Days |</p>
+<p>| 31 | 31-60 Days |</p>
+<p>| 61 | 61-90 Days |</p>
+<p>| 91 | 90+ Days |</p>
+<p><i>Note: The 'Min' column defines the start of the range. The VLOOKUP will find the largest value less than or equal to the lookup value.</i></p>
+<h2>3. The VLOOKUP Formula for Aging Categories</h2>
+<p>Now, in Column <b>J</b> of your `Invoices` sheet, enter the following formula:</p>
+<p>`=VLOOKUP(MAX(0, TODAY() - D2), P1:Q5, 2, TRUE)`</p>
+<p><b>How this works:</b></p>
+<ol>
+<li>`TODAY() - D2`: Calculates how many days have passed since the due date.</li>
+<li>`MAX(0, ...)`: Ensures that if the invoice is not yet due (negative number), the value becomes 0. This prevents errors and correctly categorizes them as 'Current'.</li>
+<li>`VLOOKUP(..., TRUE)`: The `TRUE` argument tells Excel to perform an approximate match. It looks for the largest number in the `Days Overdue (Min)` column (P1:Q5) that is less than or equal to the calculated days. It then returns the corresponding category from the `Category` column (Q1:Q5).</li>
+</ol>
+<p><b>Example:</b></p>
+<ul>
+<li>If Today is Jan 30 and Due Date is Jan 20:</li>
+<li>`TODAY() - D2` = 10.</li>
+<li>`MAX(0, 10)` = 10.</li>
+<li>VLOOKUP finds 10 in the table. The largest min value &lt;= 10 is 1 (for '1-30 Days'). Result: <b>1-30 Days</b>.</li>
+<li>If Today is Jan 30 and Due Date is Feb 10:</li>
+<li>`TODAY() - D2` = -11.</li>
+<li>`MAX(0, -11)` = 0.</li>
+<li>VLOOKUP finds 0. The largest min value &lt;= 0 is 0 (for 'Current'). Result: <b>Current</b>.</li>
+</ul>
+<p>This method is cleaner than nested IFs because if you want to change your buckets (e.g., make it 0-15, 16-30), you only change the reference table, not 1,000 rows of formulas.</p>
+<h2>4. Building the Summary Aging Report</h2>
+<p>Now that each invoice has a category, we need to summarize the total outstanding balance by category. This is the report you will show to your manager or use for decision-making.</p>
+<p>Create a new sheet named `Aging Summary`. List your categories in Column A:</p>
+<p>A1: Current</p>
+<p>A2: 1-30 Days</p>
+<p>A3: 31-60 Days</p>
+<p>A4: 61-90 Days</p>
+<p>A5: 90+ Days</p>
+<p>In Column B (Total Amount), use the `SUMIF` function:</p>
+<p>`=SUMIF(Invoices!J:J, A1, Invoices!G:G)`</p>
+<ul>
+<li>`Invoices!J:J`: The range of categories.</li>
+<li>`A1`: The specific category to match (e.g., 'Current').</li>
+<li>`Invoices!G:G`: The range of balances to sum.</li>
+</ul>
+<p><b>Result:</b> You now have a clear view of how much money is in each risk bucket. If you see 5,000 in the '90+ Days' column, you know this is high-risk debt. If you see2,000 in 'Current', that is healthy.</p>
+<h2>5. Action Plan Based on Aging Buckets</h2>
+<p>Numbers without action are useless. Here is a standard small business protocol for each bucket:</p>
+<ul>
+<li><b>Current (Not Yet Due):</b> No action needed. Ensure invoices are sent on time.</li>
+<li><b>1-30 Days:</b> <b>Friendly Reminder.</b> Send an automated or polite email: "Just following up on invoice #123 due on [Date]. Please let us know if there are any issues."</li>
+<li><b>31-60 Days:</b> <b>Firm Reminder.</b> Call the customer. Ask for a specific payment date. Document the call. If they promise to pay, get a written confirmation.</li>
+<li><b>61-90 Days:</b> <b>Escalation.</b> Stop providing new services/products until the debt is settled. Send a formal letter. Offer a small discount (e.g., 5%) for immediate payment to recover cash quickly.</li>
+<li><b>90+ Days:</b> <b>High Risk/Write-off Decision.</b> Consult with your accountant or a collection agency. Consider writing off the debt as a bad expense for tax purposes if it is unrecoverable. Do not let this sit indefinitely; it distorts your cash flow forecast.</li>
+</ul>
+<h2>6. Common Mistakes to Avoid</h2>
+<ol>
+<li><b>Including Paid Invoices:</b> Ensure your `Balance` column (G) is 0 for paid invoices. If you sum Column G, you are only summing unpaid amounts. If you sum Column E (Total Amount), you will overstate your receivables. <b>Always sum the Balance, not the Total.</b></li>
+<li><b>Hardcoding Dates:</b> Never type `TODAY()` as a fixed date in your reference table. The formula `TODAY()` updates automatically every day. This is a feature, not a bug. Your report will always reflect the current age of the debt.</li>
+<li><b>Ignoring Partial Payments:</b> If a customer pays half, the `Balance` column reflects the remaining half. The aging bucket should be based on the <i>original</i> due date, not the payment date. Our formula uses `Due_Date` (Column D), which is correct. Do not change the due date when a partial payment is received.</li>
+<li><b>Using Text Dates:</b> If Column D is entered as text (e.g., "01/20/2024"), `TODAY() - D2` will return a `#VALUE!` error. Check your date format in Excel by multiplying the cell by 1. If it errors, it is text. Convert it to a real date.</li>
+</ol>
+<h2>7. How to Use This Data for Cash Flow Forecasting</h2>
+<p>Your AR Aging Report is not just a collection tool; it is a forecasting tool. By analyzing your average collection period (DSO - Days Sales Outstanding), you can predict when cash will arrive.</p>
+<p><b>Calculate DSO:</b></p>
+<p>`DSO = (Average Accounts Receivable Balance / Total Credit Sales) x Number of Days`</p>
+<p>If your DSO is 45 days, you can expect that on average, it takes 45 days to collect payment. This helps you plan your own payments to suppliers. If your DSO is 90 days, you have a serious cash flow problem and need to tighten your credit policy.</p>
+<p><b>Pro Tip:</b> Add a column in your summary sheet for "Projected Collection Date." If an invoice is 10 days past due, and your average collection time for overdue invoices is 15 days, you can project cash inflow for 5 days from now. This adds a dynamic layer to your cash flow statement.</p>
+<h2>Conclusion</h2>
+<p>An Accounts Receivable Aging Report is the heartbeat of your small business cash flow. By using the VLOOKUP method described above, you create a scalable, error-resistant system that automatically categorizes your debt. You spend less time hunting for formulas and more time making strategic decisions: who to call, when to escalate, and how to protect your cash.</p>
+<p>Start with your current invoice data. Build the `Invoices` sheet. Add the `Days Past Due` and `Aging Bucket` columns. Create the summary. Then, implement the action plan. Your cash flow will thank you.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

@@ -1,0 +1,54 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Manage Customer Credit Risk and Overdue Invoices: A Practical Guide for Small Businesses | Kumpanya Dijital</title><meta name="description" content="Late payments are one of the leading causes of cash flow failures for small businesses. When a customer delays an invoice by 30 or 60 days, your business a"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Manage Customer Credit Risk and Overdue Invoices: A Practical Guide for Small Businesses</h1>
+<p>Late payments are one of the leading causes of cash flow failures for small businesses. When a customer delays an invoice by 30 or 60 days, your business absorbs the hidden cost of financing their purchase. Without a structured credit policy and rigorous accounts receivable (AR) tracking, even a profitable business can face sudden insolvency.</p>
+<p>This guide breaks down step-by-step methods to assess customer credit risk, set clear payment terms, track aging receivables using Excel, and recover overdue invoices without damaging client relationships.</p>
+<h2>1. Establishing a Clear Small Business Credit Policy</h2>
+<p>Many small business owners offer informal credit to secure sales, letting customers pay 'whenever they can.' This approach invites severe cash flow bottlenecks. A professional credit policy protects your working capital.</p>
+<p>Before extending credit, establish explicit boundaries:</p>
+<ul>
+<li><b>Credit Limit:</b> Define a maximum exposure amount per client (e.g., 5,000).</li>
+<li><b>Payment Terms:</b> Standardize terms clearly on every invoice (e.g., Net 30 days).</li>
+<li><b>Early Payment Incentive:</b> Encourage faster settlement by offering a small discount (e.g., 2/10 Net 30: a 2% discount if paid within 10 days).</li>
+</ul>
+<p>To calculate your maximum allowable credit exposure for a new client, use this baseline formula in your spreadsheet:</p>
+<p>`Max Credit Limit = Average Monthly Order Value × 1.5`</p>
+<p>For example, if a client consistently orders4,000 worth of goods or services per month, your initial credit ceiling should not exceed 6,000 until they establish a reliable payment history.</p>
+<h2>2. Tracking and Managing Accounts Receivable (AR Aging)</h2>
+<p>An AR Aging Report categorizes your outstanding customer invoices by the length of time they have been unpaid. Tracking this weekly ensures that minor delays do not turn into permanent bad debt.</p>
+<p>Set up a simple AR Aging tracker in Excel with the following columns: `Customer Name`, `Invoice Number`, `Invoice Date`, `Due Date`, `Current (0-30)`, `31-60 Days`, `61-90 Days`, and `90+ Days`.</p>
+<p>To automate the categorization of invoices based on the current date, use the following logical formula in Excel:</p>
+<p>`=IF(TODAY()-Due_Date&lt;=30, "Current", IF(TODAY()-Due_Date&lt;=60, "31-60 Days", "Over 60 Days"))`</p>
+<h3>Numerical Example of Cash Loss from Late Payments</h3>
+<p>Imagine you issue an invoice of15,000 with Net 30 terms, and your gross profit margin is 25%. If the customer delays payment by an additional 60 days (total 90 days), you are effectively financing their operations with your own working capital.</p>
+<p>The implied financing cost or lost opportunity cost can be quantified using this formula:</p>
+<p>`Opportunity Cost = Invoice Amount × Gross Margin × (Delayed Days / 365)`</p>
+<p>Plugging in our numbers:</p>
+<p>`Opportunity Cost = 15,000 × 0.25 × (60 / 365) =3,750 × 0.1644 = 616.64`</p>
+<p>This calculation proves that a 60-day delay on a single invoice costs you over600 in trapped capital value that could have been reinvested in inventory or marketing.</p>
+<h2>3. Step-by-Step Follow-Up Workflow for Overdue Invoices</h2>
+<p>Waiting passively for clients to pay results in write-offs. Implement a strict, automated follow-up communication schedule:</p>
+<ol>
+<li><b>3 Days Before Due Date:</b> Send a polite automated reminder email with the invoice attached and a direct payment link.</li>
+<li><b>1 Day After Due Date:</b> Send a friendly check-in note assuming the payment may have crossed in transit.</li>
+<li><b>15 Days Overdue:</b> Make a direct phone call. Inquire if there was an issue with the product or service, and restate the agreed payment terms.</li>
+<li><b>30 Days Overdue:</b> Issue a formal Demand for Payment letter and pause any further credit-based fulfillment until the account is settled.</li>
+<li><b>60+ Days Overdue:</b> Evaluate legal recourse, collection agencies, or writing off the balance as uncollectible bad debt.</li>
+</ol>
+<h2>4. Calculating Days Sales Outstanding (DSO)</h2>
+<p>Days Sales Outstanding (DSO) measures the average number of days it takes your business to collect payment after a sale has been made. Monitoring DSO monthly reveals whether your credit control measures are improving.</p>
+<p>Use this standard financial formula:</p>
+<p>`DSO = (Total Accounts Receivable / Total Credit Sales in Period) × Number of Days in Period`</p>
+<p>For example, if your total accounts receivable balance at the end of the quarter is 45,000, your total credit sales for the quarter (90 days) were180,000, your calculation is:</p>
+<p>`DSO = (45,000 /180,000) × 90 = 0.25 × 90 = 22.5 Days`</p>
+<p>A DSO of 22.5 days on Net 30 terms indicates healthy cash collection efficiency. If your DSO climbs to 45 or 55 days, your business is facing a severe credit risk bottleneck requiring immediate tightening of collection policies.</p>
+<h2>Conclusion</h2>
+<p>Managing customer credit risk is not about distrusting clients; it is about protecting your business continuity. By combining a strict credit policy, weekly Excel AR aging tracking, proactive follow-up schedules, and continuous DSO monitoring, you eliminate the profit-but-no-cash trap and secure steady working capital for growth.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

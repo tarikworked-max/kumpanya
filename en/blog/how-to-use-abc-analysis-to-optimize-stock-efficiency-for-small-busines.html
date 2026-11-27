@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Use ABC Analysis to Optimize Stock Efficiency for Small Businesses | Kumpanya Dijital</title><meta name="description" content="Inventory management is not about tracking every item equally; it is about focusing your capital where it generates the most profit. If you are struggling "><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Use ABC Analysis to Optimize Stock Efficiency for Small Businesses</h1>
+<p>Inventory management is not about tracking every item equally; it is about focusing your capital where it generates the most profit. If you are struggling with cash flow, your inventory is likely the culprit. The ABC Analysis method allows you to categorize your stock based on value and turnover, ensuring your money is never tied up in 'dead' items while preventing costly stockouts on your best-sellers.</p>
+<h2>Understanding the ABC Framework</h2>
+<p>ABC analysis follows the Pareto Principle (80/20 rule). In inventory terms:</p>
+<ul>
+<li><b>Category A:</b> High-value items, representing 70-80% of your total annual consumption value but only 10-20% of your total SKU count.</li>
+<li><b>Category B:</b> Moderate-value items, representing 15-20% of your consumption value and 30% of your items.</li>
+<li><b>Category C:</b> Low-value items, representing 5% of your consumption value but 50% of your items.</li>
+</ul>
+<h2>How to Perform ABC Analysis in Excel</h2>
+<ol>
+<li><b>List your items:</b> Create a sheet with columns for SKU (Column A), Unit Cost (Column B), and Annual Units Sold (Column C).</li>
+<li><b>Calculate Annual Usage Value:</b> In Column D, calculate total value by multiplying Unit Cost by Annual Units Sold: `=B2*C2`.</li>
+<li><b>Sort by Value:</b> Sort your entire sheet in descending order based on Column D (Annual Usage Value).</li>
+<li><b>Calculate Cumulative Percentage:</b> In Column E, calculate the running total percentage. For row 2, use: `=SUM(D2:D2)/SUM(D2:D100)`.</li>
+<li><b>Assign Categories Automatically:</b> In Column F, use an IF formula to assign categories based on the cumulative percentage threshold: `=IF(E2&lt;=0.80, "A", IF(E2&lt;=0.95, "B", "C"))`. This instantly flags items as A (0% to 80%), B (80% to 95%), or C (95% to 100%).</li>
+</ol>
+<h2>Applying the Strategy and Managing Safety Stock</h2>
+<p>Once categorized, apply these operational rules:</p>
+<ul>
+<li><b>A-Items:</b> Require tight control, weekly physical cycle counts, and optimized safety stock levels. Because A items generate the vast majority of your revenue, <i>lower safety stock</i> is a trap; instead, keep tightly monitored, highly accurate safety stock to completely eliminate costly stockouts while ordering in frequent, smaller batches to protect cash flow.</li>
+<li><b>B-Items:</b> Moderate control, monthly reviews, and standard safety stock buffers.</li>
+<li><b>C-Items:</b> Loose control, quarterly reviews, and automated bulk reordering to save on administrative time.</li>
+</ul>
+<h2>Streamlining Your Inventory Operations</h2>
+<p>Building these cumulative formulas and dynamic IF statements in Excel takes time and careful formula maintenance as your product catalog grows. If you want to skip manual spreadsheet setup and immediately apply automated ABC classification alongside ready-to-use cash flow templates, our Small Business Toolkit provides pre-built calculation models designed specifically for growing retail and service businesses.</p>
+<p>[Access the Small Business Toolkit]</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

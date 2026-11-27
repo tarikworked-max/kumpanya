@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate and Reduce Overstock Inventory: A Guide for Small Business | Kumpanya Dijital</title><meta name="description" content="Excess inventory directly drains working capital. When cash is tied up in unsold goods on warehouse shelves, small businesses face severe liquidity crunche"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Calculate and Reduce Overstock Inventory: A Guide for Small Business</h1>
+<p>Excess inventory directly drains working capital. When cash is tied up in unsold goods on warehouse shelves, small businesses face severe liquidity crunches, unable to fund payroll, marketing, or emergency repairs. Total Holding Cost (carrying cost) typically accounts for 20% to 30% of your inventory's total value annually. This cost is broken down into four core pillars: Capital Cost (financing/interest at 8%), Storage Cost (warehouse rent and utilities at 7%), Risk Cost (shrinkage, damage, and obsolescence at 6%), and Service Cost (insurance and tax at 4%). If you hold 20,000 in excess inventory, your annual carrying cost is approximately5,000 (416 per month) lost in pure overhead.</p>
+<h2>Step 1: Identifying Overstock and Seasonality with Excel</h2>
+<p>To accurately identify overstock, you must compare current stock levels against monthly sales while accounting for seasonal demand fluctuations. Seasonal items can look like 'overstock' during off-seasons if you do not use a seasonal index multiplier.</p>
+<p>Set up your Excel inventory sheet with the following structure:</p>
+<ul>
+<li>Column A: SKU Name</li>
+<li>Column B: Current Stock Level</li>
+<li>Column C: Month 1 Sales</li>
+<li>Column D: Month 2 Sales</li>
+<li>Column E: Month 3 Sales</li>
+<li>Column F: Seasonal Adjustment Factor (e.g., 1.2 for peak season, 0.8 for off-season)</li>
+</ul>
+<p>Instead of generic formulas, use exact cell references to calculate Months of Supply adjusted for seasonality. In cell G2, enter the following formula:</p>
+<p>`=B2 / (AVERAGE(C2:E2) * F2)`</p>
+<p>For example, if SKU-101 has a Current Stock (B2) of 150 units, past 3 months sales are 30, 40, and 50 (average 40 in `AVERAGE(C2:E2)`), and your off-season Seasonal Adjustment Factor (F2) is 0.8:</p>
+<p>`=150 / (40 * 0.8) = 150 / 32 = 4.68 Months of Supply.`</p>
+<p>If the result is greater than 3.0 months, the item is classified as excess inventory requiring immediate intervention.</p>
+<h2>Step 2: Calculating Safety Stock and Reorder Points</h2>
+<p>Overstock often happens because businesses over-order to compensate for supply chain uncertainty. To stop over-ordering, you must calculate a precise Safety Stock and Reorder Point (ROP).</p>
+<ol>
+<li><b>Safety Stock Formula:</b> Protects against stockouts during supplier delays.</li>
+</ol>
+<p>`Safety Stock = (Maximum Daily Usage × Maximum Lead Time in Days) - (Average Daily Usage × Average Lead Time in Days)`</p>
+<p><i>Example:</i> If your maximum daily sales is 10 units, maximum supplier lead time is 14 days, average daily sales is 6 units, and average lead time is 10 days:</p>
+<p>`Safety Stock = (10 × 14) - (6 × 10) = 140 - 60 = 80 units.`</p>
+<ol>
+<li><b>Reorder Point Formula:</b></li>
+</ol>
+<p>`ROP = (Average Daily Usage × Average Lead Time in Days) + Safety Stock`</p>
+<p>`ROP = (6 × 10) + 80 = 140 units.`</p>
+<p>When your inventory tracker cell hits 140 units, you order only the exact replenishment quantity, preventing overstock at the root.</p>
+<h2>Step 3: Actionable Strategies to Liquidate Excess Stock</h2>
+<p>Once items exceed 3 to 6 months of supply, holding costs compound rapidly. Implement these three liquidation mechanisms immediately:</p>
+<ul>
+<li><b>Break-Even Discounting:</b> Calculate your absolute cost floor before discounting. If a product cost you50 wholesale and your cumulative holding cost to date is 10, your break-even price is60. Setting a tiered discount (e.g., 15% off in Week 1, 30% off in Week 2, 45% off in Week 3) ensures you recover cash without selling below break-even.</li>
+<li><b>Product Bundling:</b> Pair slow-moving excess stock with a fast-moving best-seller at a slightly bundled discount. For example, if you have excess slow-moving phone cases, bundle them with popular screen protectors for an attractive package price. This moves dead stock without cheapening your flagship brand perception.</li>
+<li><b>Vendor Return / Credit Negotiation:</b> Contact your supplier before writing off the stock. Many B2B vendors offer a 10% to 15% restocking fee return policy or allow a stock-rotation exchange for faster-moving items.</li>
+</ul>
+<h2>Step 4: Streamlining Operations with the Small Business Toolkit</h2>
+<p>Manually auditing hundreds of SKUs for seasonality, safety stock, and holding costs in raw Excel sheets is time-consuming and prone to formula corruption.</p>
+<p>For business owners seeking an automated, plug-and-play solution, our <b>Small Business Toolkit</b> ($12 via Polar.sh) includes pre-built inventory auditing sheets, automated overstock alert flags, and cash flow calculators. If you want to eliminate manual tracking errors and recover thousands in trapped working capital, explore the complete toolkit today.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Manage Order Fulfillment and Stock Synchronization | Kumpanya Dijital</title><meta name="description" content="Efficient order fulfillment and accurate stock synchronization are critical for small businesses to avoid lost sales and excess inventory. This guide shows"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Manage Order Fulfillment and Stock Synchronization</h1>
+<h2>Introduction</h2>
+<p>Efficient order fulfillment and accurate stock synchronization are critical for small businesses to avoid lost sales and excess inventory. This guide shows you step‑by‑step how to set up an Excel workbook that tracks orders, updates stock levels automatically, and highlights potential issues.</p>
+<h2>1. Set Up Your Order Tracker Sheet</h2>
+<p>Create a sheet named <b>Orders</b> with the following columns:</p>
+<ul>
+<li><b>A: Order ID</b> – Unique identifier (e.g., ORD001).</li>
+<li><b>B: Order Date</b> – Date of the order.</li>
+<li><b>C: Product SKU</b> – Match the SKU used in the inventory sheet.</li>
+<li><b>D: Quantity Ordered</b> – Number of units sold.</li>
+<li><b>E: Fulfilled?</b> – Drop‑down Yes/No.</li>
+<li><b>F: Fulfillment Date</b> – Date when the order is shipped.</li>
+</ul>
+<p>Enter each new order as a new row. Use data validation for the <b>Fulfilled?</b> column to ensure consistent entries.</p>
+<h2>2. Build Your Inventory Sheet</h2>
+<p>Create a sheet named <b>Inventory</b> with these columns:</p>
+<ul>
+<li><b>A: SKU</b> – Unique product code.</li>
+<li><b>B: Product Name</b> – Description.</li>
+<li><b>C: Starting Stock</b> – Stock at the beginning of the period.</li>
+<li><b>D: Received Stock</b> – Purchases received during the period.</li>
+<li><b>E: Sold Stock</b> – <b>Formula</b>: `=SUMIFS(Orders!D:D, Orders!C:C, A2, Orders!E:E, "Yes")`</li>
+<li><b>F: Current Stock</b> – <b>Formula</b>: `=C2 + D2 - E2`</li>
+<li><b>G: Reorder Point</b> – Recommended safety stock level (e.g., 20 units).</li>
+<li><b>H: Alert</b> – <b>Formula</b>: `=IF(F2&lt;=G2, "Reorder", "OK")`</li>
+</ul>
+<h3>Example Row</h3>
+<p>| SKU | Product Name | Starting Stock | Received Stock | Sold Stock | Current Stock | Reorder Point | Alert |</p>
+<p>|-----|--------------|----------------|----------------|------------|---------------|---------------|-------|</p>
+<p>| 1001 | Blue T‑Shirt | 150 | 50 | =SUMIFS(Orders!D:D,Orders!C:C,1001,Orders!E:E,"Yes") | =C2+D2-E2 | 30 | =IF(F2&lt;=G2,"Reorder","OK") |</p>
+<h2>3. Automate Stock Updates on Order Fulfillment</h2>
+<p>When you mark <b>Fulfilled?</b> as <b>Yes</b> in the <b>Orders</b> sheet, the <b>Sold Stock</b> column in <b>Inventory</b> updates automatically because of the `SUMIFS` formula. This instantly recalculates <b>Current Stock</b> and triggers the <b>Alert</b> column if stock falls below the reorder point.</p>
+<h2>4. Identify Bottlenecks and Reduce Errors</h2>
+<ul>
+<li><b>Duplicate Orders</b>: Use conditional formatting on <b>Order ID</b> to highlight duplicates.</li>
+<li><b>Mismatched SKUs</b>: Apply data validation on the <b>Product SKU</b> column to only allow SKUs present in the <b>Inventory</b> sheet.</li>
+<li><b>Late Fulfillment</b>: Add a column <b>Days to Fulfill</b> in <b>Orders</b> (`=IF(E2="Yes",F2-B2,"")`). Filter for values &gt; 3 to spot delays.</li>
+</ul>
+<h2>5. Take Action Based on Insights</h2>
+<ul>
+<li>If <b>Alert</b> shows <b>Reorder</b>, place a purchase order immediately to avoid stockouts.</li>
+<li>For orders taking more than three days to fulfill, investigate shipping processes or supplier lead times.</li>
+<li>Regularly (weekly) copy the <b>Current Stock</b> column to a backup sheet to track trends over time.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>By following this Excel‑based system, small business owners can synchronize order fulfillment with inventory levels, prevent stockouts, and reduce manual errors. The built‑in alerts and formulas give you real‑time visibility, enabling faster decision‑making and protecting revenue.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

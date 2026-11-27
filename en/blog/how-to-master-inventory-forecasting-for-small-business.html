@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Master Inventory Forecasting for Small Business | Kumpanya Dijital</title><meta name="description" content="Inventory forecasting is the process of predicting future customer demand to determine optimal stock levels. Many small business owners rely solely on the "><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Master Inventory Forecasting for Small Business</h1>
+<h2>Why 90 Days of Data Is Not Enough for Accurate Forecasting</h2>
+<p>Inventory forecasting is the process of predicting future customer demand to determine optimal stock levels. Many small business owners rely solely on the past 90 days of sales data, which is a critical mistake. Looking at only three months creates a dangerous blind spot, completely missing annual seasonality, holiday spikes, and macroeconomic shifts. To build a robust forecast, you must analyze at least 12 to 24 months of historical sales data. By studying year-over-year trends, you identify true seasonal peaks and troughs, preventing both catastrophic stockouts during high-demand months and costly overstocking during slow periods.</p>
+<h2>Implementing Moving Averages and Spreadsheet Logic</h2>
+<p>To start forecasting in your spreadsheet, organize your historical data with columns for Date, SKU, Product Name, and Quantity Sold. Instead of relying on static averages or basic `AVERAGEIF` functions that treat all past months equally, utilize a 3-month or 6-month moving average formula to capture recent demand momentum. For example, use `=AVERAGE(D10:F10)` where columns D, E, and F represent the last three months of sales for a specific SKU. This moving window smooths out random daily fluctuations while reacting quickly to emerging sales trends.</p>
+<h2>Calculating Safety Stock and Reorder Points Precisely</h2>
+<p>An accurate forecast is useless without a proper buffer against supply chain delays. Your reorder point must account for both average demand and safety stock. The safety stock formula is:</p>
+<p>`Safety Stock = (Max Daily Sales <i> Max Lead Time in Days) - (Average Daily Sales </i> Average Lead Time in Days)`</p>
+<p>For instance, if your bakery sells a maximum of 15 bags of flour a day with a worst-case delivery lead time of 7 days, your peak demand buffer is 105 units. If your average daily sales are 10 units with a standard 5-day lead time (50 units), your safety stock is 105 - 50 = 55 units.</p>
+<p>Once you have your safety stock, calculate your overall reorder point using the formula:</p>
+<p>`Reorder Point = (Average Daily Usage * Lead Time in Days) + Safety Stock`</p>
+<p>If your average daily usage is 10 units, lead time is 5 days, and safety stock is 55 units, your reorder point is `(10 * 5) + 55 = 105 units`. When your inventory drops to 105 units, it is time to reorder.</p>
+<h2>Seasonal Multipliers and Cash Flow Optimization</h2>
+<p>Seasonal businesses must apply a growth or contraction multiplier to their baseline moving average. If historical data shows that your Q4 sales consistently surge by 30%, multiply your baseline monthly demand by 1.30 for October, November, and December.</p>
+<p>While spreadsheets are a fantastic starting point for small businesses, manual forecasting models have strict limits. As your SKU count grows beyond a few dozen items, static formulas become prone to human error, broken references, and maintenance fatigue. When your inventory tracking requires automated alerts and multi-variable forecasting, transitioning to a structured, pre-built Small Business Toolkit spreadsheet eliminates manual calculations and protects your hard-earned cash flow from stockout losses.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

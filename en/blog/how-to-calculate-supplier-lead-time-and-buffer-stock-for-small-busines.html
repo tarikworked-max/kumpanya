@@ -1,0 +1,51 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate Supplier Lead Time and Buffer Stock for Small Businesses | Kumpanya Dijital</title><meta name="description" content="For small business owners, inventory management is a delicate balancing act. Order too late, and you face costly stockouts and frustrated customers. Order "><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Calculate Supplier Lead Time and Buffer Stock for Small Businesses</h1>
+<p>For small business owners, inventory management is a delicate balancing act. Order too late, and you face costly stockouts and frustrated customers. Order too early, and you tie up critical working capital in excess inventory. At the heart of this balance lies a single, often unpredictable factor: supplier lead time.</p>
+<p>Supplier lead time is the total duration from the moment you place a purchase order with your supplier to the exact time the goods arrive at your warehouse or retail shelf. However, real-world supply chains are rarely linear. Supplier delays, customs holdups, and transportation bottlenecks mean that lead time almost always fluctuates.</p>
+<p>To protect your cash flow and maintain high service levels without overspending on storage, you need to calculate and buffer your lead time accurately using structured data.</p>
+<h2>Understanding Lead Time Variability and Its Financial Impact</h2>
+<p>If a supplier promises a 14-day lead time, many small business owners use exactly 14 days in their reorder calculations. In practice, however, suppliers might take 14 days on average, but stretch to 21 or 25 days during peak seasons.</p>
+<p>When actual lead time exceeds expected lead time, your inventory buffer disappears. This results in stockouts, missed sales, and damaged customer lifetime value (CLV). Conversely, holding excessive safety stock just in case drains your cash flow.</p>
+<p>The solution is calculating your <b>Maximum Lead Time</b> and establishing a data-driven buffer stock formula.</p>
+<h2>Step-by-Step Formula: Calculating Buffer Stock for Uncertain Lead Times</h2>
+<p>To determine the exact quantity of buffer stock (safety stock) required for lead time variability, you need two primary metrics: Daily Average Demand and Maximum Lead Time minus Average Lead Time.</p>
+<p>Here is the standard operational formula:</p>
+<p>Buffer Stock = (Maximum Daily Sales × Maximum Lead Time in Days) - (Average Daily Sales × Average Lead Time in Days)</p>
+<p>Let’s look at a concrete operational scenario for an e-commerce seller:</p>
+<ul>
+<li><b>Average Daily Sales:</b> 15 units</li>
+<li><b>Maximum Daily Sales:</b> 22 units (during promotional spikes)</li>
+<li><b>Average Lead Time:</b> 14 days</li>
+<li><b>Maximum Lead Time:</b> 21 days (due to occasional shipping delays)</li>
+</ul>
+<p>Step 1: Calculate maximum demand during the maximum lead time window.</p>
+<p>22 units/day × 21 days = 462 units</p>
+<p>Step 2: Calculate expected demand under normal conditions.</p>
+<p>15 units/day × 14 days = 210 units</p>
+<p>Step 3: Calculate the required buffer stock.</p>
+<p>462 - 210 = 252 units</p>
+<p>This means you need an extra 252 units sitting in your inventory specifically allocated to absorb delivery shocks and demand spikes.</p>
+<h2>Setting Up Your Excel or Google Sheets Lead Time Tracker</h2>
+<p>To automate this process in your spreadsheet toolkit, set up a dedicated tracking table with the following column structure:</p>
+<ul>
+<li><b>Column A (SKU):</b> Unique product identifier</li>
+<li><b>Column B (Avg Daily Demand):</b> Historical sales divided by days</li>
+<li><b>Column C (Max Daily Demand):</b> Peak daily sales observed</li>
+<li><b>Column D (Avg Lead Time):</b> Standard supplier delivery days</li>
+<li><b>Column E (Max Lead Time):</b> Worst-case delivery days</li>
+<li><b>Column F (Buffer Stock Formula):</b> Enter `= (C2<i>E2) - (B2</i>D2)` in cell F2 and drag down.</li>
+</ul>
+<p>Using conditional formatting on Column F can alert you when supplier lead times widen past acceptable thresholds. For instance, set a rule where if Column E minus Column D is greater than 7 days, highlight the row in soft red to prompt a supplier review.</p>
+<h2>When Spreadsheet Tracking Becomes Not Enough</h2>
+<p>Spreadsheets are powerful tools for gaining visibility and controlling costs during the early and growth stages of your business. However, spreadsheets require manual data entry for shipment arrivals and inventory counts.</p>
+<p>When your SKU count exceeds 1,000 active items, or when you manage multiple international suppliers with dynamic pricing and fluctuating shipping schedules, manual tracking introduces human error. At that operational threshold, integrating automated ERP or inventory management software becomes necessary to protect your margins.</p>
+<p>Until then, maintaining strict oversight over your supplier lead times through structured spreadsheet models remains the most cost-effective way to preserve cash flow and eliminate hidden inventory losses.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

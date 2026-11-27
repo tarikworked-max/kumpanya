@@ -1,0 +1,53 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate Product Profitability and Optimize Margins | Kumpanya Dijital</title><meta name="description" content="Many small business owners make the mistake of tracking total revenue while ignoring the net profitability of individual items. If you are selling high-vol"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Calculate Product Profitability and Optimize Margins</h1>
+<p>Many small business owners make the mistake of tracking total revenue while ignoring the net profitability of individual items. If you are selling high-volume but low-margin products, you might be working harder while making less money. This guide shows you how to build a precise Product Profitability Matrix in Excel using exact cell references.</p>
+<h2>The True Cost of Product Sales and Hidden Expenses</h2>
+<p>Most businesses calculate profit simply as Selling Price minus Cost of Goods Sold (COGS). However, this ignores operational costs like packaging, outbound shipping, payment gateway fees, and true return costs. A common mistake is treating any low-margin item as a strategic 'Loss Leader'. In reality, a true loss leader is a deliberate, highly calculated promotional item designed to drive store traffic and cross-sells. If a low-margin product does not drive additional basket size, it is simply a case of poor purchasing or outdated pricing.</p>
+<p>To calculate true unit profitability, you must include reverse logistics and repacking labor in your return costs:</p>
+<p>Net Profit Per Unit = Selling Price - (COGS + Shipping &amp; Packaging + Payment Processing Fee + Total Return Cost)</p>
+<h2>Building Your Profitability Matrix in Excel with Exact Formulas</h2>
+<p>Open your spreadsheet and set up the following columns from Row 2:</p>
+<ul>
+<li>Column A: Product Name</li>
+<li>Column B: Selling Price (e.g., 50.00)</li>
+<li>Column C: COGS (e.g.,20.00)</li>
+<li>Column D: Shipping &amp; Packaging (e.g., 5.00)</li>
+<li>Column E: Payment Fee % (e.g., 0.03 for 3%)</li>
+<li>Column F: Return Rate % (e.g., 0.08 for 8%)</li>
+<li>Column G: Unit Return Cost (Product Inspection + Restocking Labor + Return Shipping)</li>
+<li>Column H: Net Profit Per Unit</li>
+<li>Column I: Margin Status</li>
+</ul>
+<p>Apply these exact formulas in Row 2 to automate your calculations:</p>
+<ol>
+<li>In Column G (Unit Return Cost), assuming an average reverse logistics cost of4.00 per returned item, enter:</li>
+</ol>
+<p>`=F2 * 4.00`</p>
+<ol>
+<li>In Column H (Net Profit Per Unit), calculate the true net margin:</li>
+</ol>
+<p>`=B2 - (C2 + D2 + (B2 * E2) + G2)`</p>
+<ol>
+<li>In Column I (Margin Status), use a nested IF function to flag low-margin items accurately:</li>
+</ol>
+<p>`=IF(H2 &lt; (B2 * 0.15), "Review Pricing / Poor Sourcing", "Healthy")`</p>
+<p>This formula instantly alerts you when an item's net profit drops below 15% of its selling price, helping you separate genuine promotional loss leaders from unprofitable dead stock.</p>
+<h2>Analyzing Your Product Mix and Action Plan</h2>
+<p>Once your matrix is active, categorize your inventory into three clear segments:</p>
+<ul>
+<li><b>Cash Cows (Margin &gt; 30%):</b> High volume and healthy margins. Protect supply and promote aggressively.</li>
+<li><b>Strategic Loss Leaders (Margin &lt; 0% but High Cross-Sell):</b> Deliberate acquisition items that consistently drive multi-item checkouts. Track cross-sell attach rate weekly.</li>
+<li><b>Pricing Errors (Margin &lt; 15% and Low Volume):</b> Products suffering from poor supplier negotiation or uncalculated reverse logistics. Re-price immediately or delist.</li>
+</ul>
+<p>Maintain at least 70% of your active inventory in the 'Cash Cows' category. By applying this spreadsheet framework weekly, you ensure every SKU earns its place on your shelf. For a ready-made template and automated cash flow tracking tools tailored for small businesses, explore the Small Business Toolkit.</p>
+<h2>Scaling Your Margins with Data</h2>
+<p>Stop guessing which products drive your business forward. By tracking unit-level profitability, payment fees, and true return costs monthly, you transition from reactive firefighting to proactive margin control. Use your Excel matrix to renegotiate supplier terms or adjust retail pricing before margin erosion damages your cash reserves.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate the Cost of Stockouts: A Practical Guide for Small Businesses | Kumpanya Dijital</title><meta name="description" content="Stockouts represent a direct, measurable leak in your small business cash flow. When inventory hits zero and a customer is turned away, the financial damag"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Calculate the Cost of Stockouts: A Practical Guide for Small Businesses</h1>
+<p>Stockouts represent a direct, measurable leak in your small business cash flow. When inventory hits zero and a customer is turned away, the financial damage extends far beyond that single missed transaction. You absorb the sunk acquisition cost, face potential operational overhead like emergency shipping fees, and risk losing the customer permanently to a competitor. Understanding and calculating the true financial impact of stockouts requires a structured approach that accounts for lost immediate revenue, expedited replenishment costs, and the erosion of Customer Lifetime Value (CLV).</p>
+<p>In this guide, we will break down the mathematics of stockout costs and provide a ready-to-use Excel framework to quantify and prevent these losses.</p>
+<h2>The True Components of a Stockout Cost</h2>
+<p>Many small business owners calculate stockouts strictly by multiplying lost units by the selling price. This severely underestimates the actual financial drain. A comprehensive stockout cost formula accounts for four distinct variables:</p>
+<ol>
+<li><b>Direct Lost Revenue:</b> The immediate cash you fail to collect from the unfulfilled sale.</li>
+<li><b>Expedited Shipping and Restocking Fees:</b> The operational premium paid to rush replacement inventory from suppliers to correct the stockout.</li>
+<li><b>Customer Acquisition Cost (CAC) Waste:</b> The marketing and sales dollars spent to acquire a customer who left empty-handed.</li>
+<li><b>Customer Lifetime Value (CLV) Erosion:</b> The long-term recurring revenue lost when a frustrated buyer permanently switches to a rival brand.</li>
+</ol>
+<p>To capture this accurately, you must move beyond basic revenue tracking and integrate operational penalties into your calculation sheet.</p>
+<h2>The Comprehensive Stockout Cost Formula</h2>
+<p>To calculate the total financial drain of a stockout event, use the following operational formula:</p>
+<p>Total Stockout Cost = (Lost Units x Selling Price) + Expedited Shipping Penalty + (Acquisition Cost Waste) + (CLV Loss Factor)</p>
+<p>For example, if a boutique coffee roaster runs out of a top-selling bean:</p>
+<ul>
+<li><b>Lost Units:</b> 20 bags</li>
+<li><b>Selling Price:</b> 25 per bag</li>
+<li><b>Direct Lost Revenue:</b> 20 x25 = 500</li>
+<li><b>Expedited Freight Fee:</b>45 extra to air-ship inventory from the supplier</li>
+<li><b>CAC Waste:</b> 15 marketing spend per customer spread across the lost orders =300</li>
+<li><b>CLV Loss Factor:</b> Estimated future repeat orders lost from 3 permanent churned customers with an average lifetime value of 150 each =450</li>
+<li><b>Total Stockout Cost:</b> 500 +45 + 300 +450 = 1,295</li>
+</ul>
+<p>The actual cost is more than double the direct lost revenue.</p>
+<h2>Building a Stockout Tracking Log in Excel</h2>
+<p>To operationalize this in your business, create a dedicated 'Stockout Log' tab in your spreadsheet. Below is the exact structural framework and formulas you should implement.</p>
+<p>| Date | SKU / Item Name | Lost Sales Count | Selling Price () | Expedited Freight () | Lost CAC () | CLV Loss () | Total Stockout Cost () |</p>
+<p>| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |</p>
+<p>| 12/04 | Organic Bean 12oz | 20 | 25.00 | 45.00 | 300.00 | 450.00 | 1,295.00 |</p>
+<p>| 14/04 | Ceramic Mug | 8 | 15.00 | 15.00 | 120.00 | 90.00 | 245.00 |</p>
+<p>| 18/04 | Filter Papers 100pk | 35 | 8.00 | 20.00 | 105.00 | 0.00 | 185.00 |</p>
+<h3>Step-by-Step Excel Implementation</h3>
+<p>Open your spreadsheet and follow these exact syntax rules to automate your stockout loss calculations:</p>
+<ol>
+<li><b>Column A (Date):</b> Enter the date the stockout was identified.</li>
+<li><b>Column B (SKU / Item Name):</b> Enter the product identifier.</li>
+<li><b>Column C (Lost Sales Count):</b> Enter the number of customer inquiries or orders unfulfilled due to zero inventory. You can automate this from your daily sales inquiry log using: `=COUNTIFS(Inventory_Log!A2:A500, A2, Inventory_Log!D2:D500, "Out of Stock")`.</li>
+<li><b>Column D (Selling Price):</b> Enter the retail price per unit.</li>
+<li><b>Column E (Expedited Freight):</b> Enter any extra shipping charges incurred to source emergency stock.</li>
+<li><b>Column F (Lost CAC):</b> Calculate marketing waste by multiplying lost sales count by your average customer acquisition cost: `=(C2 * 15.00)` (assuming 15 CAC).</li>
+<li><b>Column G (CLV Loss):</b> Estimate long-term customer attrition cost using your historical churn rate multiplier: `=(C2 <i> 0.15 </i> 150)` (assuming 15% of lost buyers never return, with a150 CLV).</li>
+<li><b>Column H (Total Stockout Cost):</b> Sum all financial penalties into a single cell using the formula: `=(C2 * D2) + E2 + F2 + G2`.</li>
+</ol>
+<h2>Analyzing Inventory Turnover and Reorder Thresholds</h2>
+<p>Tracking the cost of stockouts highlights why reactive ordering fails. When you wait until shelves are empty, you trigger expensive emergency freight and permanent customer churn. The structural fix is establishing a mathematically sound <b>Reorder Point (ROP)</b>.</p>
+<p>Use this formula to set your trigger threshold before stock depletes:</p>
+<p>Reorder Point = (Average Daily Usage x Lead Time in Days) + Safety Stock</p>
+<p>For instance, if your cafe sells 10 bags of coffee per day, and your supplier takes 5 days to deliver, your base demand during lead time is 50 bags. If you maintain a safety stock buffer of 20 bags to absorb demand spikes, your ROP is 70 bags. When your inventory tracking sheet hits 70, a reorder must be placed immediately.</p>
+<h2>Moving from Manual Sheets to Automated Control</h2>
+<p>While maintaining an Excel stockout log exposes where cash is leaking, manual data entry across dozens of SKUs introduces human error and delayed reordering. Spreadsheets are exceptional for calculating holding costs, tracking cash flow, and auditing inventory losses, but relying entirely on manual cell updates means you may still miss subtle shifts in supplier lead times or velocity changes.</p>
+<p>This is precisely why growing small businesses transition from isolated manual spreadsheets to integrated operations toolkits. A structured framework like the <b>Small Business Toolkit</b> automates reorder point alerts, integrates inventory valuation formulas, and connects daily cash flow tracking with stock replenishment logs—ensuring you never lose another customer to an empty shelf.</p>
+<p>Stop guessing your inventory thresholds and absorbing hidden stockout penalties. Implement your tracking sheet today, establish rigid reorder triggers, and protect your hard-earned working capital.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

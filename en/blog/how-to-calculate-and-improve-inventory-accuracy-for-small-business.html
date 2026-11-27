@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate and Improve Inventory Accuracy for Small Business | Kumpanya Dijital</title><meta name="description" content="Inventory accuracy directly impacts your working capital. If your physical stock does not match your records, you face two hidden costs: stockouts that kil"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Calculate and Improve Inventory Accuracy for Small Business</h1>
+<p>Inventory accuracy directly impacts your working capital. If your physical stock does not match your records, you face two hidden costs: stockouts that kill your sales, and ghost inventory that ties up your cash in dead stock. A simple SKU match percentage is no longer enough; you need to track absolute unit errors and financial discrepancies to protect your bottom line.</p>
+<h2>Why SKU-Level Accuracy Is Not Enough</h2>
+<p>Traditional inventory metrics only look at whether a SKU matches or not. If your system says you have 10 units of Product A and you actually count 9, your binary system marks it as a failure. However, if your system says 100 units and you actually have 10, that is a massive operational failure disguised in the same metric.</p>
+<p>To capture the true health of your warehouse or stockroom, you must measure <b>Absolute Unit Error</b> and <b>Financial Discrepancy Cost</b>.</p>
+<h2>The Inventory Accuracy Formulas</h2>
+<h3>1. SKU Accuracy Rate (Basic)</h3>
+<p>Inventory Accuracy Percentage = (Number of SKUs with Correct Counts / Total Number of SKUs Counted) × 100</p>
+<h3>2. Absolute Quantity Error Rate (Advanced)</h3>
+<p>Absolute Error Percentage = (Sum of |System Quantity - Physical Count| / Total System Quantity) × 100</p>
+<p><b>Numerical Example:</b></p>
+<ul>
+<li>SKU 1: System = 50 units, Physical Count = 45 units (Absolute Error = 5)</li>
+<li>SKU 2: System = 10 units, Physical Count = 12 units (Absolute Error = 2)</li>
+<li>Total Absolute Error = 7 units. If total system stock across these items was 60 units, your absolute quantity error rate is (7 / 60) × 100 = 11.6%.</li>
+</ul>
+<h2>Setting Up Your Accuracy Tracking Sheet in Excel</h2>
+<p>Create a dynamic tracking sheet to automatically catch variances and calculate financial impacts. Set up your columns as follows:</p>
+<ul>
+<li>Column A: SKU / Item Name</li>
+<li>Column B: Unit Cost ()</li>
+<li>Column C: System Quantity</li>
+<li>Column D: Physical Count</li>
+<li>Column E: Absolute Variance (Formula: `=ABS(C2-D2)`)</li>
+<li>Column F: Financial Discrepancy () (Formula: `=E2*B2`)</li>
+<li>Column G: Status (Formula: `=IF(E2=0, "Match", "Mismatch")`)</li>
+</ul>
+<p>By tracking Column F, you immediately see which discrepancies are bleeding cash rather than just showing a counting mistake.</p>
+<h2>Implementing Cycle Counts and Knowing When to Automate</h2>
+<p>Instead of halting your business for an annual physical count, implement a rolling cycle count using ABC analysis:</p>
+<ol>
+<li><b>A-Items (Top 20% value):</b> Count every month.</li>
+<li><b>B-Items (Next 30% value):</b> Count every quarter.</li>
+<li><b>C-Items (Remaining 50% value):</b> Count semi-annually.</li>
+</ol>
+<p>While manual Excel spreadsheets work well up to 150-200 SKUs, managing high-frequency cycle counts, real-time reorder points, and automated variance tracking in native spreadsheets eventually hits a ceiling of human error. When your inventory turnover slows down due to manual reconciliation lag, transitioning to a structured operational framework like the <b>Small Business Toolkit</b> standardizes your formulas and safeguards your cash flow against hidden shrinkage.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

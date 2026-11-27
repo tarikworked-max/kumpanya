@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Manage Accounts Receivable Aging for Small Business | Kumpanya Dijital</title><meta name="description" content="Many small business owners fall into the 'profit trap.' You make a sale, issue an invoice, and record it as revenue. On paper, you are profitable. In reali"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Manage Accounts Receivable Aging for Small Business</h1>
+<h2>Understanding the Cash Gap: Why Your Invoices Are Not Cash in Hand</h2>
+<p>Many small business owners fall into the 'profit trap.' You make a sale, issue an invoice, and record it as revenue. On paper, you are profitable. In reality, your bank account is empty because your customer has not paid. This is where the Accounts Receivable (AR) Aging report becomes your most important financial tool. Without tracking how long your invoices have been outstanding, you are flying blind, unable to predict when your next cash inflow will actually occur.</p>
+<h2>What is an Accounts Receivable Aging Report?</h2>
+<p>An AR Aging report is a spreadsheet that categorizes your unpaid invoices based on the length of time they have been outstanding. Typically, these are broken down into buckets: 0-30 days, 31-60 days, 61-90 days, and 90+ days.</p>
+<p>By organizing your data this way, you stop looking at total debt and start looking at 'risk.' A 500 invoice that is 10 days overdue is a minor administrative oversight. A500 invoice that is 120 days overdue is a significant threat to your business liquidity.</p>
+<h2>Step-by-Step: Building Your Aging Tracker in Excel</h2>
+<p>To calculate your aging, you need a structured data set. Create an Excel sheet with these columns:</p>
+<ul>
+<li><b>Customer Name</b></li>
+<li><b>Invoice Date</b></li>
+<li><b>Due Date</b></li>
+<li><b>Invoice Amount</b></li>
+<li><b>Status (Paid/Unpaid)</b></li>
+<li><b>Days Outstanding</b> (Use formula: =TODAY() - [Invoice Date])</li>
+</ul>
+<p>Once you have your 'Days Outstanding', use the 'IF' function to sort them into your aging buckets:</p>
+<ul>
+<li><b>0-30 Days:</b> =IF([Days Outstanding]&lt;=30, [Invoice Amount], 0)</li>
+<li><b>31-60 Days:</b> =IF(AND([Days Outstanding]&gt;30, [Days Outstanding]&lt;=60), [Invoice Amount], 0)</li>
+<li><b>61-90 Days:</b> =IF(AND([Days Outstanding]&gt;60, [Days Outstanding]&lt;=90), [Invoice Amount], 0)</li>
+<li><b>90+ Days:</b> =IF([Days Outstanding]&gt;90, [Invoice Amount], 0)</li>
+</ul>
+<h2>Analyzing Your Risk: What the Numbers Tell You</h2>
+<p>Once your data is populated, look at the sum of each column. If your '90+ Days' column is growing, your credit policy is failing. You are essentially acting as a free bank for your customers.</p>
+<p><b>The Rule of Thumb:</b> If more than 15% of your total receivables are in the 60+ day category, you need to tighten your payment terms immediately. Stop offering credit to new customers until your current '90+ days' bucket is cleared.</p>
+<h2>Taking Action: From Data to Cash</h2>
+<ol>
+<li><b>Immediate Action (0-30 days):</b> Send a friendly payment reminder 3 days before the due date. Most people simply forget.</li>
+<li><b>Escalation (31-60 days):</b> Call the customer directly. Emails are easy to ignore; phone calls require an answer.</li>
+<li><b>Hard Stop (90+ days):</b> Cease all services or product shipments to this client. If they cannot pay what they owe, they are not a customer; they are a liability.</li>
+</ol>
+<p>By using this systematic approach, you replace emotional guessing with hard data. Our Small Business Toolkit includes pre-built templates that automate these aging calculations, allowing you to focus on selling rather than chasing invoices. [Get the Full Toolkit for $12]</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

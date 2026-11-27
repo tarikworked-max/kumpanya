@@ -1,0 +1,85 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Optimize Supplier Payment Terms: A Practical Guide for Small Business | Kumpanya Dijital</title><meta name="description" content="Most small business owners treat supplier invoices as a simple administrative task: receive the bill, pay it, move on. This approach ignores one of the mos"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Optimize Supplier Payment Terms: A Practical Guide for Small Business</h1>
+<p>Most small business owners treat supplier invoices as a simple administrative task: receive the bill, pay it, move on. This approach ignores one of the most powerful levers in cash flow management: your payment terms. By strategically negotiating and extending payment terms, you can free up cash that would otherwise sit idle in your accounts, potentially improving your working capital by 10-20% without taking on any debt.</p>
+<p>This guide moves beyond generic advice. It provides the exact formulas to calculate your Days Payable Outstanding (DPO), a concrete Excel structure to track your supplier terms, and a decision matrix to determine when extending terms is beneficial versus when it might harm your business relationships.</p>
+<h2>Understanding Your Current DPO: The Starting Point</h2>
+<p>Before you can optimize, you must know where you stand. Days Payable Outstanding (DPO) measures the average number of days it takes for your company to pay its suppliers. A higher DPO means you are holding onto your cash longer, which is generally better for cash flow, provided you are not damaging supplier relationships.</p>
+<p><b>The Formula:</b></p>
+<p>DPO = (Accounts Payable / Daily Cost of Goods Sold) * 365</p>
+<p><b>Where do the numbers come from?</b></p>
+<ol>
+<li><b>Accounts Payable (AP):</b> This is the total amount you owe to suppliers at a specific point in time. You can find this on your Balance Sheet under Current Liabilities. For a small business using a spreadsheet, this is the sum of all unpaid invoices in your "Supplier Ledger" tab.</li>
+</ol>
+<ul>
+<li><i>Source:</i> Sum of column "Unpaid Amount" in your Supplier Ledger.</li>
+</ul>
+<ol>
+<li><b>Daily Cost of Goods Sold (COGS):</b> This is your total COGS for the period divided by the number of days in that period. If you are looking at annual data, divide your annual COGS by 365. If you are looking at monthly data, divide your monthly COGS by 30.</li>
+</ol>
+<ul>
+<li><i>Source:</i> Total COGS from your Income Statement / 365 (for annual) or / 30 (for monthly).</li>
+</ul>
+<p><b>Example Calculation:</b></p>
+<ul>
+<li>Total Annual COGS: 120,000</li>
+<li>Daily COGS:120,000 / 365 = 328.77</li>
+<li>Current Accounts Payable Balance:15,000</li>
+<li>DPO = (15,000 /328.77) * 365 = <b>16.7 days</b></li>
+</ul>
+<p>This means you are paying your suppliers roughly every 17 days. If your industry standard is 30 days, you have room to negotiate.</p>
+<h2>The Excel Structure for Tracking Supplier Terms</h2>
+<p>You cannot optimize what you do not track. Create a dedicated "Supplier Terms" tab in your spreadsheet. Here is the exact structure to use:</p>
+<p>| Column A | Column B | Column C | Column D | Column E | Column F |</p>
+<p>| :--- | :--- | :--- | :--- | :--- | :--- |</p>
+<p>| Supplier Name | Invoice Date | Due Date | Payment Date | Days Taken | Early Pay Discount? |</p>
+<p>| Acme Corp | 01/01/2024 | 01/31/2024 | 01/25/2024 | 24 | No |</p>
+<p>| Beta Supplies | 01/05/2024 | 02/04/2024 | 02/01/2024 | 27 | Yes (2%) |</p>
+<p><b>How to Calculate "Days Taken":</b></p>
+<p>In cell `E2`, enter the formula: `=D2-B2`</p>
+<p>This simple calculation shows you how many days you actually take to pay each invoice. Over time, the average of this column becomes your real-world DPO, which is often more accurate than the balance sheet method because it accounts for individual invoice variations.</p>
+<p><b>Identifying Opportunities:</b></p>
+<p>Look for rows where `Days Taken` is significantly higher than the standard 30-day term. These are your candidates for negotiation. If you are consistently paying in 45 days but the terms say 30, you have already de facto extended your terms. Formalize this to avoid late fees.</p>
+<h2>When to Extend Terms and When Not To</h2>
+<p>Extending payment terms is not always a good idea. It becomes a risk when it damages supplier relationships or when the cost of lost early payment discounts outweighs the benefit of holding the cash.</p>
+<p><b>The Decision Matrix:</b></p>
+<ol>
+<li><b>Check for Early Payment Discounts:</b></li>
+</ol>
+<ul>
+<li>If a supplier offers "2/10 net 30" (2% discount if paid in 10 days, otherwise full amount in 30 days), calculate the annualized cost of <i>not</i> taking the discount.</li>
+<li>Formula: `(Discount % / (1 - Discount %)) * (365 / (Net Days - Discount Days))`</li>
+<li>Example: `(0.02 / (1 - 0.02)) <i> (365 / (30 - 10))` = `0.0204 </i> 18.25` = <b>37.2% annualized cost</b>.</li>
+<li>If your cost of borrowing (or opportunity cost of capital) is less than 37.2%, you should <b>take the discount</b> and pay early. Do not extend terms for this supplier.</li>
+</ul>
+<ol>
+<li><b>Assess Supplier Criticality:</b></li>
+</ol>
+<ul>
+<li>If a supplier is your only source for a critical component, extending their terms too far can jeopardize your supply chain. Keep DPO for critical suppliers within 10-15 days of their offered terms.</li>
+<li>For non-critical suppliers (e.g., office supplies, packaging), you can push terms to 45-60 days.</li>
+</ul>
+<ol>
+<li><b>Monitor Your Own Cash Flow:</b></li>
+</ol>
+<ul>
+<li>If your cash flow is positive and you have a surplus, paying early to build relationships may be worth it. If your cash flow is tight, prioritize extending terms for non-critical suppliers to preserve liquidity.</li>
+</ul>
+<h2>Implementing the Strategy: Step-by-Step</h2>
+<ol>
+<li><b>Calculate Your Current DPO</b> using the formula above. Aim to increase it by 5-10 days over the next 6 months.</li>
+<li><b>Identify Non-Critical Suppliers:</b> Use your Supplier Terms tab to flag suppliers who do not offer early payment discounts and are not critical to your production.</li>
+<li><b>Negotiate:</b> Contact these suppliers and request an extension of terms from 30 to 45 or 60 days. Frame it as a standard business practice, not a cash flow problem.</li>
+<li><b>Track the Impact:</b> Monitor your Accounts Payable balance and DPO monthly. If your DPO increases, you are successfully freeing up cash.</li>
+<li><b>Reinvest the Cash:</b> Use the freed-up cash to reduce inventory levels, pay down debt, or invest in marketing. Do not let it sit idle.</li>
+</ol>
+<p><b>Warning:</b> Do not extend terms to the point where you are consistently paying late. This can lead to late fees, loss of supplier goodwill, and even supply disruptions. Always aim to pay on or before the extended due date.</p>
+<p>By mastering supplier payment terms, you turn a passive liability into an active cash flow tool. Start by calculating your DPO today and identify one supplier you can negotiate with this week. The cash you free up can be the difference between struggling and thriving in a tight market.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

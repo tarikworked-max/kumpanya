@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate Safety Stock for Small Businesses | Kumpanya Dijital</title><meta name="description" content="Safety stock is the extra inventory you keep on hand to protect against uncertainty in demand or supply. Small businesses can use a simple formula to deter"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Calculate Safety Stock for Small Businesses</h1>
+<p>Safety stock is the extra inventory you keep on hand to protect against uncertainty in demand or supply. Small businesses can use a simple formula to determine the appropriate level of safety stock without relying on complex software.</p>
+<h2>1. Understand the Variables</h2>
+<ul>
+<li><b>Demand during lead time (DLT)</b>: Average units sold per day × average lead time in days.</li>
+<li><b>Standard deviation of demand (σD)</b>: Variation in daily sales.</li>
+<li><b>Standard deviation of lead time (σL)</b>: Variation in delivery time.</li>
+<li><b>Service level (SL)</b>: The probability that you will not run out of stock. Common SL values are 90 % (1.28), 95 % (1.65), and 99 % (2.33).</li>
+</ul>
+<h2>2. The Basic Formula</h2>
+<p>Safety Stock (SS) = Z × √[(σD² × L) + (D² × σL²)]</p>
+<p>Where:</p>
+<ul>
+<li><b>Z</b> = Standard normal deviate for the chosen service level.</li>
+<li><b>L</b> = Average lead time (days).</li>
+<li><b>D</b> = Average daily demand.</li>
+</ul>
+<h3>Example</h3>
+<p>| Item | Daily Demand (D) | Lead Time (L) | σD | σL | SL (90 %) |</p>
+<p>|------|------------------|---------------|----|----|-----------|</p>
+<p>| Coffee Beans | 50 | 7 | 5 | 1 | 1.28 |</p>
+<p>SS = 1.28 × √[(5² × 7) + (50² × 1²)]</p>
+<p>SS = 1.28 × √[(25 × 7) + (2500 × 1)]</p>
+<p>SS = 1.28 × √[175 + 2500]</p>
+<p>SS = 1.28 × √2675 ≈ 1.28 × 51.71 ≈ 66 units.</p>
+<p>So, keep an extra 66 units of coffee beans in stock to maintain a 90 % service level.</p>
+<h2>3. Step‑by‑Step Calculation in Excel</h2>
+<ol>
+<li><b>Collect data</b>: Record daily sales and delivery times for at least 3 months.</li>
+<li><b>Calculate averages</b>: Use `AVERAGE()` for D and L.</li>
+<li><b>Calculate standard deviations</b>: Use `STDEV.P()` for σD and σL.</li>
+<li><b>Choose service level</b>: Decide SL and look up Z in a standard normal table.</li>
+<li><b>Apply formula</b>: In a cell, type `=Z<i>SQRT((σD^2</i>L)+(D^2*σL^2))`.</li>
+<li><b>Round up</b>: Use `CEILING()` to avoid fractional units.</li>
+</ol>
+<h2>4. Practical Tips</h2>
+<ul>
+<li><b>Update regularly</b>: Recalculate every month to capture changes in demand patterns.</li>
+<li><b>Use safety stock for critical items only</b>: Items with high lead time variability or high customer impact.</li>
+<li><b>Combine with reorder point</b>: Safety stock + average demand during lead time = reorder point.</li>
+<li><b>Monitor service level</b>: Track stock‑out incidents; adjust SL if you consistently over‑ or under‑stock.</li>
+</ul>
+<h2>5. Common Mistakes to Avoid</h2>
+<ul>
+<li><b>Ignoring lead time variability</b>: Assuming a fixed delivery date can underestimate SS.</li>
+<li><b>Using sample standard deviation</b>: `STDEV.S()` underestimates variability for small samples.</li>
+<li><b>Choosing too low a service level</b>: Leads to frequent stock‑outs and lost sales.</li>
+</ul>
+<h2>6. Quick Reference Table</h2>
+<p>| SL | Z | Typical Use |</p>
+<p>|----|---|-------------|</p>
+<p>| 90 % | 1.28 | Start‑up, low risk |</p>
+<p>| 95 % | 1.65 | Most small businesses |</p>
+<p>| 99 % | 2.33 | High‑value or critical items |</p>
+<h2>7. Conclusion</h2>
+<p>By applying this straightforward formula, small businesses can keep inventory costs low while maintaining high customer satisfaction. Remember, the key is to balance the cost of holding extra stock against the cost of potential lost sales. Adjust the service level based on your business priorities and risk tolerance.</p>
+<p>---</p>
+<p><b>Next steps</b>: Incorporate this safety stock calculation into your existing inventory spreadsheet and link it to your reorder point formula. This integration will automate stock‑level alerts and help you maintain optimal inventory levels without manual calculations.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

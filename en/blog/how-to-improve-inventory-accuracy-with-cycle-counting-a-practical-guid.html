@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Improve Inventory Accuracy with Cycle Counting: A Practical Guide for Small Business | Kumpanya Dijital</title><meta name="description" content="Inventory accuracy is the backbone of a healthy cash flow. If your records say you have 50 items but your shelf is empty, you are not just losing stock; yo"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Improve Inventory Accuracy with Cycle Counting: A Practical Guide for Small Business</h1>
+<p>Inventory accuracy is the backbone of a healthy cash flow. If your records say you have 50 items but your shelf is empty, you are not just losing stock; you are losing money, missing sales, and frustrating customers. Many small businesses rely on annual physical counts, which are prone to human error and operational disruption. The solution is Cycle Counting.</p>
+<h2>Understanding Cycle Counting vs. Annual Inventory</h2>
+<p>Annual inventory is a snapshot taken once a year—it is often inaccurate by the time the report is generated. Cycle counting is a process of counting a small subset of your inventory on a rotating schedule. Instead of stopping your business for three days to count everything, you count a few items every day. This keeps your data fresh and allows you to catch discrepancies before they become financial losses.</p>
+<h2>The Excel Setup for Cycle Counting</h2>
+<p>To implement this, create a 'Cycle Count' tab in your inventory spreadsheet. You need three columns: 'SKU', 'Last Count Date', and 'Count Frequency'.</p>
+<ol>
+<li><b>Categorize your items:</b> Use ABC Analysis. Category A items are high-value/high-turnover, B are medium, and C are low-value/slow-moving.</li>
+<li><b>Set frequencies:</b> Count Category A items every 30 days, B every 90, and C every 180.</li>
+<li><b>The Formula:</b> Use the formula `=IF(TODAY()-B2&gt;C2, "COUNT NOW", "OK")` in a status column. This creates an automated alert for your daily tasks.</li>
+</ol>
+<h2>How to Perform the Audit</h2>
+<p>When your spreadsheet alerts you to 'COUNT NOW', follow these steps:</p>
+<ol>
+<li>Print the list for the specific SKU.</li>
+<li>Count the physical stock without looking at the system quantity first (to avoid bias).</li>
+<li>Compare the physical count to your system quantity. If they differ, investigate the cause (e.g., missed entry, theft, or damage).</li>
+<li>Update your system and record the adjustment in a 'Stock Adjustment Log' tab. This log is crucial for tracking shrinkage over time.</li>
+</ol>
+<h2>Calculating the Impact: Opportunity Cost of Inaccuracy</h2>
+<p>Every unit of discrepancy has a hidden cost. If you have a 100 item missing, that100 is 'dead capital' that cannot be used to buy new stock or cover operating expenses.</p>
+<ul>
+<li><b>Formula for Financial Impact:</b> `(System Quantity - Physical Quantity) * Unit Cost = Total Shrinkage Cost`</li>
+</ul>
+<p>By running this calculation weekly, you can see exactly how much cash flow you are leaking due to poor inventory controls. If your shrinkage exceeds 2% of your total inventory value, your current processes are failing. Use this Excel toolkit to monitor these variances and implement the 30-day review cycle for your most valuable items to stop the bleeding immediately.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

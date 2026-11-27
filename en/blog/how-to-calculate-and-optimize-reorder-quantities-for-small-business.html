@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate and Optimize Reorder Quantities for Small Business | Kumpanya Dijital</title><meta name="description" content="Inventory management is one of the most critical operational challenges for small business owners. When you order too much stock, you tie up valuable worki"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Calculate and Optimize Reorder Quantities for Small Business</h1>
+<p>Inventory management is one of the most critical operational challenges for small business owners. When you order too much stock, you tie up valuable working capital in stagnant goods that sit on shelves, accumulating storage costs and risking obsolescence. When you order too little, you face constant stockouts, unhappy customers, and lost revenue. To break this cycle, you need a precise mathematical approach to determine your exact Reorder Quantity (ROQ).</p>
+<p>Unlike large enterprises with automated ERP systems, small businesses often rely on guesswork or historical habit when placing purchase orders with suppliers. This manual approach inevitably leads to cash flow crunches. By implementing a standardized formula in Excel, you can take the emotion out of inventory control and ensure your capital works efficiently.</p>
+<h2>The Core Formula: Understanding Economic Order Quantity (EOQ) for Small Businesses</h2>
+<p>The foundation of optimal inventory ordering is the Economic Order Quantity (EOQ) model, adapted for small business operations. EOQ calculates the ideal order size that minimizes the total costs of inventory—specifically, the trade-off between holding costs and ordering costs.</p>
+<p>The standard formula is:</p>
+<p>EOQ = Square Root of ((2 <i> D </i> S) / H)</p>
+<p>Where:</p>
+<ul>
+<li>D = Annual demand quantity (units)</li>
+<li>S = Fixed cost per order (shipping, administrative, receiving costs)</li>
+<li>H = Annual holding cost per unit (storage, insurance, depreciation)</li>
+</ul>
+<p>Let's look at a practical example for a growing boutique retail shop in Austin, Texas. Suppose your annual demand (D) for your bestselling ceramic mug is 2,400 units. Your fixed cost to place and receive an order (S) is 50, regardless of the shipment size. Your annual holding cost per unit (H) is4.</p>
+<p>Step 1: Multiply 2 <i> 2,400 </i> 50 = 240,000.</p>
+<p>Step 2: Divide 240,000 by the holding cost of 4 = 60,000.</p>
+<p>Step 3: Calculate the square root of 60,000, which gives you approximately 245 units.</p>
+<p>Your optimal Reorder Quantity for this item is 245 units per order. Instead of ordering 500 units at once and draining your cash reserve, or ordering 50 units weekly and paying excessive shipping fees, 245 units strikes the exact mathematical balance.</p>
+<h2>Building Your Reorder Quantity Calculator in Excel</h2>
+<p>To automate this process without paying for expensive SaaS inventory tools, you can build a simple tracking sheet in Excel. Open a blank workbook and set up the following column headers across row 1:</p>
+<ul>
+<li>Column A: Product Name</li>
+<li>Column B: Annual Demand (Units)</li>
+<li>Column C: Order Cost ()</li>
+<li>Column D: Holding Cost per Unit ()</li>
+<li>Column E: Calculated EOQ (Units)</li>
+</ul>
+<p>To calculate the EOQ automatically in cell E2, enter the following formula:</p>
+<p>=SQRT((2 <i> B2 </i> C2) / D2)</p>
+<p>If the result in cell E2 returns a decimal, wrap the formula in an INT function to round down to whole units:</p>
+<p>=INT(SQRT((2 <i> B2 </i> C2) / D2))</p>
+<h2>Accounting for Lead Time and Safety Stock</h2>
+<p>While EOQ tells you <i>how much</i> to order, it does not tell you <i>when</i> to place the order. For that, you must integrate your Reorder Point (ROP) formula with your supplier lead time.</p>
+<p>The ROP formula is:</p>
+<p>ROP = (Average Daily Usage * Lead Time in Days) + Safety Stock</p>
+<p>Imagine your ceramic mug sells at an average rate of 10 units per day (D). Your supplier in Chicago takes 7 days to deliver a shipment (Lead Time). To protect against unexpected shipping delays or sudden demand spikes, you maintain a safety stock buffer of 20 units.</p>
+<p>Calculation:</p>
+<p>ROP = (10 units/day * 7 days) + 20 units safety stock = 90 units.</p>
+<p>When your inventory tracker in Excel shows that your stock level has dropped to 90 units, it is time to trigger a purchase order for exactly 245 units (your EOQ).</p>
+<h2>Common Pitfalls and Hidden Risks in Inventory Ordering</h2>
+<p>Many small business owners make critical mistakes when calculating reorder quantities. Recognizing these traps will protect your cash flow:</p>
+<ol>
+<li>Ignoring Volume Discounts vs. Holding Costs: Sometimes suppliers offer a massive discount if you buy 1,000 units instead of 245. However, if your annual holding cost exceeds the discount savings, buying in bulk actually destroys your net profit. Always calculate the total landed cost.</li>
+<li>Failing to Update Seasonal Demand: If your annual demand (D) is based on a static historical average, you will over-order during slow months. Recalculate your demand figures quarterly, especially if you operate in retail, e-commerce, or hospitality.</li>
+<li>Zero Stock Reference Errors: In Excel, if your holding cost cell (Column D) is accidentally left blank or set to zero, your formula will return a #DIV/0! error. To prevent this, wrap your formula in an IFERROR statement:</li>
+</ol>
+<p>=IFERROR(INT(SQRT((2 <i> B2 </i> C2) / D2)), "Check Holding Cost")</p>
+<h2>Action Plan: Stop Guessing and Standardize Your Orders</h2>
+<p>Inventory mismanagement is silent profit erosion. By replacing intuition with exact calculations for your reorder quantities, you free up trapped cash, eliminate stockouts, and protect your operating margins.</p>
+<p>If you want to skip manual formula building and deploy a fully integrated, error-checked financial control system immediately, download our Small Business Toolkit (12). It includes pre-built Excel and Google Sheets templates designed specifically to automate inventory valuation, reorder alerts, and cash flow forecasting for growing businesses.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

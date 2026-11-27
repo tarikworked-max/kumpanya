@@ -1,0 +1,42 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate and Track Supplier On-Time Delivery Performance | Kumpanya Dijital</title><meta name="description" content="For small businesses, supplier delays are not just a nuisance; they are a direct hit to your cash flow. Relying on gut feeling leads to excessive safety st"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Calculate and Track Supplier On-Time Delivery Performance</h1>
+<p>For small businesses, supplier delays are not just a nuisance; they are a direct hit to your cash flow. Relying on gut feeling leads to excessive safety stock and lost sales. This guide provides an Excel system to quantify On-Time Delivery (OTD) and transform it into a decision-making tool.</p>
+<h2>The Financial Impact: Beyond Late Shipments</h2>
+<p>Every day a shipment is late, your Cash Conversion Cycle (CCC) extends. If a supplier promises a 14-day lead time but delivers in 20, you are forced to hold higher safety stock, which increases your 'Inventory Carrying Cost' (typically 20-30% of inventory value annually). By tracking OTD, you identify exactly how much working capital is tied up due to unreliable partners.</p>
+<h2>Setting Up Your OTD Tracking Spreadsheet</h2>
+<p>Create an Excel sheet with these columns:</p>
+<ul>
+<li>A: Supplier Name</li>
+<li>B: Order Date</li>
+<li>C: Promised Delivery Date</li>
+<li>D: Actual Delivery Date</li>
+<li>E: Days Late (Formula: =MAX(0, D2-C2))</li>
+<li>F: On-Time Status (Formula: =IF(E2=0, "Yes", "No"))</li>
+</ul>
+<p>Use the MAX function to ensure early deliveries aren't penalized. For the 'On-Time Status', if your industry allows a 24-hour grace period, use: =IF(D2-C2 &lt;= 1, "Yes", "No").</p>
+<h2>Building an OTD Dashboard with Pivot Tables</h2>
+<p>To visualize performance, highlight your data and insert a 'Pivot Table'.</p>
+<ol>
+<li>Drag 'Supplier Name' to 'Rows'.</li>
+<li>Drag 'On-Time Status' to 'Columns'.</li>
+<li>Drag 'Order Date' to 'Values' (set to 'Count').</li>
+</ol>
+<p>This creates an instant breakdown of on-time vs. late orders per supplier. Use the 'Slicer' feature in Excel to filter by month or specific vendor to spot trends.</p>
+<h2>Advanced KPI Tracking: The COUNTIFS Method</h2>
+<p>To build an automated dashboard, create a summary table where cell G2 is the Supplier Name. Use this formula to calculate their specific OTD rate:</p>
+<p>=COUNTIFS(A:A, G2, F:F, "Yes") / COUNTIF(A:A, G2)</p>
+<p>This formula dynamically updates as you add new rows, allowing you to monitor suppliers in real-time.</p>
+<h2>From Data to Action: The Performance Review</h2>
+<p>Don't just store this data; use it to negotiate. When a supplier's OTD drops below 85%, send a 'Quarterly Performance Report'.</p>
+<p><b>Sample Communication Template:</b></p>
+<p>"Dear [Supplier], our records indicate an OTD rate of [X]% for Q3. This delay has increased our safety stock requirements and carrying costs by [Y]%. We require a corrective action plan to return to our 95% service level agreement (SLA) by [Date]."</p>
+<p>By documenting these metrics, you shift from reactive firefighting to a data-driven supply chain strategy, ensuring your cash remains in your pocket rather than in stagnant, delayed inventory.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

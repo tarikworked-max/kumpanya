@@ -1,0 +1,50 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Implement Cycle Counting for Small Business: A Practical Guide | Kumpanya Dijital</title><meta name="description" content="Inventory inaccuracies lead to phantom stock outs and tied-up capital. Instead of disruptive annual audits, implement a dynamic cycle counting system to ma"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Implement Cycle Counting for Small Business: A Practical Guide</h1>
+<p>Inventory inaccuracies lead to phantom stock outs and tied-up capital. Instead of disruptive annual audits, implement a dynamic cycle counting system to maintain 99%+ accuracy using a structured Excel tracker.</p>
+<h2>Why Cycle Counting Beats Annual Audits</h2>
+<p>Annual counts are prone to fatigue and operational downtime. Cycle counting spreads the workload, ensuring high-value items are audited more frequently. By identifying discrepancies in real-time, you prevent the 'profit erosion' caused by accumulated shrinkage.</p>
+<h2>Structuring Your ABC Inventory Analysis</h2>
+<p>Not all items are equal. To prioritize your counts, segment your inventory:</p>
+<ul>
+<li><b>A-Items (High Value/Impact):</b> Top 20% of items contributing to 80% of your annual revenue or profit. Count these weekly.</li>
+<li><b>B-Items (Medium):</b> Next 30% of items. Count these monthly.</li>
+<li><b>C-Items (Low Value):</b> Remaining 50% of items. Count these quarterly.</li>
+</ul>
+<p><i>Note: Always prioritize by 'Value' (Cost × Quantity) rather than just 'Volume' (Sales Frequency). A low-volume luxury item is an A-item; a high-volume, cheap accessory is a C-item.</i></p>
+<h2>Setting Up Your Excel Cycle Count Tracker</h2>
+<p>Do not use the `TODAY()` function, as it updates automatically and hides your historical scheduling. Instead, use a manual 'Last Count Date' column and a 'Next Count Date' column.</p>
+<p><b>Excel Workflow:</b></p>
+<ol>
+<li><b>Columns:</b> SKU, Item Name, Category (A/B/C), Last Count Date, Next Count Date, System Quantity, Actual Quantity, Variance.</li>
+<li><b>Scheduling Formula:</b> In the 'Next Count Date' column, manually enter the date. To create a visual alert, use <b>Conditional Formatting</b> on the 'Next Count Date' column: `=AND(B2&lt;=TODAY(), B2&lt;&gt;"")`. Set the cell color to red if the date has passed.</li>
+<li><b>Variance Formula:</b> `=Actual_Quantity - System_Quantity`. If the value is not zero, trigger an investigation.</li>
+</ol>
+<h2>The 1000 SKU Execution Plan</h2>
+<p>If you have 1,000 SKUs, do not try to count them all at once.</p>
+<ul>
+<li><b>A-Items (200 SKUs):</b> Count 40 items every Monday (5-day cycle).</li>
+<li><b>B-Items (300 SKUs):</b> Count 75 items once a month.</li>
+<li><b>C-Items (500 SKUs):</b> Count 125 items per month (quarterly cycle).</li>
+</ul>
+<p>Total daily commitment: Approximately 15-20 minutes of scanning/counting. Use a smartphone camera as a barcode scanner via mobile spreadsheet apps to speed up input.</p>
+<h2>Root Cause Analysis: Beyond the Numbers</h2>
+<p>When `Actual &lt; System`:</p>
+<ul>
+<li><b>Check Processing Time:</b> Was the sale recorded in the POS but the inventory deduction failed?</li>
+<li><b>Unit of Measure Error:</b> Did you count 'individual items' while the system tracks 'cases'?</li>
+<li><b>Theft/Damages:</b> If variance is persistent, verify if physical security or shelf-life management (obsolescence) is the culprit.</li>
+</ul>
+<h2>Operational Efficiency</h2>
+<ul>
+<li><b>Rotate Responsibility:</b> If you have staff, have a different person perform the count than the one who manages the stock to ensure neutral oversight.</li>
+<li><b>Dashboard Integration:</b> Our Small Business Toolkit provides an automated 'Inventory Variance Dashboard'. Instead of manual tracking, it flags discrepancies in red the moment you input your physical count, allowing you to focus immediately on high-value loss items rather than hunting for errors across 1,000 SKUs.</li>
+</ul>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

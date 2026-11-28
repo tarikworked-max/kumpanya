@@ -1,0 +1,80 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate and Optimize Backorder Rate and Cost for Small Business | Kumpanya Dijital</title><meta name="description" content="Managing stockouts is one of the most critical challenges for small business owners. When a customer wants to buy a product but it is out of stock, it lead"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Calculate and Optimize Backorder Rate and Cost for Small Business</h1>
+<p>Managing stockouts is one of the most critical challenges for small business owners. When a customer wants to buy a product but it is out of stock, it leads to a backorder, lost revenue, and damaged customer trust. To protect your profit margins and maintain high customer satisfaction, you must track, calculate, and systematically reduce your backorder rate and associated costs.</p>
+<p>In this practical guide, we will break down the exact formulas, Excel spreadsheet structures, and step-by-step methods to calculate backorder rates, measure the true financial impact, and optimize your inventory replenishment strategy.</p>
+<h2>Understanding Backorders vs. Stockouts</h2>
+<p>A <b>stockout</b> occurs when an item is completely unavailable to sell. A <b>backorder</b> occurs when a customer places an order for an out-of-stock item, and you fulfill it later once new inventory arrives. While backorders are better than completely lost sales because you retain the revenue, they incur hidden operational costs:</p>
+<ul>
+<li>Expedited shipping fees to receive stock faster.</li>
+<li>Administrative costs for managing delayed orders.</li>
+<li>Customer service overhead for handling inquiries and complaints.</li>
+<li>Risk of permanent customer churn.</li>
+</ul>
+<p>To measure this accurately, let us set up a practical tracking model in Excel.</p>
+<h2>Setting Up Your Backorder Tracking Spreadsheet in Excel</h2>
+<p>Open a new Excel worksheet and set up the following column headers from row 1:</p>
+<ul>
+<li><b>Column A</b>: SKU ID (`SKU-1001`)</li>
+<li><b>Column B</b>: Product Name (`Ergonomic Desk Chair`)</li>
+<li><b>Column C</b>: Total Customer Orders (`Total_Orders`)</li>
+<li><b>Column D</b>: Orders Fulfilled on Time (`On_Time_Orders`)</li>
+<li><b>Column E</b>: Backordered Orders (`Backordered_Orders`)</li>
+<li><b>Column F</b>: Average Backorder Fulfillment Days (`Lead_Time_Days`)</li>
+<li><b>Column G</b>: Expedited Shipping Cost per Unit (`Expedited_Cost`)</li>
+<li><b>Column H</b>: Lost Margin per Backorder (`Lost_Margin`)</li>
+</ul>
+<h3>Practical Numerical Example</h3>
+<p>Assume you manage an online furniture store. For SKU-1001 during the month of October:</p>
+<ul>
+<li>Total Customer Orders (`C2`): `500`</li>
+<li>Orders Fulfilled on Time (`D2`): `450`</li>
+<li>Backordered Orders (`E2`): `50`</li>
+<li>Average Backorder Fulfillment Days (`F2`): `12`</li>
+<li>Expedited Shipping Cost per Unit (`G2`): `15.00`</li>
+<li>Lost Margin per Backorder (`H2`): `8.00` (due to discounts offered for the delay)</li>
+</ul>
+<h2>Step 1: Calculating the Backorder Rate</h2>
+<p>The <b>Backorder Rate</b> measures the percentage of customer orders that could not be fulfilled immediately from current inventory.</p>
+<p>Formula:</p>
+<p>Backorder Rate = (Backordered Orders / Total Customer Orders) × 100</p>
+<p>In Excel, enter this formula into Cell `I2`:</p>
+<p>```excel</p>
+<p>=(E2/C2)*100</p>
+<p>```</p>
+<p>Calculation for our example:</p>
+<p>`(50 / 500) * 100 = 10%`</p>
+<p>A backorder rate above 5% typically signals a structural flaw in your reorder point calculation or supplier reliability.</p>
+<h2>Step 2: Calculating Total Backorder Financial Cost</h2>
+<p>The true cost of backorders includes both direct expenses (like expedited shipping) and indirect costs (like customer goodwill loss and delayed cash flow).</p>
+<p>Formula:</p>
+<p>Total Backorder Cost = (Backordered Orders × Expedited Cost) + (Backordered Orders × Lost Margin)</p>
+<p>In Excel, enter this formula into Cell `J2`:</p>
+<p>```excel</p>
+<p>=(E2<i>G2)+(E2</i>H2)</p>
+<p>```</p>
+<p>Calculation for our example:</p>
+<p>`=(50 <i> 15) + (50 </i> 8) = 750 + 400 = 1,150.00`</p>
+<p>Your business lost1,150 on a single SKU in one month solely due to backorders.</p>
+<h2>Step 3: Optimizing Inventory and Reducing Backorders</h2>
+<p>To drive your backorder rate down toward zero, implement these three operational rules:</p>
+<ol>
+<li><b>Dynamic Reorder Point (ROP)</b>: Never wait until stock hits zero to reorder. Calculate your ROP using daily demand and lead time:</li>
+</ol>
+<p>`ROP = (Average Daily Usage × Supplier Lead Time in Days) + Safety Stock`</p>
+<ol>
+<li><b>Buffer Stock Maintenance</b>: Keep an extra 10% to 15% safety stock for fast-moving items during peak seasonal demand.</li>
+<li><b>Vendor Accountability</b>: Track supplier delay rates closely. If a vendor consistently pushes lead times past the agreed window, renegotiate terms or diversify your supplier base.</li>
+</ol>
+<h2>Streamlining Your Operations with the Small Business Toolkit</h2>
+<p>Manually tracking backorder rates, carrying costs, and reorder points in isolated spreadsheets can lead to data fragmentation. To fully automate your inventory management, cash flow forecasting, and profit tracking, small business owners use integrated spreadsheet systems.</p>
+<p>Our <b>Small Business Toolkit (Excel + Google Sheets)</b> includes pre-built automated calculators for backorder tracking, economic order quantity (EOQ), safety stock, and rolling cash flow forecasting. It is designed to save hours of manual bookkeeping and protect your profit margins.</p>
+<p>[Explore the Small Business Toolkit ($12) and take full control of your inventory today.]</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

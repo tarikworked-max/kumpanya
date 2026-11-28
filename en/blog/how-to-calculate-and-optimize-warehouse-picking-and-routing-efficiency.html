@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate and Optimize Warehouse Picking and Routing Efficiency for Small Business | Kumpanya Dijital</title><meta name="description" content="For small business owners managing an e-commerce warehouse or a physical retail stockroom, labor costs associated with order fulfillment can quietly erode "><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Calculate and Optimize Warehouse Picking and Routing Efficiency for Small Business</h1>
+<p>For small business owners managing an e-commerce warehouse or a physical retail stockroom, labor costs associated with order fulfillment can quietly erode profit margins. When employees spend excessive time walking between aisles to pick items for customer orders, labor efficiency drops, and fulfillment times increase. Optimizing warehouse picking routes and measuring labor productivity using structured spreadsheets is essential for scaling operations profitably without adding unnecessary headcount.</p>
+<p>In this practical guide, we will break down the exact metrics, Excel formulas, and step-by-step spreadsheet structures you need to calculate warehouse picking efficiency, reduce travel time, and integrate these operational improvements directly into your financial workflow.</p>
+<p>---</p>
+<h2>1. Understanding Picking Efficiency and Travel Time Costs</h2>
+<p>Order picking typically accounts for up to 50% of total warehouse operating costs. If your picking layout is disorganized, workers waste valuable time navigating redundant paths. To measure and optimize this process, you must track three primary variables: total orders processed, total items picked, and total active picking time.</p>
+<p>By organizing your warehouse data into a structured Excel sheet, you can instantly identify bottlenecks and evaluate whether your current layout supports fast order fulfillment.</p>
+<h3>Excel Column Setup for Picking Log</h3>
+<p>Create a new worksheet named `Picking_Log` with the following column structure:</p>
+<ul>
+<li><b>Column A:</b> `Order_ID` (e.g., ORD-1001)</li>
+<li><b>Column B:</b> `Total_Items` (Number of units in the order)</li>
+<li><b>Column C:</b> `Picking_Time_Min` (Total time spent picking in minutes)</li>
+<li><b>Column D:</b> `Travel_Distance_Meters` (Estimated walking distance in meters)</li>
+<li><b>Column E:</b> `Labor_Rate_Per_Hour` (Hourly wage of warehouse staff)</li>
+</ul>
+<p>---</p>
+<h2>2. Step-by-Step Excel Formulas for Picking Cost and Speed</h2>
+<p>To evaluate picking performance, you need to calculate the cost per item picked and the average picking speed (items per minute). Let's implement these formulas in your tracking sheet.</p>
+<h3>Calculating Cost Per Item Picked</h3>
+<p>Add <b>Column F</b> (`Cost_Per_Item`) to calculate the labor expense incurred to pick each individual unit within an order.</p>
+<p>In cell `F2`, enter the following formula:</p>
+<p>`=(C2/60) * E2 / B2`</p>
+<ul>
+<li><b>Formula Breakdown:</b> `(C2/60)` converts picking minutes into hours. Multiplying by `E2` gives the total labor cost for that order. Dividing by `B2` yields the exact labor cost per item.</li>
+</ul>
+<h3>Calculating Picking Velocity (Items Per Minute)</h3>
+<p>Add <b>Column G</b> (`Picking_Velocity`) to measure how many units your staff picks per minute.</p>
+<p>In cell `G2`, enter the following formula:</p>
+<p>`=B2 / C2`</p>
+<ul>
+<li><b>Formula Breakdown:</b> Higher values indicate faster order fulfillment and better routing efficiency.</li>
+</ul>
+<p>---</p>
+<h2>3. Practical Numerical Example: Evaluating Picking Performance</h2>
+<p>Let's run a realistic scenario for a growing small business shipping 50 orders a day.</p>
+<ul>
+<li><b>Order ID:</b> ORD-1001</li>
+<li><b>Total Items (B2):</b> 10 units</li>
+<li><b>Picking Time (C2):</b> 15 minutes</li>
+<li><b>Travel Distance (D2):</b> 120 meters</li>
+<li><b>Labor Rate (E2):</b> 18.00 per hour</li>
+</ul>
+<p>Applying our formulas:</p>
+<ol>
+<li><b>Total Labor Cost:</b> `(15 / 60) * 18.00 =4.50`</li>
+<li><b>Cost Per Item (F2):</b> `4.50 / 10 =0.45 per item`</li>
+<li><b>Picking Velocity (G2):</b> `10 / 15 = 0.67 items per minute`</li>
+</ol>
+<p>If your average cost per item exceeds your target threshold (e.g., 0.30 per item), it signals that your warehouse layout or picking path requires reorganization.</p>
+<p>---</p>
+<h2>4. Implementing Zone-Based Routing to Slash Labor Costs</h2>
+<p>To reduce travel distance (`D2`), implement a zone-based picking strategy or reorganise your fastest-moving inventory (A-items) closer to the packing station. By cutting travel distance by 40%, you directly reduce `Picking_Time_Min`, driving down fulfillment costs and protecting your profit margins.</p>
+<p>For businesses looking to automate these calculations without manual spreadsheet maintenance, our <b>Small Business Toolkit (12)</b> includes pre-built, plug-and-play Excel templates designed specifically to track inventory turnover, labor efficiency, and fulfillment costs instantly.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate and Manage Inventory Reorder Point Variability | Kumpanya Dijital</title><meta name="description" content="Inventory reorder point (ROP) is not a static number; it is a dynamic threshold that must adapt to lead time variability and demand fluctuations. If your R"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Calculate and Manage Inventory Reorder Point Variability</h1>
+<p>Inventory reorder point (ROP) is not a static number; it is a dynamic threshold that must adapt to lead time variability and demand fluctuations. If your ROP is fixed, you are either overstocking (tying up cash) or stockout-prone (losing sales). This guide shows you how to calculate a variable ROP using Excel based on statistical methods.</p>
+<h2>The Anatomy of a Dynamic Reorder Point</h2>
+<p>Your Reorder Point formula should be: ROP = (Average Daily Usage * Average Lead Time) + Safety Stock. The 'Safety Stock' component is where most small businesses fail. Instead of using arbitrary max-min guesses, you must account for the standard deviation of both lead time and demand using a 30-day dataset. In Excel, use the STDEV.S function to measure this variability accurately.</p>
+<h2>Step-by-Step Excel Implementation for 30-Day Data</h2>
+<ol>
+<li><b>Data Setup</b>: In column A (rows 2 to 31), list your daily sales volume for the last 30 days. In column B (rows 2 to 31), list your corresponding lead times in days for each replenishment cycle over the period.</li>
+<li><b>Calculate Variability</b>: In cell C2, use `=AVERAGE(A2:A31)` to find Average Daily Demand. In cell C3, use `=STDEV.S(A2:A31)` to find Demand Standard Deviation. In cell C4, use `=AVERAGE(B2:B31)` to find Average Lead Time. In cell C5, use `=STDEV.S(B2:B31)` to find Lead Time Standard Deviation.</li>
+<li><b>Safety Stock Formula</b>: Assuming a 95% service level corresponding to a Z-score of 1.65, calculate your safety stock in cell C6 using the statistical formula: `=1.65 <i> SQRT((C4 </i> (C3^2)) + ((C2^2) * (C5^2)))`. This formula rigorously captures the combined uncertainty of demand and supplier delivery times.</li>
+<li><b>Final ROP</b>: In cell C7, input your dynamic Reorder Point: `=(C2 * C4) + C6`.</li>
+</ol>
+<h2>Why Fixed ROPs Cause Cash Flow Leaks</h2>
+<p>A fixed ROP ignores the 'bullwhip effect'—where small changes in consumer demand cause massive amplification in inventory requirements upstream, with studies showing supply chain variance distortions reaching up to 18% in small retail environments. If your ROP is based on outdated averages, you are likely carrying excess inventory. By updating your ROP monthly using this Excel structure, you convert stagnant stock into liquid cash.</p>
+<h2>Operational Action: Immediate Inventory Audit</h2>
+<p>Do not wait for the end of the quarter. Take your top 5 selling SKUs and apply the 30-day formula above. If your current stock levels are 30% higher than the calculated ROP, you have identified immediate cash that can be freed up. Use our Small Business Toolkit to automate these calculations and integrate them directly into your purchase order workflow, saving you hours of manual reconciliation every week.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

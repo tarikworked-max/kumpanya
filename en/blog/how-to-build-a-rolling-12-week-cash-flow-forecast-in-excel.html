@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Build a Rolling 12-Week Cash Flow Forecast in Excel | Kumpanya Dijital</title><meta name="description" content="For small business owners, cash flow is the heartbeat of operations. A rolling 12-week cash flow forecast allows you to anticipate shortfalls before they b"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Build a Rolling 12-Week Cash Flow Forecast in Excel</h1>
+<p>For small business owners, cash flow is the heartbeat of operations. A rolling 12-week cash flow forecast allows you to anticipate shortfalls before they become crises. This guide provides the exact Excel structure to track your liquidity.</p>
+<h2>The Anatomy of a 12-Week Cash Flow Forecast</h2>
+<p>To build this, you need three core data sources: Accounts Receivable (AR) aging, Accounts Payable (AP) schedules, and fixed operational expenses. In your Excel sheet, create columns for each of the next 12 weeks.</p>
+<ul>
+<li>Row 1: Opening Balance</li>
+<li>Row 2: Expected Cash Inflow</li>
+<li>Row 3: Expected Cash Outflow</li>
+<li>Row 4: Net Cash Flow (Row 2 - Row 3)</li>
+<li>Row 5: Closing Balance (Row 1 + Row 4)</li>
+</ul>
+<h3>Setting Up Your Rolling Logic</h3>
+<p>To ensure your forecast remains actionable, use the following formulas:</p>
+<ul>
+<li><b>Net Cash Flow (Cell C4):</b> `=C2-C3`</li>
+<li><b>Closing Balance (Cell C5):</b> `=B5+C4`</li>
+</ul>
+<p>By linking the Closing Balance of the previous week (B5) to the current week's opening, you create a seamless rolling forecast. This structure is vital for identifying 'cash gaps' where outgoing payments exceed incoming receipts.</p>
+<h2>Understanding the Cash Gap</h2>
+<p>Your 'Cash Gap' indicates how long your cash is tied up in the operating cycle.</p>
+<p><b>The Formula:</b> `Cash Gap = DSO + DIO - DPO`</p>
+<ul>
+<li><b>DSO (Days Sales Outstanding):</b> Average time to collect payments (e.g., 45 days).</li>
+<li><b>DIO (Days Inventory Outstanding):</b> Average time to sell inventory (e.g., 30 days).</li>
+<li><b>DPO (Days Payable Outstanding):</b> Average time you take to pay suppliers (e.g., 20 days).</li>
+</ul>
+<p><b>Example:</b> 45 (DSO) + 30 (DIO) - 20 (DPO) = <b>55 days</b>. You need to finance 55 days of operations with your own capital. A high number here is a red flag for liquidity risk.</p>
+<h2>Why This Approach Beats SaaS Tools</h2>
+<p>Many businesses pay high monthly fees for automated SaaS tools that lack the flexibility to handle specific supplier terms or seasonal spikes. Excel offers full control at zero cost.</p>
+<p>| Feature | SaaS Subscription | Excel Toolkit |</p>
+<p>| :--- | :--- | :--- |</p>
+<p>| Monthly Cost | 50 -200 | $0 |</p>
+<p>| Customization | Limited/Rigid | Fully Editable |</p>
+<p>| Data Ownership | Cloud-locked | Local/Portable |</p>
+<p>| 'What-If' Analysis | Often restricted | Unlimited |</p>
+<h2>Risk Mitigation and Optimization</h2>
+<p>To optimize working capital, use an Excel 'IF' statement in your AP tracking to prioritize payments:</p>
+<p>`=IF(C10&lt;30, "Pay Early for Discount", "Pay on Due Date")`</p>
+<p>By performing 'What-If' analyses—such as assuming an 80% collection rate instead of 100%—you can stress-test your 12-week runway. This level of granular control is the hallmark of effective financial risk management for small businesses.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

@@ -1,0 +1,128 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate Fill Rate and Order Fulfillment Efficiency for Small Business | Kumpanya Dijital</title><meta name="description" content="For a growing small business, accepting customer orders is only half the battle. The true measure of operational success lies in your ability to ship those"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Calculate Fill Rate and Order Fulfillment Efficiency for Small Business</h1>
+<p>For a growing small business, accepting customer orders is only half the battle. The true measure of operational success lies in your ability to ship those orders completely, accurately, and on time. When a customer orders 10 units of an item and you only ship 7 due to stockouts, you suffer an immediate loss of revenue and risk long-term customer churn.</p>
+<p>Fill Rate measures the percentage of customer demand that is satisfied immediately from available inventory without backordering or lost sales. Tracking this metric helps small business owners identify inventory bottlenecks, prevent stockouts, and optimize cash flow.</p>
+<p>In this practical guide, we will break down how to calculate different types of Fill Rate, set up automated formulas in Excel or Google Sheets, and implement actionable strategies to boost your order fulfillment rate.</p>
+<p>---</p>
+<h2>1. Understanding the Key Fulfillment Metrics: Item, Line, and Order Fill Rates</h2>
+<p>Not all fill rates measure the same operational performance. To gain a clear picture of your stock availability and warehouse efficiency, you must distinguish between three primary levels of calculation:</p>
+<h3>A. Item Fill Rate (SKU Level)</h3>
+<p>This measures the percentage of total individual units requested that are actually shipped.</p>
+<ul>
+<li><b>Formula:</b> Item Fill Rate = (Total Units Shipped / Total Units Ordered) * 100</li>
+<li><b>Example:</b> A wholesale client orders 500 custom candles. You have enough stock to ship 450 units immediately.</li>
+<li>Item Fill Rate = (450 / 500) * 100 = 90%</li>
+</ul>
+<h3>B. Order Line Fill Rate</h3>
+<p>This measures the percentage of order lines (distinct items or SKUs on an invoice) fulfilled in full compared to total lines ordered.</p>
+<ul>
+<li><b>Formula:</b> Line Fill Rate = (Number of Fully Shipped Lines / Total Lines Ordered) * 100</li>
+<li><b>Example:</b> An invoice contains 5 different SKUs. You ship 4 of those SKUs in full, but 1 SKU is partially backordered.</li>
+<li>Line Fill Rate = (4 / 5) * 100 = 80%</li>
+</ul>
+<h3>C. Total Order Fill Rate (Perfect Order Rate)</h3>
+<p>This measures the percentage of entire customer orders fulfilled completely without any missing items or backorders.</p>
+<ul>
+<li><b>Formula:</b> Order Fill Rate = (Entirely Completed Orders / Total Orders Placed) * 100</li>
+<li><b>Example:</b> Out of 50 customer orders received this week, 42 were shipped completely intact, while 8 had at least one backordered item.</li>
+<li>Order Fill Rate = (42 / 50) * 100 = 84%</li>
+</ul>
+<p>---</p>
+<h2>2. Step-by-Step Excel Setup to Track Order Fill Rates</h2>
+<p>Tracking fill rate manually leads to human error. By structuring a simple Excel spreadsheet, you can automate these metrics across daily order logs.</p>
+<h3>Step 1: Set Up Your Data Columns</h3>
+<p>Create a table with the following headers across columns A to G:</p>
+<ul>
+<li><b>Column A:</b> Order ID</li>
+<li><b>Column B:</b> Customer Name</li>
+<li><b>Column C:</b> SKU / Item Code</li>
+<li><b>Column D:</b> Quantity Ordered</li>
+<li><b>Column E:</b> Quantity Shipped</li>
+<li><b>Column F:</b> Line Status (`=IF(D2=E2, "Complete", "Incomplete")`)</li>
+<li><b>Column G:</b> Unfulfilled Units (`=D2-E2`)</li>
+</ul>
+<h3>Step 2: Calculate Item Fill Rate for the Period</h3>
+<p>To calculate your aggregate item fill rate across all sales for a month, use the following formulas:</p>
+<ul>
+<li>Total Units Ordered (Cell D50): `=SUM(D2:D49)`</li>
+<li>Total Units Shipped (Cell E50): `=SUM(E2:E49)`</li>
+<li>Overall Item Fill Rate (Cell E51): `=(E50/D50)*100`</li>
+</ul>
+<h3>Step 3: Calculate Line Fill Rate in Excel</h3>
+<p>To calculate how many order lines were completely satisfied:</p>
+<ul>
+<li>Total Lines Ordered (Cell F50): `=COUNTA(F2:F49)`</li>
+<li>Fully Completed Lines (Cell F51): `=COUNTIF(F2:F49, "Complete")`</li>
+<li>Line Fill Rate Percentage (Cell F52): `=(F51/F50)*100`</li>
+</ul>
+<h3>Concrete Worked Example:</h3>
+<p>Imagine an online boutique receives 5 orders totaling 200 items in a single day:</p>
+<ul>
+<li>Order #101: 50 items ordered, 50 shipped (Complete)</li>
+<li>Order #102: 30 items ordered, 30 shipped (Complete)</li>
+<li>Order #103: 40 items ordered, 20 shipped (Incomplete - 20 short)</li>
+<li>Order #104: 60 items ordered, 60 shipped (Complete)</li>
+<li>Order #105: 20 items ordered, 15 shipped (Incomplete - 5 short)</li>
+</ul>
+<p><b>Calculations:</b></p>
+<ul>
+<li>Total Units Ordered = 200 units</li>
+<li>Total Units Shipped = 50 + 30 + 20 + 60 + 15 = 175 units</li>
+<li><b>Item Fill Rate:</b> `(175 / 200) * 100 = 87.5%`</li>
+<li>Total Lines/Orders = 5 orders</li>
+<li>Completed Orders = 3 orders</li>
+<li><b>Order Fill Rate:</b> `(3 / 5) * 100 = 60.0%`</li>
+</ul>
+<p>This simple comparison shows why both metrics matter: while you delivered 87.5% of total merchandise, 40% of your customer shipments were incomplete, leading to higher customer support inquiries and potential churn.</p>
+<p>---</p>
+<h2>3. Financial Impact: The Hidden Cost of Low Fill Rates</h2>
+<p>A fill rate below 95% exposes your business to silent financial leaks. Understanding the true financial impact encourages proactive inventory management.</p>
+<h3>1. Direct Lost Revenue and Backorder Expenses</h3>
+<p>When an item is out of stock, customers often cancel the unfulfilled portion of their order or buy from a competitor. If they agree to wait, you incur extra shipping and administrative handling costs for secondary partial deliveries.</p>
+<h3>2. Excess Safety Stock vs. Idle Capital</h3>
+<p>Attempting to hit a 100% fill rate blindly by over-ordering stock traps capital in non-moving inventory. The key is balance: targeting a 95% to 98% fill rate for high-demand (Fast-Moving) items while keeping holding costs lean for low-demand SKUs.</p>
+<h3>Calculating the True Cost of Unfulfilled Demand:</h3>
+<p>Use this baseline formula to quantify your monthly revenue loss from stockouts:</p>
+<ul>
+<li><b>Monthly Lost Revenue:</b> `Total Shortfall Units * Average Selling Price Per Unit`</li>
+<li><b>Example:</b> If you missed shipping 250 units this month with an average selling price of 45 per unit:</li>
+<li>Lost Revenue = 250 *45 = $11,250 per month.</li>
+</ul>
+<p>---</p>
+<h2>4. Practical Strategies to Improve Your Fulfillment Efficiency</h2>
+<p>If your calculated Fill Rate drops below 92%, apply these practical inventory adjustments:</p>
+<h3>A. Implement ABC Inventory Classification</h3>
+<p>Categorize your stock using the 80/20 rule:</p>
+<ul>
+<li><b>Category A (Top 20% of SKUs generating 80% of revenue):</b> Target a 98% Fill Rate. Reorder aggressively and hold higher buffer stock.</li>
+<li><b>Category B (Next 30% of SKUs generating 15% of revenue):</b> Target a 93-95% Fill Rate.</li>
+<li><b>Category C (Bottom 50% of SKUs generating 5% of revenue):</b> Target an 85-90% Fill Rate to prevent tying up valuable working capital.</li>
+</ul>
+<h3>B. Recalculate Reorder Points (ROP) Regularly</h3>
+<p>Ensure your Reorder Point factors in supplier lead times and safety stock accurately:</p>
+<ul>
+<li>`Reorder Point = (Average Daily Sales * Lead Time in Days) + Safety Stock`</li>
+</ul>
+<p>Updating sales velocity monthly prevents sudden stock depletion during peak trading periods.</p>
+<h3>C. Adopt a Modular Inventory Tracking Template</h3>
+<p>Spreadsheets remain the most cost-effective tool for managing inventory velocity, calculating fill rates, and tracking cash flow without recurring SaaS subscription fees. Pre-built templates eliminate manual formula creation errors and provide immediate operational metrics.</p>
+<p>---</p>
+<h2>5. Streamline Your Inventory and Order Tracking Today</h2>
+<p>Maintaining reliable fill rates requires accurate raw data and actionable tracking tools. Instead of spending hours designing spreadsheets from scratch, leverage our comprehensive <b>Small Business Toolkit (Excel + Google Sheets)</b>.</p>
+<p>Designed specifically for retail stores, Etsy sellers, wholesalers, and small workshops, our toolkit includes automated templates for:</p>
+<ul>
+<li>Inventory level tracking with automatic low-stock alerts</li>
+<li>Purchase order tracking and lead time management</li>
+<li>Cash flow forecasting and margin profitability calculators</li>
+<li>Order fulfillment and customer metrics reporting</li>
+</ul>
+<p>Take full control of your operations, eliminate costly stockouts, and safeguard your profit margins without monthly software costs.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

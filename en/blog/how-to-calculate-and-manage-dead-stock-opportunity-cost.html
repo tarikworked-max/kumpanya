@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate and Manage Dead Stock Opportunity Cost | Kumpanya Dijital</title><meta name="description" content="Dead stock is not just unsold inventory; it is trapped cash that suffocates your daily operations. For a small business, every dollar tied up in stagnant i"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Calculate and Manage Dead Stock Opportunity Cost</h1>
+<p>Dead stock is not just unsold inventory; it is trapped cash that suffocates your daily operations. For a small business, every dollar tied up in stagnant items for over 180 days is a dollar stolen from payroll, emergency cash reserves, or high-velocity inventory that actually sells.</p>
+<h2>1. Understanding the True Cost of Trapped Capital</h2>
+<p>When inventory stops moving, its financial damage compounds daily. If you have 10,000 tied up in stagnant goods, you are not just losing shelf space; you are paying three distinct holding costs every month:</p>
+<ol>
+<li><b>Storage &amp; Warehouse Cost:</b>45/month allocated rent and utility space per rack.</li>
+<li><b>Insurance &amp; Capital Cost:</b> 25/month tied up bank loan interest or opportunity cost of capital.</li>
+<li><b>Obsolescence &amp; Damage Risk:</b>30/month physical degradation or packaging wear.</li>
+</ol>
+<p>Total monthly holding cost = 100. Over 12 months, keeping this dead stock drains an extra1,200 out of your pocket before you even sell a single unit.</p>
+<h2>2. Step-by-Step: Identifying Stagnant Items Using Excel Pivot Tables</h2>
+<p>Don't rely on a flat 180-day rule alone; combine stagnant duration with margin contribution using an Excel Pivot Table and ABC Analysis.</p>
+<ol>
+<li>List your inventory with columns: `SKU`, `Unit Cost`, `Units on Hand`, `Last Sale Date`, and `Total Value` (`=Unit Cost * Units on Hand`).</li>
+<li>Add a 'Days Stagnant' column: `=TODAY() - [Last Sale Date]`.</li>
+<li>Create a Pivot Table: Drag `SKU` to Rows, and `Total Value` to Values. Filter by `Days Stagnant &gt; 180` to isolate dead capital.</li>
+<li>Apply ABC classification based on total trapped value to prioritize which dead stock items to liquidate first.</li>
+</ol>
+<h2>3. Calculating the Net Cash Recovery Liquidation Price</h2>
+<p>To free up cash immediately, you must calculate a realistic liquidation price focused on net cash recovery rather than theoretical target margins.</p>
+<p>Formula for Net Cash Recovery Price:</p>
+<p>Liquidation Price = Unit Cost - (Annual Holding Cost per Unit * Years Held) - Target Cash Discount</p>
+<p>Example: If an item cost 100 to acquire, has accumulated30 in holding costs over 2 years, and you need fast liquidity to buy fast-moving stock, setting your liquidation price at 70 recovers cash instantly without adding further losses. Compare this70 recovery against your annual holding cost rate (typically 25% of inventory value per year).</p>
+<h2>4. Strategic Decisions: Liquidate vs. Hold and the Cost of Manual Tracking</h2>
+<ul>
+<li><b>High Holding Cost (e.g., bulky furniture, electronics):</b> Liquidate immediately at cost or slight loss. Freeing up warehouse space generates more profit than waiting for a miracle buyer.</li>
+<li><b>Low Holding Cost (e.g., small hardware, non-perishables):</b> You may bundle them or run a clearance promotion.</li>
+</ul>
+<p>Manually pulling sales dates and calculating stagnation in spreadsheets every week wastes 4 to 6 hours of valuable owner time—time that should be spent driving sales. Instead of wrestling with manual formulas every month, automate your inventory auditing and dead stock alerts with our Small Business Toolkit.</p>
+<p>By tracking your 'Inventory Velocity' in Excel, you transform dead stock from a silent profit killer into a predictable cash flow buffer. Start by calculating the opportunity cost of your top 10 stagnant items today.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

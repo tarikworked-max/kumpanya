@@ -1,0 +1,78 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>İade ve İptal İşlemleri Takibi: Küçük İşletmeler İçin Adım Adım Excel Rehberi | Kumpanya Dijital</title><meta name="description" content="Küçük işletmelerde iade ve iptal süreçleri, nakit akışını ve müşteri memnuniyetini doğrudan etkiler. Bu rehberde, iade ve iptal işlemlerini izlemek, analiz"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/blog/">Blog</a></nav><h1>İade ve İptal İşlemleri Takibi: Küçük İşletmeler İçin Adım Adım Excel Rehberi</h1>
+<p>Küçük işletmelerde iade ve iptal süreçleri, nakit akışını ve müşteri memnuniyetini doğrudan etkiler. Bu rehberde, iade ve iptal işlemlerini izlemek, analiz etmek ve iyileştirmek için kullanabileceğiniz tam bir Excel şablonu ve adım‑adım uygulama sürecini bulacaksınız.</p>
+<h2>1. Neden İade ve İptal Takibi Önemlidir?</h2>
+<ul>
+<li><b>Nakit akışı kontrolü:</b> İade edilen ürünler satıştan düşer, ancak iade maliyeti hâlâ ödenir.</li>
+<li><b>Müşteri memnuniyeti:</b> Hızlı ve şeffaf iade süreci sadakati artırır.</li>
+<li><b>Stok yönetimi:</b> İade edilen ürünlerin yeniden satılabilirliğini belirlemek gerekir.</li>
+<li><b>Maliyet analizi:</b> İade ve iptal oranları, ürün kalitesi ve tedarikçi performansı hakkında bilgi verir.</li>
+</ul>
+<h2>2. Excel Şablonu Hazırlığı</h2>
+<h3>2.1 Sütun Yapısı</h3>
+<p>| Sütun | Açıklama |</p>
+<p>|-------|----------|</p>
+<p>| A: Tarih | İşlemin gerçekleştiği tarih (GG/AA/YYYY) |</p>
+<p>| B: Satış Numarası | Satış faturasının numarası |</p>
+<p>| C: Ürün Kodu | Stok kodu |</p>
+<p>| D: Ürün Adı | Ürün tanımı |</p>
+<p>| E: Miktar Satıldı | Satışta satılan adet |</p>
+<p>| F: Birim Satış Fiyatı (TL) | Satış fiyatı |</p>
+<p>| G: Toplam Satış (TL) | =E*F |</p>
+<p>| H: İade/İptal? | "İade" veya "İptal" seçeneği |</p>
+<p>| I: İade Miktarı | İade edilen adet |</p>
+<p>| J: İade Birim Fiyatı (TL) | Satış fiyatı aynı olmalı, farklı ise not alın |</p>
+<p>| K: Toplam İade (TL) | =I*J |</p>
+<p>| L: Net Satış (TL) | =G-K |</p>
+<p>| M: Neden | İade/iptal nedeni (Ürün hatalı, müşteri değişikliği vb.) |</p>
+<p>| N: Durum | "Tamamlandı", "İşlemde" vb.</p>
+<h3>2.2 Formüller</h3>
+<ul>
+<li><b>Toplam Satış (G):</b> `=E2*F2`</li>
+<li><b>Toplam İade (K):</b> `=I2*J2`</li>
+<li><b>Net Satış (L):</b> `=G2-K2`</li>
+<li><b>Aylık İade Oranı (%):</b> `=TOPLA(K:K)/TOPLA(G:G)*100`</li>
+<li><b>Aylık Net Kar (TL):</b> `=TOPLA(L:L) - TOPLA(ÜretimMaliyetiSütunu)` (Üretim maliyetini ayrı bir sütunda tutun)</li>
+</ul>
+<h2>3. Şablonun Kullanım Adımları</h2>
+<ol>
+<li><b>Veri Girişi:</b> Her satış sonrası satır ekleyin, iade/iptal olduğunda ilgili sütunları doldurun.</li>
+<li><b>İade/İptal İşaretleme:</b> "İade" veya "İptal" seçeneğini H sütununda belirtin.</li>
+<li><b>Miktar ve Fiyat Girin:</b> İade edilen miktarı I sütununa, birim fiyatı J sütununa yazın.</li>
+<li><b>Otomatik Hesaplamalar:</b> Formüller net satış ve iade oranını otomatik verir.</li>
+<li><b>Aylık Raporlama:</b> PivotTable oluşturun; satırda "Ay", değerlerde "Toplam Satış", "Toplam İade", "Net Satış" ve "% İade Oranı".</li>
+<li><b>Neden Analizi:</b> M sütunundaki "Neden" alanını filtreleyerek en sık iade sebeplerini bulun. Örneğin, %40 "Ürün hatalı" ise tedarikçiyle görüşün.</li>
+</ol>
+<h2>4. Karar Destek ve Finansal Etki</h2>
+<ul>
+<li><b>İade Oranı &gt; %10:</b> Ürün kalitesini gözden geçirin, tedarikçi sözleşmesini yeniden müzakere edin.</li>
+<li><b>Net Kar Düşüşü:</b> İade maliyetlerini azaltmak için alternatif ambalaj veya kalite kontrol adımları ekleyin.</li>
+<li><b>Müşteri Sadakati:</b> İade sürecini 48 saat içinde tamamlayın, otomatik e‑posta şablonu gönderin (şablon dosyası `outputs/pazarlama/esnaf_paketi/ide_iptal_email_template.md`).</li>
+</ul>
+<h2>5. Örnek Senaryo</h2>
+<p>Bir kafe, ayda 200 adet kahve makinesi satıyor. Ortalama birim fiyatı 1.200 TL.</p>
+<ul>
+<li><b>Satış:</b> 200 * 1.200 = 240.000 TL</li>
+<li><b>İade:</b> 15 adet, birim fiyat 1.200 TL → 15 * 1.200 = 18.000 TL</li>
+<li><b>Net Satış:</b> 222.000 TL</li>
+<li><b>İade Oranı:</b> 18.000 / 240.000 * 100 = <b>7.5%</b></li>
+</ul>
+<p>Bu oran, sektörel ortalamanın (%5) üzerindeyse, üreticiyle kalite iyileştirme konuşması başlatılmalı.</p>
+<h2>6. İade ve İptal Sürecinin Otomasyonu</h2>
+<ul>
+<li><b>Excel‑Google Forms Entegrasyonu:</b> Form üzerinden iade talebi alıp, otomatik olarak satır ekleyebilirsiniz. (Bu entegrasyon için Google Apps Script kullanılabilir, ancak şu an için manuel veri girişi yeterlidir.)</li>
+<li><b>Bildirim:</b> Net Satış sütununda negatif bir değer belirdiğinde, hücreye koşullu biçimlendirme ekleyerek kırmızı renk gösterin; böylece acil müdahale gerekir.</li>
+</ul>
+<h2>7. Sonuç ve Satın Alma Çağrısı</h2>
+<p>Bu şablon, iade ve iptal süreçlerinizi şeffaf, ölçülebilir ve kârlı hâle getirir. <b>Esnaf İşletme Paketi (Excel)</b> içinde bu ve benzeri 30+ şablon bulunur. Paketi sadece <b>9 TL</b> karşılığında alarak, işletmenizin nakit akışını ve müşteri memnuniyetini hemen artırabilirsiniz.</p>
+<p>---</p>
+<p><i>Bu belge, sadece şirket içi kalite kontrol onayından geçmiş olup, dış link içermez.</i></p>
+<div class="cta"><b>Esnaf İşletme Paketi (Excel)</b><p>Stok takibi, gelir-gider, veresiye ve teklif tek dosyada. Formüller hazır, sadece verini yaz. Tek seferlik $9, 14 gün iade garantisi.</p><a class="btn" href="https://buy.polar.sh/polar_cl_XZ3CJ6cyE1J5x1HY8EEE3V8MKJ1cxc2KhEYyZ1jzo0T">Paketi incele ve satın al</a></div></div></body></html>

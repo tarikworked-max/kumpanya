@@ -1,0 +1,113 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Managing Cash Flow with Seasonal Inventory Changes for Small Coffee Shops | Kumpanya Dijital</title><meta name="description" content="Running a coffee shop means juggling a lot of moving parts: fresh beans, pastries, milk, and the day‑to‑day cash flow that keeps the lights on. When demand"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>Managing Cash Flow with Seasonal Inventory Changes for Small Coffee Shops</h1>
+<p>Running a coffee shop means juggling a lot of moving parts: fresh beans, pastries, milk, and the day‑to‑day cash flow that keeps the lights on. When demand swings with seasons—think holiday rushes, summer crowds, or winter slow‑downs—your inventory levels need to shift accordingly. But if you don’t plan those changes, you’ll either run out of stock or tie up cash in excess inventory. This guide gives you a step‑by‑step workflow to align inventory planning with cash flow, using simple Excel formulas you can copy into your own spreadsheet.</p>
+<h2>1. Capture Historical Sales Data</h2>
+<p><b>Why it matters:</b> Understanding past sales patterns lets you forecast future demand more accurately.</p>
+<ol>
+<li>Open a new sheet called <i>Historical Sales</i>.</li>
+<li>Create columns: <i>Date</i>, <i>Item</i>, <i>Units Sold</i>, <i>Unit Price</i>.</li>
+<li>Enter your last 12 months of sales. If you don’t have 12 months, use the longest period you have.</li>
+<li>Use the <b>AVERAGE</b> function to calculate monthly averages:</li>
+</ol>
+<p>```excel</p>
+<p>=AVERAGEIFS(Units Sold, Date, "&gt;=2023-01-01", Date, "&lt;=2023-01-31")</p>
+<p>```</p>
+<ol>
+<li>Create a pivot table to see sales by month and by item.</li>
+</ol>
+<p><b>Result:</b> A clear picture of which items spike during holidays, which are steady, and which decline in winter.</p>
+<h2>2. Build a Seasonal Demand Forecast</h2>
+<p><b>Why it matters:</b> Forecasting lets you order the right amount of inventory before a season starts.</p>
+<ol>
+<li>In a new sheet called <i>Seasonal Forecast</i>, list each item in column A.</li>
+<li>In column B, use the monthly average from step 1.</li>
+<li>In column C, add a <i>Seasonality Factor</i> (e.g., 1.2 for a 20% increase during the holiday season).</li>
+<li>Multiply to get the forecast:</li>
+</ol>
+<p>```excel</p>
+<p>=B2*C2</p>
+<p>```</p>
+<ol>
+<li>Drag the formula down for all items.</li>
+</ol>
+<p><b>Tip:</b> For items with no clear seasonality, set the factor to 1.0.</p>
+<h2>3. Calculate Safety Stock and Reorder Points</h2>
+<p><b>Why it matters:</b> Safety stock protects against demand spikes and supply delays.</p>
+<ol>
+<li>In the <i>Inventory Plan</i> sheet, add columns: <i>Lead Time (days)</i>, <i>Average Daily Demand</i>, <i>Safety Stock</i>, <i>Reorder Point</i>.</li>
+<li>Average Daily Demand:</li>
+</ol>
+<p>```excel</p>
+<p>=Forecast / 30</p>
+<p>```</p>
+<ol>
+<li>Safety Stock (using a 95% service level, Z=1.65):</li>
+</ol>
+<p>```excel</p>
+<p>=Z <i> STDEV.P(Units Sold) </i> SQRT(Lead Time)</p>
+<p>```</p>
+<ol>
+<li>Reorder Point:</li>
+</ol>
+<p>```excel</p>
+<p>=Average Daily Demand * Lead Time + Safety Stock</p>
+<p>```</p>
+<p><b>Result:</b> You now know exactly when to reorder and how much to keep on hand.</p>
+<h2>4. Link Inventory to Cash Flow</h2>
+<p><b>Why it matters:</b> Inventory purchases are cash outflows; knowing the timing keeps your cash flow healthy.</p>
+<ol>
+<li>In a <i>Cash Flow</i> sheet, list <i>Cash Inflows</i> (sales) and <i>Cash Outflows</i> (inventory purchases, rent, utilities).</li>
+<li>For each inventory purchase, add a line item with the date you plan to pay. Use the reorder point dates from step 3.</li>
+<li>Add a <b>SUMIF</b> to calculate total inventory outflow per month:</li>
+</ol>
+<p>```excel</p>
+<p>=SUMIF(Pay Dates, "&gt;=2024-12-01", Amount)</p>
+<p>```</p>
+<ol>
+<li>Subtract outflows from inflows to see net cash flow.</li>
+<li>If the net cash flow dips below a threshold (e.g., 500), plan a short‑term loan or credit line.</li>
+</ol>
+<h2>5. Review and Adjust Monthly</h2>
+<p><b>Why it matters:</b> Markets change; continuous improvement ensures you stay ahead.</p>
+<ol>
+<li>At the end of each month, compare actual sales to forecast.</li>
+<li>Calculate forecast accuracy:</li>
+</ol>
+<p>```excel</p>
+<p>=ABS(Actual - Forecast) / Forecast</p>
+<p>```</p>
+<ol>
+<li>If accuracy &gt; 10%, adjust your seasonality factor or safety stock.</li>
+<li>Update the <i>Cash Flow</i> sheet with actual outflows and inflows.</li>
+<li>Re‑forecast for the next season.</li>
+</ol>
+<h2>6. Quick Checklist for Coffee Shop Owners</h2>
+<ul>
+<li><b>Track sales daily</b> in a simple spreadsheet.</li>
+<li><b>Update seasonality factors</b> every quarter.</li>
+<li><b>Order inventory</b> at least 30 days before a peak season.</li>
+<li><b>Keep safety stock</b> at 1–2 weeks of demand.</li>
+<li><b>Monitor cash flow</b> monthly and set a minimum cash reserve.</li>
+<li><b>Re‑evaluate</b> after each season and adjust formulas.</li>
+</ul>
+<h2>7. Example: Holiday Rush for a Small Café</h2>
+<p>| Item | Avg. Daily Demand (Dec) | Lead Time (days) | Safety Stock | Reorder Point |</p>
+<p>|------|--------------------------|------------------|--------------|----------------|</p>
+<p>| Coffee Beans | 50 | 7 | 65 | 415 |</p>
+<p>| Pastries | 30 | 3 | 30 | 120 |</p>
+<p>| Milk | 20 | 2 | 20 | 60 |</p>
+<ul>
+<li><b>Order coffee beans</b> 30 days before December starts, ensuring you have 415 units on hand.</li>
+<li><b>Order pastries</b> 15 days before, with a reorder point of 120 units.</li>
+<li><b>Monitor cash flow</b>: Coffee bean purchase will be a2,500 outflow; plan this in your December budget.</li>
+</ul>
+<p>By following this workflow, you can confidently manage seasonal inventory changes without jeopardizing cash flow. Your coffee shop will stay stocked for the busy periods and avoid costly excess inventory during slower months.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

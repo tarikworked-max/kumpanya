@@ -1,0 +1,107 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Küçük İşletmeler İçin Kârlılık Analizi: Gelir, Gider ve Kar Marjı Nasıl Hesaplanır? | Kumpanya Dijital</title><meta name="description" content="Küçük işletmelerin çoğu, günlük satışlarını takip ederken aynı zamanda kârlılıklarını da ölçmek zorunda kalır. Çoğu zaman bu, “gelir – gider = kârlılık” fo"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/blog/">Blog</a></nav><h1>Küçük İşletmeler İçin Kârlılık Analizi: Gelir, Gider ve Kar Marjı Nasıl Hesaplanır?</h1>
+<h2>Giriş</h2>
+<p>Küçük işletmelerin çoğu, günlük satışlarını takip ederken aynı zamanda kârlılıklarını da ölçmek zorunda kalır. Çoğu zaman bu, “gelir – gider = kârlılık” formülünü hatırlamakla başlar, ancak gerçek dünyada bu formülün arkasındaki adımlar ve kullanılan metrikler çoğu zaman karmaşıklaşır. Bu yazıda, küçük işletmelerin gelir, gider ve kar marjı hesaplamalarını adım adım, Excel’de nasıl yapacaklarını göstererek, okuyuculara somut bir kılavuz sunacağız.</p>
+<h2>1. Gelir Tablosu Oluşturma</h2>
+<h3>1.1 Satış Geliri</h3>
+<ul>
+<li><b>Satış Adedi</b> (A2): 120 adet</li>
+<li><b>Satış Fiyatı</b> (B2): 35 TL</li>
+</ul>
+<p>```excel</p>
+<p>= A2 * B2</p>
+<p>```</p>
+<p><b>Örnek</b>: 120 * 35 = 4.200 TL</p>
+<h3>1.2 Diğer Gelir Kaynakları</h3>
+<ul>
+<li><b>Kampanya Geliri</b> (C2): 500 TL</li>
+<li><b>Diğer Gelir</b> (D2): 300 TL</li>
+</ul>
+<p>```excel</p>
+<p>= C2 + D2</p>
+<p>```</p>
+<p><b>Toplam Gelir</b> (E2) = Satış Geliri + Diğer Gelir</p>
+<p>```excel</p>
+<p>= A2*B2 + C2 + D2</p>
+<p>```</p>
+<h3>1.3 Toplam Gelir Örneği</h3>
+<p>| Satış Adedi | Satış Fiyatı | Satış Geliri | Kampanya | Diğer | Toplam Gelir |</p>
+<p>|-------------|--------------|--------------|----------|-------|--------------|</p>
+<p>| 120         | 35           | 4.200        | 500      | 300   | 5.000        |</p>
+<h2>2. Gider Tablosu Oluşturma</h2>
+<h3>2.1 Değişken Giderler</h3>
+<p>| Gider Kalemi | Birim Fiyat | Adet | Toplam |</p>
+<p>|--------------|-------------|------|--------|</p>
+<p>| Hammadde     | 10          | 50   | 500    |</p>
+<p>| Ambalaj      | 2           | 120  | 240    |</p>
+<p>| Kargo        | 5           | 120  | 600    |</p>
+<p>```excel</p>
+<p>= SUM(F2:F4)</p>
+<p>```</p>
+<h3>2.2 Sabit Giderler</h3>
+<p>| Gider Kalemi | Aylık Miktar |</p>
+<p>|--------------|--------------|</p>
+<p>| Kira         | 1.200 TL     |</p>
+<p>| Elektrik     | 300 TL       |</p>
+<p>| İnternet     | 150 TL       |</p>
+<p>```excel</p>
+<p>= SUM(G2:G4)</p>
+<p>```</p>
+<h3>2.3 Toplam Gider</h3>
+<p>```excel</p>
+<p>= Değişken Gider + Sabit Gider</p>
+<p>```</p>
+<p>| Değişken Gider | Sabit Gider | Toplam Gider |</p>
+<p>|----------------|-------------|--------------|</p>
+<p>| 1.340 TL       | 1.650 TL    | 3.000 TL     |</p>
+<h2>3. Kar Marjı Hesaplama</h2>
+<h3>3.1 Brüt Kar</h3>
+<p>```excel</p>
+<p>= Toplam Gelir - Toplam Değişken Gider</p>
+<p>```</p>
+<p>| Toplam Gelir | Değişken Gider | Brüt Kar |</p>
+<p>|--------------|----------------|----------|</p>
+<p>| 5.000 TL     | 1.340 TL       | 3.660 TL |</p>
+<h3>3.2 Net Kar</h3>
+<p>```excel</p>
+<p>= Brüt Kar - Sabit Gider</p>
+<p>```</p>
+<p>| Brüt Kar | Sabit Gider | Net Kar |</p>
+<p>|----------|-------------|---------|</p>
+<p>| 3.660 TL | 1.650 TL    | 2.010 TL |</p>
+<h3>3.3 Kar Marjı Yüzdesi</h3>
+<p>```excel</p>
+<p>= (Net Kar / Toplam Gelir) * 100</p>
+<p>```</p>
+<p><b>Örnek</b>: (2.010 / 5.000) * 100 = <b>40.2%</b></p>
+<h2>4. Kar Marjını Artırmanın 3 Yöntemi</h2>
+<ol>
+<li><b>Fiyatlandırma Stratejisi</b> – Ürün fiyatını %10 artırarak, aynı satış adediyle gelir %10 artar.</li>
+<li><b>Maliyet Kontrolü</b> – Hammadde maliyetini %5 azaltmak, değişken giderleri %5 düşürür.</li>
+<li><b>Verimlilik Artışı</b> – Kargo maliyetini %20 azaltmak, toplam giderleri düşürür.</li>
+</ol>
+<h2>5. Excel’de Otomatik Hesaplama</h2>
+<p>| Adım | Formül | Açıklama |</p>
+<p>|------|--------|----------|</p>
+<p>| 1    | `=A2*B2` | Satış Geliri |</p>
+<p>| 2    | `=C2+D2` | Diğer Gelir |</p>
+<p>| 3    | `=E2+F2` | Toplam Gelir |</p>
+<p>| 4    | `=SUM(H2:H4)` | Değişken Gider |</p>
+<p>| 5    | `=SUM(I2:I4)` | Sabit Gider |</p>
+<p>| 6    | `=G2+J2` | Toplam Gider |</p>
+<p>| 7    | `=K2-L2` | Brüt Kar |</p>
+<p>| 8    | `=M2-N2` | Net Kar |</p>
+<p>| 9    | `=(O2/P2)*100` | Kar Marjı |</p>
+<h2>6. Sonuç</h2>
+<p>Küçük işletmeler için gelir, gider ve kar marjı hesaplamaları, doğru Excel formülleri ve net tablo yapıları ile çok daha basit ve hızlıdır. Yukarıdaki örnek, 5.000 TL gelirle 3.000 TL giderle 40.2% net kar marjı elde etmenin adımlarını gösteriyor. Bu şablonu kendi verilerinizle doldurarak, haftalık veya aylık kârlılığınızı anlık olarak izleyebilir, stratejik kararlar alabilirsiniz.</p>
+<p>---</p>
+<p>&gt; <b>Not:</b> Bu rehber, gerçek verilerle doldurulduğunda 5 dakikadan az sürede tamamlanabilir. Excel’de formülleri kopyalayıp yapıştırın, hücreleri doldurun ve sonuçları hemen görün. Kârlılığınızı artırmak için fiyatlandırma ve gider kontrolünü düzenli olarak gözden geçirin.</p>
+<div class="cta"><b>Esnaf İşletme Paketi (Excel)</b><p>Stok takibi, gelir-gider, veresiye ve teklif tek dosyada. Formüller hazır, sadece verini yaz. Tek seferlik $9, 14 gün iade garantisi.</p><a class="btn" href="https://buy.polar.sh/polar_cl_XZ3CJ6cyE1J5x1HY8EEE3V8MKJ1cxc2KhEYyZ1jzo0T">Paketi incele ve satın al</a></div></div></body></html>

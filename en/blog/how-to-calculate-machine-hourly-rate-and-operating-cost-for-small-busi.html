@@ -1,0 +1,58 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate Machine Hourly Rate and Operating Cost for Small Business | Kumpanya Dijital</title><meta name="description" content="Running a small manufacturing shop, custom woodwork studio, or local assembly business requires absolute clarity on your equipment costs. When a client ask"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Calculate Machine Hourly Rate and Operating Cost for Small Business</h1>
+<p>Running a small manufacturing shop, custom woodwork studio, or local assembly business requires absolute clarity on your equipment costs. When a client asks for a quote, guessing your machine operating expenses or relying on a vague percentage markup is a direct path to hidden losses. If you do not know the exact cost of running your equipment per hour, every job you take carries an invisible risk of eating into your actual profits.</p>
+<p>Calculating your machine hourly rate allows you to price jobs accurately, identify equipment bottlenecks, and determine whether outsourcing certain tasks is more profitable than producing in-house. This practical guide walks you through the exact steps and Excel formulas needed to calculate and optimize your machine operating costs without complex accounting software.</p>
+<h2>1. Deconstructing the Total Machine Operating Cost Components</h2>
+<p>Before you can divide your expenses by operational hours, you must capture every single cost associated with running a specific machine. Equipment expenses are generally split into two categories: fixed costs (which you pay regardless of whether the machine runs) and variable costs (which scale directly with machine usage).</p>
+<p>To build a clean tracking mechanism in Excel, set up your spreadsheet with the following core cost components on an annual basis:</p>
+<ul>
+<li><b>Depreciation Cost:</b> The loss of equipment value over time. Formula: `(Initial Purchase Cost - Salvage Value) / Useful Life in Years`.</li>
+<li><b>Maintenance and Repair Cost:</b> Annual spare parts, routine servicing, and unexpected repair labor.</li>
+<li><b>Facility and Floor Space Cost:</b> The portion of rent and property tax allocated to the square footage occupied by the machine.</li>
+<li><b>Power and Energy Cost:</b> Electricity or fuel consumed per operating hour.</li>
+<li><b>Operator Labor Cost:</b> The hourly wage of the technician operating the machine (if dedicated).</li>
+</ul>
+<p>Let us look at a practical example for a CNC router in a small custom fabrication shop. The machine costs 30,000, has a 5-year useful life, and a3,000 salvage value. Annual maintenance averages 2,000, floor space allocation is1,200 per year, and power consumption runs 2,500 annually. The operator is paid20 per hour.</p>
+<h2>2. Building the Machine Hourly Rate Formula in Excel</h2>
+<p>To calculate the true hourly rate, you must divide your total annual fixed and variable machine costs by your <b>productive operating hours</b> (not total available hours, as maintenance and setup time reduce active running time).</p>
+<p>Set up your Excel sheet with the following column layout:</p>
+<ul>
+<li>Column A: Cost Component Description</li>
+<li>Column B: Annual Amount ()</li>
+<li>Column C: Monthly Allocation ()</li>
+</ul>
+<p>In cell B10, calculate your Total Annual Operating Cost using the sum formula:</p>
+<p>`=SUM(B2:B6)`</p>
+<p>Assuming the CNC router operates for 1,500 productive hours per year (out of 2,080 total working hours, factoring in maintenance downtime and setup delays), your Machine Hourly Rate formula in cell B12 becomes:</p>
+<p>`=B10 / 1500`</p>
+<p>If your total annual operating cost is 15,000 and your productive hours are 1,500, your baseline machine rate is `10.00 per hour` of pure machine running cost, to which you must add the operator's hourly labor.</p>
+<h2>3. Factoring in Operator Labor and Setup Time</h2>
+<p>Equipment rarely runs in a vacuum. Combining your machine operating cost with direct labor gives you your true production cost rate. Furthermore, you must account for setup and changeover time, during which the machine is consuming overhead without generating billable output.</p>
+<p>Create a dedicated production quoting block in your spreadsheet:</p>
+<ul>
+<li><b>Direct Machine Running Rate:</b> `=Machine_Cost_Per_Hour` (e.g., 10.00)</li>
+<li><b>Operator Wage Rate:</b> `=Operator_Hourly_Rate` (e.g.,20.00)</li>
+<li><b>Combined Shop Rate:</b> `=B12 + B13` (Total: 30.00 per hour)</li>
+</ul>
+<p>When calculating job estimates, include setup hours explicitly. If a custom batch requires 2 hours of fixture setup and 5 hours of run time, your total production labor and machine cost calculation is:</p>
+<p>`=(Setup_Hours <i> Combined_Shop_Rate) + (Run_Hours </i> Combined_Shop_Rate)`</p>
+<p>`=(2 <i> 30) + (5 </i> 30) =210.00`</p>
+<p>Failing to bill for setup time is one of the most common reasons small shops struggle with cash flow despite being busy.</p>
+<h2>4. Optimizing Utilization and Reducing Idle Machine Costs</h2>
+<p>Calculating your hourly rate reveals a harsh reality: idle machines are expensive. Every hour a piece of capital equipment sits unused, its fixed depreciation and floor space costs continue to accumulate, driving up your effective cost per operational hour.</p>
+<p>To optimize your shop floor and protect your margins, implement these three operational steps immediately:</p>
+<ol>
+<li><b>Track Actual vs. Estimated Run Times:</b> Compare your quoting sheet against actual completion logs weekly. If jobs consistently take 20% longer than estimated, your hourly rate calculations are outdated.</li>
+<li><b>Batch Similar Production Runs:</b> Reduce changeover and setup downtime by grouping orders with identical tooling requirements.</li>
+<li><b>Calculate Your Break-Even Utilization Rate:</b> Determine the minimum operating hours required each month to cover your fixed equipment overhead. Formula: `Monthly Fixed Costs / (Hourly Billing Rate - Hourly Variable Cost)`.</li>
+</ol>
+<p>By replacing guesswork with precise hourly rate calculations, you ensure that every hour your machinery operates contributes directly to your bottom line, securing sustainable growth for your small business.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

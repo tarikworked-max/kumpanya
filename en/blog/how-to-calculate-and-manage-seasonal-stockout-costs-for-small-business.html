@@ -1,0 +1,50 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate and Manage Seasonal Stockout Costs for Small Business | Kumpanya Dijital</title><meta name="description" content="Seasonal demand spikes can catch small business owners off guard. When customer demand outpaces inventory, stockouts happen. Beyond lost immediate sales, s"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Calculate and Manage Seasonal Stockout Costs for Small Business</h1>
+<p>Seasonal demand spikes can catch small business owners off guard. When customer demand outpaces inventory, stockouts happen. Beyond lost immediate sales, stockouts damage customer loyalty and long-term business value. This guide provides a practical framework to calculate seasonal stockout costs and implement Excel-based controls to protect your revenue.</p>
+<h2>1. Understanding Seasonal Stockout Costs</h2>
+<p>A stockout cost is more than just the gross profit lost from an unfulfilled sale. It includes administrative reordering expenses, expedited shipping fees, and the lifetime value of frustrated customers who walk away to a competitor.</p>
+<p>To measure this accurately in your spreadsheet, you need to track three core components:</p>
+<ul>
+<li><b>Lost Gross Margin:</b> (Selling Price - Unit Cost) * Unfulfilled Units</li>
+<li><b>Expedited Freight Costs:</b> Extra charges to restock shelves quickly</li>
+<li><b>Customer Goodwill Loss:</b> Estimated long-term value penalty calculated as a percentage (e.g., 15%) of the lost retail value for repeat customers who abandon their purchase.</li>
+</ul>
+<h2>2. Setting Up Your Excel Stockout Tracker</h2>
+<p>Open a clean Google Sheets or Excel workbook and set up the following columns to track potential and actual stockout losses during peak seasons:</p>
+<ul>
+<li><b>Column A:</b> Product Name</li>
+<li><b>Column B:</b> Average Daily Demand (Units)</li>
+<li><b>Column C:</b> Stockout Duration (Days)</li>
+<li><b>Column D:</b> Unit Selling Price ()</li>
+<li><b>Column E:</b> Unit Cost ()</li>
+<li><b>Column F:</b> Total True Stockout Cost (Including Goodwill Loss)</li>
+</ul>
+<p>In cell <b>F2</b>, enter the following formula to calculate total true stockout cost including both lost gross margin and estimated customer goodwill loss (assuming a 15% goodwill penalty factor on retail value):</p>
+<p>`= ((B2 <i> C2) </i> (D2 - E2)) + ((B2 <i> C2 </i> D2) * 0.15)`</p>
+<p>Copy this formula down to row 20 to monitor your entire seasonal catalog.</p>
+<h2>3. Calculating the True Cost of Expedited Restocking</h2>
+<p>When seasonal inventory runs low, standard shipping is often replaced by expensive express freight. To factor this into your financial model, add these columns:</p>
+<ul>
+<li><b>Column G:</b> Standard Shipping Cost ()</li>
+<li><b>Column H:</b> Expedited Freight Cost ()</li>
+<li><b>Column I:</b> Excess Freight Penalty</li>
+</ul>
+<p>In cell <b>I2</b>, calculate the surcharge paid due to poor forecasting:</p>
+<p>`= H2 - G2`</p>
+<p>Sum column I to see how much extra margin was burned through reactive logistics.</p>
+<h2>4. Implementing Buffer Thresholds and Reorder Points</h2>
+<p>To prevent stockouts before they happen, calculate your seasonal Reorder Point (ROP) using daily demand and supplier lead time:</p>
+<p>`ROP = (Average Daily Demand * Lead Time in Days) + Safety Stock`</p>
+<p>If your cafe or boutique sells 15 units of a seasonal item per day, and your supplier takes 4 days to deliver, your base demand during lead time is 60 units. Adding a safety stock buffer of 20 units gives you an ROP of 80 units. Assuming your current stock level is tracked in <b>Column C (Stockout Duration / Current Stock Level depending on layout, or specifically Column C for Inventory Balance)</b>, when inventory drops to 80, your spreadsheet should automatically flag a reorder alert using this conditional formatting rule referencing your inventory quantity column (e.g., Column C):</p>
+<p>`= C2 &lt;= 80`</p>
+<h2>5. Conclusion and Next Steps</h2>
+<p>Tracking stockout costs transforms inventory management from a guessing game into a precise science. By maintaining clean spreadsheet records of lost sales, goodwill penalties, and freight expenses, you protect your cash flow and keep seasonal revenue scaling upward.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>

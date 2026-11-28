@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate Inventory Risk Using Z-Score for Small Business | Kumpanya Dijital</title><meta name="description" content="Most small business owners rely on gut feeling to set their safety stock. This is dangerous. If your supplier is late or your customer demand spikes, you e"><style>:root{--bg:#f6f4ef;--fg:#1c2230;--muted:#5d6676;--card:#fff;--line:#e2ddd2;--accent:#c8661f}
+@media (prefers-color-scheme:dark){:root{--bg:#141a24;--fg:#e6ebf2;--muted:#93a0b4;--card:#1b2330;--line:#2f3b4e;--accent:#f2b84b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 system-ui,"Segoe UI",sans-serif}
+.w{max-width:720px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 64px}a{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.2}h2{margin-top:2em}p,li{color:var(--fg)}
+.cta{background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:20px;margin:40px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+nav{font-size:14px;margin-bottom:24px}</style></head>
+<body><div class="w"><nav><a href="https://tarikworked-max.github.io/kumpanya/en/">Kumpanya Dijital</a> · <a href="https://tarikworked-max.github.io/kumpanya/en/blog/">Blog</a></nav><h1>How to Calculate Inventory Risk Using Z-Score for Small Business</h1>
+<p>Most small business owners rely on gut feeling to set their safety stock. This is dangerous. If your supplier is late or your customer demand spikes, you either run out of stock (losing sales) or tie up cash in excess inventory. The Z-Score method removes the guesswork by quantifying exactly how much 'buffer' you need to stay safe 95% or 99% of the time.</p>
+<p>This guide shows you how to build a dynamic inventory risk model in Excel. It goes beyond simple averages by accounting for the <i>variability</i> in both customer demand and supplier lead times. You will learn to calculate the exact safety stock level that protects your cash flow without overstocking.</p>
+<h2>Why Average Demand Is a Dangerous Metric</h2>
+<p>Many owners calculate their reorder point using the average daily sales. This is the most common and costly mistake. Demand is rarely constant. In a coffee shop, weekend sales might be 30% higher than weekdays. In retail, a viral social media post can double demand overnight.</p>
+<p>If you only use the average, you will run out of stock during these peak moments. The loss from a stockout is not just the missed sale; it is the loss of the customer's trust and the potential for them to switch to a competitor permanently.</p>
+<p>The Z-Score approach addresses this by measuring the <i>spread</i> of your data, not just the center. It answers the question: "How much does my demand usually fluctuate?" and "How reliable is my supplier?"</p>
+<h2>The Core Formula: Combining Demand and Lead Time</h2>
+<p>The standard safety stock formula accounts for two sources of uncertainty:</p>
+<ol>
+<li>Variation in daily demand.</li>
+<li>Variation in the supplier's lead time (delivery time).</li>
+</ol>
+<p>Many simple guides ignore the second factor, assuming the supplier is always 7 days late or always on time. In reality, delivery times vary. If your supplier is usually 7 days but sometimes takes 10, your risk profile changes significantly.</p>
+<p>The combined standard deviation is calculated as:</p>
+<p>Combined Std Dev = SQRT( (Lead Time <i> (Daily Demand Std Dev)^2) + (Average Daily Demand)^2 </i> (Lead Time Std Dev)^2 )</p>
+<p>Note: Use STDEV.S in Excel for sample data, not STDEV.P. Since you are working with historical sales records (a sample of all possible sales), STDEV.S is the statistically correct choice for forecasting future risk.</p>
+<h2>Step-by-Step Excel Implementation</h2>
+<p>Let's build this model. Assume you have the following data in your spreadsheet:</p>
+<ul>
+<li><b>Average Daily Demand (Cell B1):</b> 50 units</li>
+<li><b>Std Dev of Daily Demand (Cell B2):</b> 10 units (Calculated using STDEV.S of your last 30 days of sales)</li>
+<li><b>Average Lead Time (Cell B3):</b> 7 days</li>
+<li><b>Std Dev of Lead Time (Cell B4):</b> 1.5 days (Calculated using STDEV.S of your last 10 deliveries)</li>
+<li><b>Service Level Z-Score (Cell B5):</b> 1.65 (For 95% service level)</li>
+</ul>
+<p><b>Step 1: Calculate the Standard Deviation of Demand During Lead Time</b></p>
+<p>In Cell C1, enter:</p>
+<p>=SQRT( (B3 <i> B2^2) + (B1^2 </i> B4^2) )</p>
+<p>This single number represents the total volatility you face. If the result is high, your supply chain is unstable.</p>
+<p><b>Step 2: Calculate Safety Stock</b></p>
+<p>In Cell C2, enter:</p>
+<p>=B5 * C1</p>
+<p>If the result is 25, you need 25 units of safety stock.</p>
+<p><b>Step 3: Calculate Reorder Point (ROP)</b></p>
+<p>In Cell C3, enter:</p>
+<p>=(B1 * B3) + C2</p>
+<p>This is the inventory level at which you must place a new order. If your stock drops to this number, order immediately.</p>
+<h2>Interpreting the Results for Cash Flow</h2>
+<p>A high safety stock number ties up cash. If your safety stock is 5,000, that is5,000 that cannot be used for marketing or debt repayment.</p>
+<p>Use the Z-Score to find your 'sweet spot'. A Z-score of 1.65 (95% service level) is a good balance for most small businesses. A Z-score of 2.33 (99% service level) is very expensive and usually unnecessary for non-critical items.</p>
+<p>If your calculated safety stock is too high, investigate the variables. Is the lead time variability (B4) the main driver? If yes, negotiate better delivery consistency with your supplier. Is the demand variability (B2) high? If yes, consider bundling products or smoothing out promotions.</p>
+<h2>Common Pitfalls to Avoid</h2>
+<ol>
+<li><b>Using Population vs Sample Standard Deviation:</b> Always use STDEV.S for historical data. Using STDEV.P will slightly underestimate the risk, leading to stockouts.</li>
+<li><b>Ignoring Seasonality:</b> If your sales are seasonal, a 30-day average might not reflect the peak season. Use a longer historical window or seasonal indices for more accuracy.</li>
+<li><b>Static Lead Times:</b> Supplier performance changes. Recalculate your lead time standard deviation monthly. If your supplier becomes less reliable, your safety stock must increase automatically.</li>
+</ol>
+<h2>Conclusion</h2>
+<p>Inventory risk is not a vague concept; it is a mathematical certainty that can be managed. By using the Z-Score method with combined demand and lead time variability, you move from reactive guessing to proactive control. This protects your cash flow from the two biggest threats: stockouts and overstocking.</p>
+<p>Update your Excel model every month with fresh data. As your business grows, so will your demand variability. Keep the model dynamic, and your inventory will work for you, not against you.</p>
+<div class="cta"><b>Small Business Toolkit (Excel + Google Sheets)</b><p>Inventory with reorder alerts, cash book, monthly profit report, customer credit and invoices in one file. Formulas ready. One-time $12, 14-day refund.</p><a class="btn" href="https://buy.polar.sh/polar_cl_zjN6m32WJdGnAhCaKmpDMih6c4gJGDER1bCqI0kd2Jb">Get the toolkit</a></div></div></body></html>
